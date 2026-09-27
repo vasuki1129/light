@@ -1,0 +1,44 @@
+\doxysection{script\+\_\+engine.\+h}
+\hypertarget{script__engine_8h_source}{}\label{script__engine_8h_source}\index{src/engine/script\_engine.h@{src/engine/script\_engine.h}}
+\doxymbox{\hyperlink{script__engine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../s7/s7.h"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{asset__manager_8h}{asset\_manager.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1ScriptLiteral}{ScriptLiteral}}\ \{}
+\DoxyCodeLine{00012\ \ \ std::string\ \doxymbox{\hyperlink{structengine_1_1ScriptLiteral_ace6495c6cbd96a57566d0466cc832ed1}{script}};}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1ScriptFile}{ScriptFile}}\ \{}
+\DoxyCodeLine{00016\ \ \ std::string\ \doxymbox{\hyperlink{structengine_1_1ScriptFile_aff33ff2452384c0f6a3db5318b80452a}{script\_path}};}
+\DoxyCodeLine{00017\ \ \ std::string\ \doxymbox{\hyperlink{structengine_1_1ScriptFile_a1bfbf91e4d2beb92399be2e72fa9e304}{cached\_script}};}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{structengine_1_1ScriptFile_a283fcd05679d74d6f255329f54e4d2e3}{stale}};}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ std::variant<ScriptLiteral,\ ScriptFile>\ \doxymbox{\hyperlink{namespaceengine_a319f34e5af855b09004e044e75c677a2}{ScriptData}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1ScriptEngine}{ScriptEngine}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1ScriptEngine_a6b71ee831a1cd2627417ef82f8ab4139}{eval\_string}}()\ =\ 0;}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1SchemeScriptEngine_aef71adfbf6b02d6d8646bd0d117919a2}{SchemeScriptEngine}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1ScriptEngine}{ScriptEngine}}\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \doxymbox{\hyperlink{classengine_1_1SchemeScriptEngine_aef71adfbf6b02d6d8646bd0d117919a2}{SchemeScriptEngine}}();}
+\DoxyCodeLine{00032\ \ \ \ \doxymbox{\hyperlink{classengine_1_1SchemeScriptEngine_ae1de03669805fcf54fc38ab30017e424}{\string~SchemeScriptEngine}}();}
+\DoxyCodeLine{00033\ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SchemeScriptEngine_adc6d6ece113cc5ab13768400c3c1067e}{eval\_string}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ s7\_scheme*\ scheme\_handle;}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ \ \ }
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}

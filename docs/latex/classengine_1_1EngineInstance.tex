@@ -1,0 +1,177 @@
+\doxysection{engine::Engine\+Instance Class Reference}
+\hypertarget{classengine_1_1EngineInstance}{}\label{classengine_1_1EngineInstance}\index{engine::EngineInstance@{engine::EngineInstance}}
+
+
+{\ttfamily \+\#include $<$engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d}{Engine\+Instance}} (\doxymbox{\hyperlink{structengine_1_1EngineCreateInfo}{Engine\+Create\+Info}} \&info)
+\item 
+\doxymbox{\hyperlink{classengine_1_1EngineInstance_a49d2d3bbb9cca2e118ab8b0dceaa5323}{\texorpdfstring{$\sim$}{\string~}\+Engine\+Instance}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1EngineInstance_adbcf96260e6884eea0d05f6ef3212806}{Run}} ()
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae339f5df65a70510cedfc63c4e7e56ac}{Get\+Version\+String}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1SceneLoader}{Scene\+Loader}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_a1b9ba4cab8dfcabfbd7f0f65e067ea68}{Get\+Scene\+Loader}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1OpenGLRenderer}{Open\+GLRenderer}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_af9505c69fdfe6673a3f180160d4e9074}{Get\+Renderer}} ()
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_ab053b6a90baf7fbc9aa22b8acc96c31c}{Get\+Window}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1AssetManager}{Asset\+Manager}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_a27ad2faf3e2e5fea12bedc6dc3d11311}{Get\+Asset\+Manager}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{Physics\+Handler}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_aa8cfa61da4c51566614e4e611ee773f9}{Get\+Physics}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1SoundManager}{Sound\+Manager}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae3dc83fae1e337e1ac46e8fb1c50ad4f}{Get\+Sound\+Manager}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1EngineInstance_a505b1f5b84801f5ece560345902b8292}{Stop}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_a8bf50908e41adbdf581fbac1311f467c}{Get\+Local\+Player}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1EngineInstance_a372aa58fd7b1bff06769942056bf712a}{Set\+Local\+Player}} (\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}local\+\_\+player)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1EngineInstance_a827920107d5cbbfe0d4bc76f8870cfeb}{Initialize}} ()
+\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae8ec06848b564829418533787f1516c0}{Get\+Registered\+Components\+List}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_a9f6cddc513cf8dcce33619901565a30d}{Create\+Component}} (std::\+string component\+\_\+type\+\_\+name)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_aa1ee0319f259066eee7174568bee9bf9}{Load\+Component}} (std::\+string component\+\_\+type\+\_\+name, \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1EngineInstance_a613b9be8750f1cb0de4d3bba1a940660}{Register\+Component}} (std::\+string type\+\_\+name, \doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*}factory)(void))
+\item 
+\doxymbox{\hyperlink{classengine_1_1InputHandler}{Input\+Handler}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1EngineInstance_a1d5ba27bf4ee6e514dde51071a316d3b}{Get\+Input}} ()
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1EngineInstance_doc-constructors}
+\Hypertarget{classengine_1_1EngineInstance_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d}\index{engine::EngineInstance@{engine::EngineInstance}!EngineInstance@{EngineInstance}}
+\index{EngineInstance@{EngineInstance}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{EngineInstance()}{EngineInstance()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d} 
+engine::\+\+Engine\+Instance::\+\+Engine\+Instance (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structengine_1_1EngineCreateInfo}{Engine\+Create\+Info}} \&}]{info}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a49d2d3bbb9cca2e118ab8b0dceaa5323}\index{engine::EngineInstance@{engine::EngineInstance}!````~EngineInstance@{\texorpdfstring{$\sim$}{\string~}EngineInstance}}
+\index{````~EngineInstance@{\texorpdfstring{$\sim$}{\string~}EngineInstance}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EngineInstance()}{\string~EngineInstance()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a49d2d3bbb9cca2e118ab8b0dceaa5323} 
+engine::\+\+Engine\+Instance::\+\texorpdfstring{$\sim$}{\string~}\+Engine\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{classengine_1_1EngineInstance_doc-func-members}
+\Hypertarget{classengine_1_1EngineInstance_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1EngineInstance_a9f6cddc513cf8dcce33619901565a30d}\index{engine::EngineInstance@{engine::EngineInstance}!CreateComponent@{CreateComponent}}
+\index{CreateComponent@{CreateComponent}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{CreateComponent()}{CreateComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a9f6cddc513cf8dcce33619901565a30d} 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Create\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{component\+\_\+type\+\_\+name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a27ad2faf3e2e5fea12bedc6dc3d11311}\index{engine::EngineInstance@{engine::EngineInstance}!GetAssetManager@{GetAssetManager}}
+\index{GetAssetManager@{GetAssetManager}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetAssetManager()}{GetAssetManager()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a27ad2faf3e2e5fea12bedc6dc3d11311} 
+\doxymbox{\hyperlink{classengine_1_1AssetManager}{Asset\+Manager}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Asset\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a1d5ba27bf4ee6e514dde51071a316d3b}\index{engine::EngineInstance@{engine::EngineInstance}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a1d5ba27bf4ee6e514dde51071a316d3b} 
+\doxymbox{\hyperlink{classengine_1_1InputHandler}{Input\+Handler}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a8bf50908e41adbdf581fbac1311f467c}\index{engine::EngineInstance@{engine::EngineInstance}!GetLocalPlayer@{GetLocalPlayer}}
+\index{GetLocalPlayer@{GetLocalPlayer}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetLocalPlayer()}{GetLocalPlayer()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a8bf50908e41adbdf581fbac1311f467c} 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Local\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_aa8cfa61da4c51566614e4e611ee773f9}\index{engine::EngineInstance@{engine::EngineInstance}!GetPhysics@{GetPhysics}}
+\index{GetPhysics@{GetPhysics}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetPhysics()}{GetPhysics()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_aa8cfa61da4c51566614e4e611ee773f9} 
+\doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{Physics\+Handler}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Physics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_ae8ec06848b564829418533787f1516c0}\index{engine::EngineInstance@{engine::EngineInstance}!GetRegisteredComponentsList@{GetRegisteredComponentsList}}
+\index{GetRegisteredComponentsList@{GetRegisteredComponentsList}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetRegisteredComponentsList()}{GetRegisteredComponentsList()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_ae8ec06848b564829418533787f1516c0} 
+std::\+vector$<$ std::\+string $>$ engine::\+\+Engine\+Instance::\+\+Get\+Registered\+Components\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_af9505c69fdfe6673a3f180160d4e9074}\index{engine::EngineInstance@{engine::EngineInstance}!GetRenderer@{GetRenderer}}
+\index{GetRenderer@{GetRenderer}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetRenderer()}{GetRenderer()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_af9505c69fdfe6673a3f180160d4e9074} 
+\doxymbox{\hyperlink{classengine_1_1OpenGLRenderer}{Open\+GLRenderer}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a1b9ba4cab8dfcabfbd7f0f65e067ea68}\index{engine::EngineInstance@{engine::EngineInstance}!GetSceneLoader@{GetSceneLoader}}
+\index{GetSceneLoader@{GetSceneLoader}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetSceneLoader()}{GetSceneLoader()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a1b9ba4cab8dfcabfbd7f0f65e067ea68} 
+\doxymbox{\hyperlink{classengine_1_1SceneLoader}{Scene\+Loader}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Scene\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_ae3dc83fae1e337e1ac46e8fb1c50ad4f}\index{engine::EngineInstance@{engine::EngineInstance}!GetSoundManager@{GetSoundManager}}
+\index{GetSoundManager@{GetSoundManager}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetSoundManager()}{GetSoundManager()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_ae3dc83fae1e337e1ac46e8fb1c50ad4f} 
+\doxymbox{\hyperlink{classengine_1_1SoundManager}{Sound\+Manager}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Sound\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_ae339f5df65a70510cedfc63c4e7e56ac}\index{engine::EngineInstance@{engine::EngineInstance}!GetVersionString@{GetVersionString}}
+\index{GetVersionString@{GetVersionString}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetVersionString()}{GetVersionString()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_ae339f5df65a70510cedfc63c4e7e56ac} 
+std::\+string engine::\+\+Engine\+Instance::\+\+Get\+Version\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_ab053b6a90baf7fbc9aa22b8acc96c31c}\index{engine::EngineInstance@{engine::EngineInstance}!GetWindow@{GetWindow}}
+\index{GetWindow@{GetWindow}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{GetWindow()}{GetWindow()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_ab053b6a90baf7fbc9aa22b8acc96c31c} 
+GLFWwindow \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Get\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a827920107d5cbbfe0d4bc76f8870cfeb}\index{engine::EngineInstance@{engine::EngineInstance}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a827920107d5cbbfe0d4bc76f8870cfeb} 
+void engine::\+\+Engine\+Instance::\+\+Initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_aa1ee0319f259066eee7174568bee9bf9}\index{engine::EngineInstance@{engine::EngineInstance}!LoadComponent@{LoadComponent}}
+\index{LoadComponent@{LoadComponent}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{LoadComponent()}{LoadComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_aa1ee0319f259066eee7174568bee9bf9} 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} engine::\+\+Engine\+Instance::\+\+Load\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{component\+\_\+type\+\_\+name}{, }\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a613b9be8750f1cb0de4d3bba1a940660}\index{engine::EngineInstance@{engine::EngineInstance}!RegisterComponent@{RegisterComponent}}
+\index{RegisterComponent@{RegisterComponent}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{RegisterComponent()}{RegisterComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a613b9be8750f1cb0de4d3bba1a940660} 
+void engine::\+\+Engine\+Instance::\+\+Register\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{type\+\_\+name}{, }\item[{\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}}]{factory~}{(\texorpdfstring{$\ast$}{*})(void)}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classengine_1_1EngineInstance_adbcf96260e6884eea0d05f6ef3212806}\index{engine::EngineInstance@{engine::EngineInstance}!Run@{Run}}
+\index{Run@{Run}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_adbcf96260e6884eea0d05f6ef3212806} 
+void engine::\+\+Engine\+Instance::\+\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a372aa58fd7b1bff06769942056bf712a}\index{engine::EngineInstance@{engine::EngineInstance}!SetLocalPlayer@{SetLocalPlayer}}
+\index{SetLocalPlayer@{SetLocalPlayer}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{SetLocalPlayer()}{SetLocalPlayer()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a372aa58fd7b1bff06769942056bf712a} 
+void engine::\+\+Engine\+Instance::\+\+Set\+Local\+Player (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}}]{local\+\_\+player}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1EngineInstance_a505b1f5b84801f5ece560345902b8292}\index{engine::EngineInstance@{engine::EngineInstance}!Stop@{Stop}}
+\index{Stop@{Stop}!engine::EngineInstance@{engine::EngineInstance}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily \label{classengine_1_1EngineInstance_a505b1f5b84801f5ece560345902b8292} 
+void engine::\+\+Engine\+Instance::\+\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{engine_8h}{engine.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{engine_8cpp}{engine.\+cpp}}\end{DoxyCompactItemize}

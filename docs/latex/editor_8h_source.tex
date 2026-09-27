@@ -1,0 +1,53 @@
+\doxysection{editor.\+h}
+\hypertarget{editor_8h_source}{}\label{editor_8h_source}\index{src/engine/editor.h@{src/engine/editor.h}}
+\doxymbox{\hyperlink{editor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../imgui/imgui.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine_1_1editor}{engine::editor}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a0eb36188a11a85e71bc68f546c800cfd}{EditorInstance}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a0eb36188a11a85e71bc68f546c800cfd}{EditorInstance}}();}
+\DoxyCodeLine{00010\ \ \ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a0eb36188a11a85e71bc68f546c800cfd}{\string~EditorInstance}}();}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_adc5dcb7d8c1cc470a4ec6716f0cd3252}{Run}}();}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a2a1868db3059cbbeda8f9d2ca7453856}{DebugPanel}}();}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_acc134d7703af94305a94081d8cfe4847}{ActionsPanel}}();}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_ac09328e94200111bdcc02a8af7e91caa}{AssetPanel}}();}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a56c9c7ab05fc31e063cd74cb176b6f4f}{Inspector}}();}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a46d7b6a79e46e48412c0d81ada295e0e}{SceneHierarchy}}();}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a716fc4ec5194b70e6686cfcf5a71573d}{MenuBar}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a6756c39474346d21c023c2a60a772d9a}{TransportPanel}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_acf31197526c9ddd16f74221ae0de3aa3}{OpenSceneLoadMenu}}();}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a8139a5695d5ed119fb11c93874618bf2}{OpenSceneSaveMenu}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_aee0a78e644c5b5bb276bdde678e731e0}{PreferencesWindow}}();}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a9f64c70487eaa926a017c99601ee9a15}{DrawTransformGizmo}}();}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_ad924851fa15f00d36f0ddac7c87d1d5f}{SceneLoadMenu}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1editor_1_1EditorInstance_a0e7afde7959339d891b878da17c87163}{DrawGrid}}();}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineInstance}{EngineInstance}}*\ \doxymbox{\hyperlink{namespaceengine}{engine}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{bool}\ game\_running\_switch\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent}{EditorCameraComponent}}*\ editor\_camera\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00039\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ game\_start\_camera\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ grid\_vao;}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ gizmo\_vao;}
+\DoxyCodeLine{00043\ \ \ \doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}\ *hierarchy\_selected\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ HierarchyLevel(\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}*\ tr);}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}

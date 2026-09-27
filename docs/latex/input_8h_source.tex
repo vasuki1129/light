@@ -1,0 +1,73 @@
+\doxysection{input.\+h}
+\hypertarget{input_8h_source}{}\label{input_8h_source}\index{src/engine/input.h@{src/engine/input.h}}
+\doxymbox{\hyperlink{input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{enum\ class}\ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742e}{KeyState}}\ \{}
+\DoxyCodeLine{00008\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742eac248b44c41333613a8ad29b656f8950e}{KEY\_UP}},}
+\DoxyCodeLine{00009\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742ea7ef8949a37c02f94d7975401b455b7f0}{KEY\_PRESSED}},}
+\DoxyCodeLine{00010\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742eae27439eebd778013c33fbb14dd19fd04}{KEY\_DOWN}},}
+\DoxyCodeLine{00011\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742ea7a3d6a7a7b70e89ce7bc767aed974062}{KEY\_RELEASED}}}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceengine_a455ebc9eab5dcb5f4e7e2d1886e0fdad}{InputHandlerKeyCallback}}(GLFWwindow\ *window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceengine_a722c8d81699d0df1aa98a8a43d42102d}{InputHandlerMousePositionCallback}}(GLFWwindow*\ window,\ \textcolor{keywordtype}{double}\ xpos,\ \textcolor{keywordtype}{double}\ ypos);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{namespaceengine_af4e7dabcf4367c1d4e4ffe1d05755515}{InputHandlerMouseButtonCallback}}(GLFWwindow*\ window,\ \textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1InputHandler}{InputHandler}}\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_afb577a1f50e90c7762d6c16ef35fc1c0}{KeyDown}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_afb577a1f50e90c7762d6c16ef35fc1c0}{KeyDown}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a529ffd755962abf2ec63455329a1c564}{KeyUp}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a529ffd755962abf2ec63455329a1c564}{KeyUp}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a8e0ed7b3e5781436b082862557a7a24d}{KeyPressed}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a8e0ed7b3e5781436b082862557a7a24d}{KeyPressed}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_af85d7f57a0764b8b8651de45cc52c6cd}{KeyReleased}}(\textcolor{keywordtype}{int}\ key);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_af85d7f57a0764b8b8651de45cc52c6cd}{KeyReleased}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_ab56a44bd160377ccdd2342cd0ed610a3}{DisableCursor}}();}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a265676468d4a8a717fa821eefd6cf509}{EnableCursor}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_ae2254dece6b78f7211aa9658a8b9bcc7}{MouseButtonDown}}(\textcolor{keywordtype}{int}\ button);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_aa09eff4d3a338468a133a641011f12b8}{MouseButtonPressed}}(\textcolor{keywordtype}{int}\ button);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a9262634f56387410bb782eb9e72b16a0}{MouseButtonReleased}}(\textcolor{keywordtype}{int}\ button);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ glm::vec2\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a8176c01790fac79040fc4628948a6fc8}{MouseDelta}}();}
+\DoxyCodeLine{00045\ \ \ glm::vec2\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a6695706ba3c23ee185969221be1851a1}{MousePosition}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_ad64543415ddd2b8aabe9a1b501e8c23d}{Update}}();}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a69765033432884b5a17ad718a8b72bcd}{SendInput}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_aca5a057c2b5eba31e62711086eef90be}{SendMousePosition}}(glm::vec2\ position);}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1InputHandler_a6e786c0183ae99991dbfbd30ec478bab}{SendMouseButton}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ glm::vec2\ mouse\_delta\_accum\ =\ glm::vec2(0.0,0.0);}
+\DoxyCodeLine{00055\ \ \ glm::vec2\ mouse\_delta\ =\ glm::vec2(0.0,0.0);}
+\DoxyCodeLine{00056\ \ \ glm::vec2\ last\_mouse\_pos\ =\ glm::vec2(0.0,0.0);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ std::map<int,\ KeyState>\ key\_state;}
+\DoxyCodeLine{00059\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742e}{KeyState}}\ leftClick;}
+\DoxyCodeLine{00060\ \ \ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742e}{KeyState}}\ rightClick;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \}}
+
+\end{DoxyCode}

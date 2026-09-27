@@ -1,0 +1,118 @@
+\doxysection{engine.\+h}
+\hypertarget{engine_8h_source}{}\label{engine_8h_source}\index{src/engine/engine.h@{src/engine/engine.h}}
+\doxymbox{\hyperlink{engine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \_/\ \ \ \ \ \ \ \ \_/\_/\_/\ \ \ \ \_/\_/\_/\ \ \_/\ \ \ \ \_/\ \ \_/\_/\_/\_/\_/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \_/\ \ \ \ \ \ \ \ \ \ \_/\ \ \ \ \_/\ \ \ \ \ \ \ \ \_/\ \ \ \ \_/\ \ \ \ \ \ \_/}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \_/\ \ \ \ \ \ \ \ \ \ \_/\ \ \ \ \_/\ \ \_/\_/\ \ \_/\_/\_/\_/\ \ \ \ \ \ \_/}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \_/\ \ \ \ \ \ \ \ \ \ \_/\ \ \ \ \_/\ \ \ \ \_/\ \ \_/\ \ \ \ \_/\ \ \ \ \ \ \_/}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \_/\_/\_/\_/\ \ \_/\_/\_/\ \ \ \ \_/\_/\_/\ \ \_/\ \ \ \ \_/\ \ \ \ \ \ \_/}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ \ \ hyper\ minimalist\ editor\ based\ game\ engine}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ This\ engine\ is\ proudly\ AI\ free,\ and\ will\ remain\ so}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}../s7/s7.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{opengl__renderer_8h}{opengl\_renderer.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{physics_8h}{physics.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{script__engine_8h}{script\_engine.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{scene__loader_8h}{scene\_loader.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{asset__manager_8h}{asset\_manager.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{input_8h}{input.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{camera__component_8h}{camera\_component.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{sound__manager_8h}{sound\_manager.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1AssetManager}{AssetManager}};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1SceneLoader}{SceneLoader}};}
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1OpenGLRenderer}{OpenGLRenderer}};}
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{PhysicsHandler}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Ray}{Ray}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1EngineCreateInfo}{EngineCreateInfo}}\ \{}
+\DoxyCodeLine{00048\ \ \ std::string\ \doxymbox{\hyperlink{structengine_1_1EngineCreateInfo_a48db5d1420180e51eafd757d64c368ac}{game\_name}};}
+\DoxyCodeLine{00049\ \ \ uint16\_t\ \doxymbox{\hyperlink{structengine_1_1EngineCreateInfo_a19d27221f54a110c0cbf399e57c115d6}{initial\_window\_width}};}
+\DoxyCodeLine{00050\ \ \ uint16\_t\ \doxymbox{\hyperlink{structengine_1_1EngineCreateInfo_a564f4f8551ba02638a20826361907c1e}{initial\_window\_height}};}
+\DoxyCodeLine{00051\ \ \ std::string\ \doxymbox{\hyperlink{structengine_1_1EngineCreateInfo_a25a21a611a122d44d3cde9cc0b32077a}{startup\_scene}};}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d}{EngineInstance}}\ \{}
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00056\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d}{EngineInstance}}(\doxymbox{\hyperlink{structengine_1_1EngineCreateInfo}{EngineCreateInfo}}\&\ info);}
+\DoxyCodeLine{00057\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a6c50b222f10e6ac1cb9dad6e0e26db5d}{\string~EngineInstance}}();}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_adbcf96260e6884eea0d05f6ef3212806}{Run}}();}
+\DoxyCodeLine{00059\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae339f5df65a70510cedfc63c4e7e56ac}{GetVersionString}}();}
+\DoxyCodeLine{00060\ \ \ \doxymbox{\hyperlink{classengine_1_1SceneLoader}{SceneLoader}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a1b9ba4cab8dfcabfbd7f0f65e067ea68}{GetSceneLoader}}();}
+\DoxyCodeLine{00061\ \ \ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer}{OpenGLRenderer}}\ *\doxymbox{\hyperlink{classengine_1_1EngineInstance_af9505c69fdfe6673a3f180160d4e9074}{GetRenderer}}();}
+\DoxyCodeLine{00062\ \ \ GLFWwindow\ *\doxymbox{\hyperlink{classengine_1_1EngineInstance_ab053b6a90baf7fbc9aa22b8acc96c31c}{GetWindow}}();}
+\DoxyCodeLine{00063\ \ \ \doxymbox{\hyperlink{classengine_1_1AssetManager}{AssetManager}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a27ad2faf3e2e5fea12bedc6dc3d11311}{GetAssetManager}}();}
+\DoxyCodeLine{00064\ \ \ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{PhysicsHandler}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_aa8cfa61da4c51566614e4e611ee773f9}{GetPhysics}}();}
+\DoxyCodeLine{00065\ \ \ \doxymbox{\hyperlink{classengine_1_1SoundManager}{SoundManager}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae3dc83fae1e337e1ac46e8fb1c50ad4f}{GetSoundManager}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a505b1f5b84801f5ece560345902b8292}{Stop}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}\ *\doxymbox{\hyperlink{classengine_1_1EngineInstance_a8bf50908e41adbdf581fbac1311f467c}{GetLocalPlayer}}();}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a372aa58fd7b1bff06769942056bf712a}{SetLocalPlayer}}(\doxymbox{\hyperlink{classengine_1_1Component}{Component}}*\ local\_player);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a827920107d5cbbfe0d4bc76f8870cfeb}{Initialize}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ std::vector<std::string>\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_ae8ec06848b564829418533787f1516c0}{GetRegisteredComponentsList}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}\ *\doxymbox{\hyperlink{classengine_1_1EngineInstance_a9f6cddc513cf8dcce33619901565a30d}{CreateComponent}}(std::string\ component\_type\_name);}
+\DoxyCodeLine{00083\ \ \ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_aa1ee0319f259066eee7174568bee9bf9}{LoadComponent}}(std::string\ component\_type\_name,\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value);}
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a613b9be8750f1cb0de4d3bba1a940660}{RegisterComponent}}(std::string\ type\_name,\ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}*\ (*factory)(\textcolor{keywordtype}{void}))}
+\DoxyCodeLine{00085\ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ registered\_component\_types[type\_name]\ =\ factory;}
+\DoxyCodeLine{00087\ \ \ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \doxymbox{\hyperlink{classengine_1_1InputHandler}{InputHandler}}*\ \doxymbox{\hyperlink{classengine_1_1EngineInstance_a1d5ba27bf4ee6e514dde51071a316d3b}{GetInput}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ std::string\ startup\_scene;}
+\DoxyCodeLine{00095\ \ \ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}*\ local\_player\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00096\ \ \ \doxymbox{\hyperlink{classengine_1_1SoundManager}{SoundManager}}*\ sound\_manager;}
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ RegisterBuiltinComponents();}
+\DoxyCodeLine{00098\ \ \ glm::vec2\ window\_size;}
+\DoxyCodeLine{00099\ \ \ GLFWwindow\ *window;}
+\DoxyCodeLine{00100\ \ \ \doxymbox{\hyperlink{classengine_1_1AssetManager}{AssetManager}}*\ asset\_loader;}
+\DoxyCodeLine{00101\ \ \ \doxymbox{\hyperlink{classengine_1_1SceneLoader}{SceneLoader}}*\ scene\_loader;}
+\DoxyCodeLine{00102\ \ \ s7\_scheme\ *scheme\_interpreter;}
+\DoxyCodeLine{00103\ \ \ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer}{OpenGLRenderer}}*\ renderer;}
+\DoxyCodeLine{00104\ \ \ \doxymbox{\hyperlink{classengine_1_1InputHandler}{InputHandler}}*\ input\_handler;}
+\DoxyCodeLine{00105\ \ \ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{PhysicsHandler}}*\ physics\_handler;}
+\DoxyCodeLine{00106\ \ \ std::map<std::string,\ \doxymbox{\hyperlink{classengine_1_1Component}{Component}}*\ (*)\ ()>\ registered\_component\_types;}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ EngineInstance*\ \doxymbox{\hyperlink{namespaceengine_a1c992580a41c6a6ecd42d7e3db2be74b}{CreateEngine}}(EngineCreateInfo\&\ create\_info);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ EngineInstance\ *\doxymbox{\hyperlink{namespaceengine_aabcd85f15c234272a5b74259d6a6119d}{Engine}}();}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{asset\+\_\+manager.\+h}
+\hypertarget{asset__manager_8h_source}{}\label{asset__manager_8h_source}\index{src/engine/asset\_manager.h@{src/engine/asset\_manager.h}}
+\doxymbox{\hyperlink{asset__manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../json/json.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{model_8h}{model.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{material_8h}{material.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{texture_8h}{texture.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{shader_8h}{shader.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{sound_8h}{sound.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ =\ nlohmann::json;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1AssetManager}{AssetManager}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1AssetManager_af0ed3ee07e7ca7fe0a31ca2f217e320b}{Rescan}}();}
+\DoxyCodeLine{00020\ \ \ \doxymbox{\hyperlink{classengine_1_1Mesh}{Mesh}}\ *\doxymbox{\hyperlink{classengine_1_1AssetManager_a641fba2944965fa6bd99679128f55249}{GetMeshOrNull}}(std::string\ key);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \doxymbox{\hyperlink{classengine_1_1Material}{Material}}*\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a6174a302bd177e307a375956a2853520}{GetMaterialOrNull}}(std::string\ key);}
+\DoxyCodeLine{00023\ \ \ \doxymbox{\hyperlink{classengine_1_1Sound}{Sound}}*\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a7df90828bdfb145d1411df79dd785317}{GetSoundOrNull}}(std::string\ key);}
+\DoxyCodeLine{00024\ \ \ \doxymbox{\hyperlink{classengine_1_1Shader}{Shader}}*\ \doxymbox{\hyperlink{classengine_1_1AssetManager_ac6e3ef5b2fe31b2488a192edc895628a}{GetShaderOrNull}}(std::string\ key);}
+\DoxyCodeLine{00025\ \ \ \doxymbox{\hyperlink{classengine_1_1Texture}{Texture}}*\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a1156523db9e4b18b15dca2952b7c0612}{GetTextureOrNull}}(std::string\ key);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ std::map<std::string,\ Model*>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a4920a26e7b096e25fc578ced4f053a83}{loaded\_models}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//.fbx}}
+\DoxyCodeLine{00028\ \ \ std::map<std::string,\ Mesh*>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a5e921cf2136a163dcc11af9906c9caa2}{loaded\_meshes}};}
+\DoxyCodeLine{00029\ \ \ std::map<std::string,\ Material*>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_aacabe2995142df77a9a4afa11362aad3}{loaded\_materials}};\ \ \ \ \ \ \textcolor{comment}{//.mtl}}
+\DoxyCodeLine{00030\ \ \ std::map<std::string,\ Texture*>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_ad114dcd4dc9367769e6cd1da551c0011}{loaded\_textures}};\ \ \ \ \ \ \ \ \textcolor{comment}{//.png}}
+\DoxyCodeLine{00031\ \ \ std::map<std::string,\ Shader\ *>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a73a2be73b8ce2175578335eb797ddec3}{loaded\_shaders}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//.shd}}
+\DoxyCodeLine{00032\ \ \ std::map<std::string,\ Sound*>\ \doxymbox{\hyperlink{classengine_1_1AssetManager_a896371ce7e9be8602d57e5113705279d}{loaded\_sounds}};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ ProcessModel(std::filesystem::path\ pth);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ ProcessMaterial(std::filesystem::path\ pth);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{void}\ ProcessShader(std::filesystem::path\ pth);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ ProcessTexture(std::filesystem::path\ pth);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ ProcessSound(std::filesystem::path\ pth);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

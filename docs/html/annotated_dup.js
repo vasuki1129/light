@@ -1,0 +1,48 @@
+var annotated_dup =
+[
+    [ "engine", "namespaceengine.html", [
+      [ "editor", "namespaceengine_1_1editor.html", [
+        [ "EditorInstance", "classengine_1_1editor_1_1EditorInstance.html", "classengine_1_1editor_1_1EditorInstance" ],
+        [ "Gizmo", "classengine_1_1editor_1_1Gizmo.html", "classengine_1_1editor_1_1Gizmo" ]
+      ] ],
+      [ "Asset", "classengine_1_1Asset.html", "classengine_1_1Asset" ],
+      [ "AssetManager", "classengine_1_1AssetManager.html", "classengine_1_1AssetManager" ],
+      [ "CameraComponent", "classengine_1_1CameraComponent.html", "classengine_1_1CameraComponent" ],
+      [ "Component", "classengine_1_1Component.html", "classengine_1_1Component" ],
+      [ "EditorCameraComponent", "classengine_1_1EditorCameraComponent.html", "classengine_1_1EditorCameraComponent" ],
+      [ "EngineConfig", "classengine_1_1EngineConfig.html", "classengine_1_1EngineConfig" ],
+      [ "EngineCreateInfo", "structengine_1_1EngineCreateInfo.html", "structengine_1_1EngineCreateInfo" ],
+      [ "EngineInstance", "classengine_1_1EngineInstance.html", "classengine_1_1EngineInstance" ],
+      [ "InputHandler", "classengine_1_1InputHandler.html", "classengine_1_1InputHandler" ],
+      [ "Material", "classengine_1_1Material.html", "classengine_1_1Material" ],
+      [ "Mesh", "classengine_1_1Mesh.html", "classengine_1_1Mesh" ],
+      [ "MeshComponent", "classengine_1_1MeshComponent.html", "classengine_1_1MeshComponent" ],
+      [ "Model", "classengine_1_1Model.html", "classengine_1_1Model" ],
+      [ "OpenGLRenderer", "classengine_1_1OpenGLRenderer.html", "classengine_1_1OpenGLRenderer" ],
+      [ "PhysicsHandler", "classengine_1_1PhysicsHandler.html", "classengine_1_1PhysicsHandler" ],
+      [ "Ray", "structengine_1_1Ray.html", "structengine_1_1Ray" ],
+      [ "Saveable", "classengine_1_1Saveable.html", null ],
+      [ "Scene", "classengine_1_1Scene.html", "classengine_1_1Scene" ],
+      [ "SceneLoader", "classengine_1_1SceneLoader.html", "classengine_1_1SceneLoader" ],
+      [ "SchemeScriptEngine", "classengine_1_1SchemeScriptEngine.html", "classengine_1_1SchemeScriptEngine" ],
+      [ "ScreenShader", "classengine_1_1ScreenShader.html", null ],
+      [ "ScriptComponent", "classengine_1_1ScriptComponent.html", "classengine_1_1ScriptComponent" ],
+      [ "ScriptEngine", "classengine_1_1ScriptEngine.html", "classengine_1_1ScriptEngine" ],
+      [ "ScriptFile", "structengine_1_1ScriptFile.html", "structengine_1_1ScriptFile" ],
+      [ "ScriptLiteral", "structengine_1_1ScriptLiteral.html", "structengine_1_1ScriptLiteral" ],
+      [ "Shader", "classengine_1_1Shader.html", "classengine_1_1Shader" ],
+      [ "Sound", "classengine_1_1Sound.html", "classengine_1_1Sound" ],
+      [ "SoundManager", "classengine_1_1SoundManager.html", "classengine_1_1SoundManager" ],
+      [ "Texture", "classengine_1_1Texture.html", "classengine_1_1Texture" ],
+      [ "Transform", "classengine_1_1Transform.html", "classengine_1_1Transform" ],
+      [ "Uniform_d", "structengine_1_1Uniform__d.html", "structengine_1_1Uniform__d" ],
+      [ "Uniform_f", "structengine_1_1Uniform__f.html", "structengine_1_1Uniform__f" ],
+      [ "Uniform_i", "structengine_1_1Uniform__i.html", "structengine_1_1Uniform__i" ],
+      [ "Uniform_mat4", "structengine_1_1Uniform__mat4.html", "structengine_1_1Uniform__mat4" ],
+      [ "Uniform_ui", "structengine_1_1Uniform__ui.html", "structengine_1_1Uniform__ui" ],
+      [ "Uniform_vec3", "structengine_1_1Uniform__vec3.html", "structengine_1_1Uniform__vec3" ],
+      [ "UniformList", "classengine_1_1UniformList.html", "classengine_1_1UniformList" ]
+    ] ],
+    [ "BaseUniforms", "structBaseUniforms.html", "structBaseUniforms" ],
+    [ "Vertex", "structVertex.html", "structVertex" ]
+];

@@ -1,0 +1,66 @@
+\doxysection{src/\+engine/\+saveable.h File Reference}
+\hypertarget{saveable_8h}{}\label{saveable_8h}\index{src/engine/saveable.h@{src/engine/saveable.h}}
+{\ttfamily \+\#include "{}../\+json/\+json.\+hpp"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classengine_1_1Saveable}{engine::\+\+Saveable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceengine}{engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{saveable_8h_abf6a38ae345c3de92358b27a93d00709}{PROPERTY\+\_\+\+SAVE}}(prop)
+\item 
+\+\#define \doxymbox{\hyperlink{saveable_8h_a5c753ce21b4fe11f4f984ba3c34e397e}{PROPERTY\+\_\+\+LOAD}}(prop)
+\item 
+\+\#define \doxymbox{\hyperlink{saveable_8h_ae7879b55421fc44516a860e7341eab3c}{PROPERTY\+\_\+\+CHECK}}(prop)
+\end{DoxyCompactItemize}
+
+
+\label{saveable_8h_doc-define-members}
+\Hypertarget{saveable_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{saveable_8h_ae7879b55421fc44516a860e7341eab3c}\index{saveable.h@{saveable.h}!PROPERTY\_CHECK@{PROPERTY\_CHECK}}
+\index{PROPERTY\_CHECK@{PROPERTY\_CHECK}!saveable.h@{saveable.h}}
+\doxysubsubsection{\texorpdfstring{PROPERTY\_CHECK}{PROPERTY\_CHECK}}
+{\footnotesize\ttfamily \label{saveable_8h_ae7879b55421fc44516a860e7341eab3c} 
+\+\#define PROPERTY\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{prop}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(!value.contains(\#prop))\ \{\ \(\backslash\)}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}property\ \`{}"{}}\ <<\ \#prop\ <<\ \textcolor{stringliteral}{"{}\`{}\ failed\ to\ load\ on\ component\ "{}}\ <<\ this-\/>name.c\_str()\ <<\textcolor{stringliteral}{"{}\ UID:\ "{}}\ <<\ this-\/>uid\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+
+\end{DoxyCode}
+\Hypertarget{saveable_8h_a5c753ce21b4fe11f4f984ba3c34e397e}\index{saveable.h@{saveable.h}!PROPERTY\_LOAD@{PROPERTY\_LOAD}}
+\index{PROPERTY\_LOAD@{PROPERTY\_LOAD}!saveable.h@{saveable.h}}
+\doxysubsubsection{\texorpdfstring{PROPERTY\_LOAD}{PROPERTY\_LOAD}}
+{\footnotesize\ttfamily \label{saveable_8h_a5c753ce21b4fe11f4f984ba3c34e397e} 
+\+\#define PROPERTY\+\_\+\+LOAD(\begin{DoxyParamCaption}\item[{}]{prop}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(value.contains(\#prop))\ \{\ \(\backslash\)}
+\DoxyCodeLine{prop\ =\ value[\#prop];\ \(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{else}\ \{\ \(\backslash\)}
+\DoxyCodeLine{std::cout\ <<\ \textcolor{stringliteral}{"{}property\ \`{}"{}}\ <<\ \#prop\ <<\ \textcolor{stringliteral}{"{}\`{}\ failed\ to\ load\ on\ component\ "{}}\ <<\ this-\/>name.c\_str()\ <<\textcolor{stringliteral}{"{}\ UID:\ "{}}\ <<\ this-\/>uid\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{saveable_8h_abf6a38ae345c3de92358b27a93d00709}\index{saveable.h@{saveable.h}!PROPERTY\_SAVE@{PROPERTY\_SAVE}}
+\index{PROPERTY\_SAVE@{PROPERTY\_SAVE}!saveable.h@{saveable.h}}
+\doxysubsubsection{\texorpdfstring{PROPERTY\_SAVE}{PROPERTY\_SAVE}}
+{\footnotesize\ttfamily \label{saveable_8h_abf6a38ae345c3de92358b27a93d00709} 
+\+\#define PROPERTY\+\_\+\+SAVE(\begin{DoxyParamCaption}\item[{}]{prop}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{value[\#prop]\ =\ prop;}
+
+\end{DoxyCode}

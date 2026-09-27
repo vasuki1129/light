@@ -1,0 +1,65 @@
+\doxysection{src/\+engine/\+component.h File Reference}
+\hypertarget{component_8h}{}\label{component_8h}\index{src/engine/component.h@{src/engine/component.h}}
+{\ttfamily \+\#include "{}transform.\+h"{}}\newline
+{\ttfamily \+\#include "{}saveable.\+h"{}}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}../\+imgui/\+imgui.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classengine_1_1Component}{engine::\+\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceengine}{engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{component_8h_afa395d2bb1d5550e1265394f2b951013}{FACTORY}}(type)
+\item 
+\+\#define \doxymbox{\hyperlink{component_8h_a340aa58fd56dd6c27739871e260647d9}{FACTORY\+\_\+\+DEF}}(type)
+\item 
+\+\#define \doxymbox{\hyperlink{component_8h_a625574fdf6c4d4c239eb3aeb4b2da7a8}{FACTORY\+\_\+\+REF}}(type)
+\end{DoxyCompactItemize}
+
+
+\label{component_8h_doc-define-members}
+\Hypertarget{component_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{component_8h_afa395d2bb1d5550e1265394f2b951013}\index{component.h@{component.h}!FACTORY@{FACTORY}}
+\index{FACTORY@{FACTORY}!component.h@{component.h}}
+\doxysubsubsection{\texorpdfstring{FACTORY}{FACTORY}}
+{\footnotesize\ttfamily \label{component_8h_afa395d2bb1d5550e1265394f2b951013} 
+\+\#define FACTORY(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{classengine_1_1Component}{engine::Component}}\ *\_\_Get\ \#\#\ type()}
+
+\end{DoxyCode}
+\Hypertarget{component_8h_a340aa58fd56dd6c27739871e260647d9}\index{component.h@{component.h}!FACTORY\_DEF@{FACTORY\_DEF}}
+\index{FACTORY\_DEF@{FACTORY\_DEF}!component.h@{component.h}}
+\doxysubsubsection{\texorpdfstring{FACTORY\_DEF}{FACTORY\_DEF}}
+{\footnotesize\ttfamily \label{component_8h_a340aa58fd56dd6c27739871e260647d9} 
+\+\#define FACTORY\+\_\+\+DEF(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{engine\ ::Component\ *\_\_Get\#\#type()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ return\ (\doxymbox{\hyperlink{classengine_1_1Component}{engine::Component}}\ *)(\textcolor{keyword}{new}\ type());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+
+\end{DoxyCode}
+\Hypertarget{component_8h_a625574fdf6c4d4c239eb3aeb4b2da7a8}\index{component.h@{component.h}!FACTORY\_REF@{FACTORY\_REF}}
+\index{FACTORY\_REF@{FACTORY\_REF}!component.h@{component.h}}
+\doxysubsubsection{\texorpdfstring{FACTORY\_REF}{FACTORY\_REF}}
+{\footnotesize\ttfamily \label{component_8h_a625574fdf6c4d4c239eb3aeb4b2da7a8} 
+\+\#define FACTORY\+\_\+\+REF(\begin{DoxyParamCaption}\item[{}]{type}{}\end{DoxyParamCaption})}
+
+{\bfseries Value:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\_\_Get\ \#\#\ type}
+
+\end{DoxyCode}

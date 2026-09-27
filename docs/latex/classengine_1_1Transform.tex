@@ -1,0 +1,656 @@
+\doxysection{engine::Transform Class Reference}
+\hypertarget{classengine_1_1Transform}{}\label{classengine_1_1Transform}\index{engine::Transform@{engine::Transform}}
+
+
+{\ttfamily \+\#include $<$transform.\+h$>$}
+
+Inheritance diagram for engine::Transform:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classengine_1_1Transform}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_ab7965d249ffdcc679a82ea99afbda119}{Transform}} (\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a48410f23f083b39fee8018b73cd8f0a0}{Transform}} (std::\+string name)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a1e81de03bff2a86d34367ac686d8423e}{\texorpdfstring{$\sim$}{\string~}\+Transform}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_ab831ecea9fe5cfaa0ef497b49fe9fc5e}{Set\+Name}} (std::\+string name)
+\item 
+\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \doxymbox{\hyperlink{classengine_1_1Transform_abb99eabbb47da3bf89d080408783abb9}{Save}} () override
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Transform_aac11ea3833e82e98acce7c418c36eed6}{Load}} (\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value) override
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a5fd0181eae24a3d795f59399f5271eb9}{Process\+Editor\+Render}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a1c72a895004e2e70647b485fa461a665}{Process\+Render}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_abee42f4bcaf5036b63fa21f44fe9d247}{Process\+Tick}} (float dt)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a3dd693d3c79e7776e71ffb49d0bd4cc7}{Process\+Init}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a21c39b07ade094ed03dfd29639cd27ca}{Add\+Component}} (\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}component)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a236fba4be5b53c59e83a5a910c54605c}{Get\+Component}} (std::\+string name)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a4b514e2dfd2cbebd11c66689699e31c6}{Add\+Child}} (\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*}tr)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a0500043af48d87872f1f3a08fb3c9899}{Find\+Transform\+By\+UID}} (uint64\+\_\+t id)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a3da18f46470450fb185f09ca56926d64}{Find\+Component\+By\+UID}} (uint64\+\_\+t id)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a5d9e81871beba557a4a1eea9a81e3311}{Find\+Child\+By\+Name}} (std::\+string name)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a7e1f9c74c9702d23fd1cddcaa5500ab1}{Remove\+Child}} (\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*}tr)
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classengine_1_1Transform_a40cd62c7c6c9e5d460c1d38ffaef6fbd}{Get\+Children}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a777c8c11cd2040dd6a020102275cddfa}{Translate}} (glm::\+vec3 offset)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_aad9dbec2a459f2773e5f7f19d5c6aa8f}{Scale}} (glm::\+vec3 amount)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_a0bec1267afde9b3436b6505637aff1b1}{Rotate}} (glm::\+vec3 axis, float amount)
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_ae30808adbeec2b2d67dbf9520e80a7d6}{Forward}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_aac1f4e2518c95172d210d7ef26263f1b}{Backward}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a724751e08122fa27683bf0254ba89f09}{Up}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a70c95351e62bd9752c5bd6f2ab86c691}{Down}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a944429f0bdf681ab1df851539126a94c}{Left}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a0351370683b969a078ab36f9921b0bf5}{Right}} ()
+\item 
+glm::\+mat4 \doxymbox{\hyperlink{classengine_1_1Transform_ac7a17878d1dfbe6a66c4d34a6f3c04ed}{Get\+Model\+Matrix}} ()
+\item 
+glm::\+mat4 \doxymbox{\hyperlink{classengine_1_1Transform_a1dd19bb98f5d55a6dac2f627658c3286}{Get\+Model\+Matrix\+Unscaled}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_aeeafcad621363b49dde007b824a50867}{Get\+Global\+Position}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a311b0758bd77b1fcbb3b5e76c181c40e}{Get\+Local\+Position}} ()
+\item 
+glm::\+quat \doxymbox{\hyperlink{classengine_1_1Transform_a76004d525f0ddd484c61fe6b6a5abdb2}{Get\+Global\+Rotation}} ()
+\item 
+glm::\+quat \doxymbox{\hyperlink{classengine_1_1Transform_ab35a65dd0d971261629a92046d32336b}{Get\+Local\+Rotation}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_af7d1e42725fd19e9c4cb45637df06546}{Get\+Global\+Scale}} ()
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a7fcc2d1999ac312915bf18052dfd9210}{Get\+Local\+Scale}} ()
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Transform_a07e7023e2444f4655c46fa10541842bd}{Get\+Name}} ()
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Transform_af995f7643b6bf23b717b7b51170cc51c}{Get\+UID}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Transform_aa0c524bc25f374435073be04d038a299}{Draw\+Widget}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_af179d6bf6bf590bd9c0383f3eca2c861}{position}}
+\item 
+glm::\+quat \doxymbox{\hyperlink{classengine_1_1Transform_aa2159ccddff0e6230106a119b459fe9d}{rotation}}
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_aa5ead1547ef6d5e46617b0f245041934}{scale}}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Transform_a0df0665afa2f729d274f56bf93c8dad4}{name}}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Transform_a7c2a09e567c5b7ea16c3a4f4b0aa9587}{uid}}
+\item 
+glm::\+vec3 \doxymbox{\hyperlink{classengine_1_1Transform_a6c0a71386f7b21c1db704b21ac5814fc}{rotation\+Euler}}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Transform_a30f7473f1ea5909a65042cb61526519e}{parent}} = nullptr
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classengine_1_1Transform_ad45a4f44fa2bea6627355afa1a285d3e}{children}}
+\item 
+std::\+vector$<$ \doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{classengine_1_1Transform_ab4680440e109804fcc164e1398e44bef}{components}}
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1Transform_doc-constructors}
+\Hypertarget{classengine_1_1Transform_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}\index{engine::Transform@{engine::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9} 
+engine::\+\+Transform::\+\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Default constructor \Hypertarget{classengine_1_1Transform_ab7965d249ffdcc679a82ea99afbda119}\index{engine::Transform@{engine::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ab7965d249ffdcc679a82ea99afbda119} 
+engine::\+\+Transform::\+\+Transform (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})}
+
+"{}load"{} constructor
+
+Called by the level loader to deserialize transforms from json
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The JSON to deserialize \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_a48410f23f083b39fee8018b73cd8f0a0}\index{engine::Transform@{engine::Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a48410f23f083b39fee8018b73cd8f0a0} 
+engine::\+\+Transform::\+\+Transform (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+Same as default constructor, but with the node name set
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The desired node name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_a1e81de03bff2a86d34367ac686d8423e}\index{engine::Transform@{engine::Transform}!````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}}
+\index{````~Transform@{\texorpdfstring{$\sim$}{\string~}Transform}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Transform()}{\string~Transform()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a1e81de03bff2a86d34367ac686d8423e} 
+engine::\+\+Transform::\+\texorpdfstring{$\sim$}{\string~}\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Destroys this transform, all of its components, and then recursively destroys its children 
+
+\label{classengine_1_1Transform_doc-func-members}
+\Hypertarget{classengine_1_1Transform_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1Transform_a4b514e2dfd2cbebd11c66689699e31c6}\index{engine::Transform@{engine::Transform}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a4b514e2dfd2cbebd11c66689699e31c6} 
+void engine::\+\+Transform::\+\+Add\+Child (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*}}]{tr}{}\end{DoxyParamCaption})}
+
+Add a child transform to this transform
+
+If the transform is already a child of this transform log a warning and ignore it
+
+
+\begin{DoxyParams}{Parameters}
+{\em tr} & the transform to add as a child \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_a21c39b07ade094ed03dfd29639cd27ca}\index{engine::Transform@{engine::Transform}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a21c39b07ade094ed03dfd29639cd27ca} 
+void engine::\+\+Transform::\+\+Add\+Component (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})}
+
+Add a component to this transform
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & A pointer to the component to add \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_aac1f4e2518c95172d210d7ef26263f1b}\index{engine::Transform@{engine::Transform}!Backward@{Backward}}
+\index{Backward@{Backward}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Backward()}{Backward()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aac1f4e2518c95172d210d7ef26263f1b} 
+glm::\+vec3 engine::\+\+Transform::\+\+Backward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the backward direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the backward direction of the transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a70c95351e62bd9752c5bd6f2ab86c691}\index{engine::Transform@{engine::Transform}!Down@{Down}}
+\index{Down@{Down}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Down()}{Down()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a70c95351e62bd9752c5bd6f2ab86c691} 
+glm::\+vec3 engine::\+\+Transform::\+\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the down direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the down direction of the transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_aa0c524bc25f374435073be04d038a299}\index{engine::Transform@{engine::Transform}!DrawWidget@{DrawWidget}}
+\index{DrawWidget@{DrawWidget}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{DrawWidget()}{DrawWidget()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aa0c524bc25f374435073be04d038a299} 
+void engine::\+\+Transform::\+\+Draw\+Widget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Draws the editor UI for this transform \Hypertarget{classengine_1_1Transform_a5d9e81871beba557a4a1eea9a81e3311}\index{engine::Transform@{engine::Transform}!FindChildByName@{FindChildByName}}
+\index{FindChildByName@{FindChildByName}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{FindChildByName()}{FindChildByName()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a5d9e81871beba557a4a1eea9a81e3311} 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+\+Find\+Child\+By\+Name (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+Return the child transform with the given name
+
+If more than one child has the given name, return the first in the array
+
+If no child has the given name, return nullptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the child to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the transform with the given name, or nullptr 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a3da18f46470450fb185f09ca56926d64}\index{engine::Transform@{engine::Transform}!FindComponentByUID@{FindComponentByUID}}
+\index{FindComponentByUID@{FindComponentByUID}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{FindComponentByUID()}{FindComponentByUID()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a3da18f46470450fb185f09ca56926d64} 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+\+Find\+Component\+By\+UID (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Return the attached component that has the given id
+
+If no component has the given ID, return nullptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the component to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component with the given id, or nullptr 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a0500043af48d87872f1f3a08fb3c9899}\index{engine::Transform@{engine::Transform}!FindTransformByUID@{FindTransformByUID}}
+\index{FindTransformByUID@{FindTransformByUID}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{FindTransformByUID()}{FindTransformByUID()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a0500043af48d87872f1f3a08fb3c9899} 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+\+Find\+Transform\+By\+UID (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id}{}\end{DoxyParamCaption})}
+
+Return the child transform that has the given id
+
+If no child has the given ID, return nullptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id of the transform to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the transform with the given id, or nullptr 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_ae30808adbeec2b2d67dbf9520e80a7d6}\index{engine::Transform@{engine::Transform}!Forward@{Forward}}
+\index{Forward@{Forward}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Forward()}{Forward()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ae30808adbeec2b2d67dbf9520e80a7d6} 
+glm::\+vec3 engine::\+\+Transform::\+\+Forward (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the forward direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the forward direction of the transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a40cd62c7c6c9e5d460c1d38ffaef6fbd}\index{engine::Transform@{engine::Transform}!GetChildren@{GetChildren}}
+\index{GetChildren@{GetChildren}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetChildren()}{GetChildren()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a40cd62c7c6c9e5d460c1d38ffaef6fbd} 
+std::\+vector$<$ \doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} $>$ engine::\+\+Transform::\+\+Get\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Return the children array of this transform
+
+\begin{DoxyReturn}{Returns}
+The children array of this transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a236fba4be5b53c59e83a5a910c54605c}\index{engine::Transform@{engine::Transform}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a236fba4be5b53c59e83a5a910c54605c} 
+\doxymbox{\hyperlink{classengine_1_1Component}{Component}} \texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+\+Get\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+Get a component on this transform by name
+
+If multiple components have the same name, the first in the array is returned
+
+If no component has the given name, return nullptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the component to return\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component with the given name, or nullptr 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_aeeafcad621363b49dde007b824a50867}\index{engine::Transform@{engine::Transform}!GetGlobalPosition@{GetGlobalPosition}}
+\index{GetGlobalPosition@{GetGlobalPosition}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetGlobalPosition()}{GetGlobalPosition()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aeeafcad621363b49dde007b824a50867} 
+glm::\+vec3 engine::\+\+Transform::\+\+Get\+Global\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Calculates the position of this transform in global coordinates
+
+\begin{DoxyReturn}{Returns}
+the global position vector of this transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a76004d525f0ddd484c61fe6b6a5abdb2}\index{engine::Transform@{engine::Transform}!GetGlobalRotation@{GetGlobalRotation}}
+\index{GetGlobalRotation@{GetGlobalRotation}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetGlobalRotation()}{GetGlobalRotation()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a76004d525f0ddd484c61fe6b6a5abdb2} 
+glm::\+quat engine::\+\+Transform::\+\+Get\+Global\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the rotation of this transform in global coordinates
+
+\begin{DoxyReturn}{Returns}
+the quaternion rotation of this transform in global coordinates 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_af7d1e42725fd19e9c4cb45637df06546}\index{engine::Transform@{engine::Transform}!GetGlobalScale@{GetGlobalScale}}
+\index{GetGlobalScale@{GetGlobalScale}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetGlobalScale()}{GetGlobalScale()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_af7d1e42725fd19e9c4cb45637df06546} 
+glm::\+vec3 engine::\+\+Transform::\+\+Get\+Global\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the scale of this transform in global coordinates
+
+\begin{DoxyReturn}{Returns}
+the scale value of this transform in global coordinates 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a311b0758bd77b1fcbb3b5e76c181c40e}\index{engine::Transform@{engine::Transform}!GetLocalPosition@{GetLocalPosition}}
+\index{GetLocalPosition@{GetLocalPosition}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetLocalPosition()}{GetLocalPosition()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a311b0758bd77b1fcbb3b5e76c181c40e} 
+glm::\+vec3 engine::\+\+Transform::\+\+Get\+Local\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the position of this transform in local coordinates
+
+\begin{DoxyReturn}{Returns}
+the local position vector of this transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_ab35a65dd0d971261629a92046d32336b}\index{engine::Transform@{engine::Transform}!GetLocalRotation@{GetLocalRotation}}
+\index{GetLocalRotation@{GetLocalRotation}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetLocalRotation()}{GetLocalRotation()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ab35a65dd0d971261629a92046d32336b} 
+glm::\+quat engine::\+\+Transform::\+\+Get\+Local\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the rotation of this transform in local coordinates
+
+\begin{DoxyReturn}{Returns}
+the quaternion rotation of this transform in local coordinates 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a7fcc2d1999ac312915bf18052dfd9210}\index{engine::Transform@{engine::Transform}!GetLocalScale@{GetLocalScale}}
+\index{GetLocalScale@{GetLocalScale}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetLocalScale()}{GetLocalScale()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a7fcc2d1999ac312915bf18052dfd9210} 
+glm::\+vec3 engine::\+\+Transform::\+\+Get\+Local\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the scale of this transform in local coordinates
+
+\begin{DoxyReturn}{Returns}
+the scale value of this transform in local coordinates 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_ac7a17878d1dfbe6a66c4d34a6f3c04ed}\index{engine::Transform@{engine::Transform}!GetModelMatrix@{GetModelMatrix}}
+\index{GetModelMatrix@{GetModelMatrix}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetModelMatrix()}{GetModelMatrix()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ac7a17878d1dfbe6a66c4d34a6f3c04ed} 
+glm::\+mat4 engine::\+\+Transform::\+\+Get\+Model\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Calculate the model matrix given the instances position, rotation, and scale
+
+\begin{DoxyReturn}{Returns}
+the model matrix corresponding to this instance 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a1dd19bb98f5d55a6dac2f627658c3286}\index{engine::Transform@{engine::Transform}!GetModelMatrixUnscaled@{GetModelMatrixUnscaled}}
+\index{GetModelMatrixUnscaled@{GetModelMatrixUnscaled}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetModelMatrixUnscaled()}{GetModelMatrixUnscaled()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a1dd19bb98f5d55a6dac2f627658c3286} 
+glm::\+mat4 engine::\+\+Transform::\+\+Get\+Model\+Matrix\+Unscaled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Calculates the model matrix with the scale normalized to 1
+
+This is used internally for some editor functionality.
+
+\begin{DoxyReturn}{Returns}
+The model matrix corresponding to this instance with a unit scale 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a07e7023e2444f4655c46fa10541842bd}\index{engine::Transform@{engine::Transform}!GetName@{GetName}}
+\index{GetName@{GetName}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a07e7023e2444f4655c46fa10541842bd} 
+std::\+string engine::\+\+Transform::\+\+Get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the name of this transform
+
+\begin{DoxyReturn}{Returns}
+the name of this transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_af995f7643b6bf23b717b7b51170cc51c}\index{engine::Transform@{engine::Transform}!GetUID@{GetUID}}
+\index{GetUID@{GetUID}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{GetUID()}{GetUID()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_af995f7643b6bf23b717b7b51170cc51c} 
+uint64\+\_\+t engine::\+\+Transform::\+\+Get\+UID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the uid of this transform
+
+\begin{DoxyReturn}{Returns}
+the uid of this transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a944429f0bdf681ab1df851539126a94c}\index{engine::Transform@{engine::Transform}!Left@{Left}}
+\index{Left@{Left}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Left()}{Left()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a944429f0bdf681ab1df851539126a94c} 
+glm::\+vec3 engine::\+\+Transform::\+\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the left direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the left direction of the transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_aac11ea3833e82e98acce7c418c36eed6}\index{engine::Transform@{engine::Transform}!Load@{Load}}
+\index{Load@{Load}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aac11ea3833e82e98acce7c418c36eed6} 
+bool engine::\+\+Transform::\+\+Load (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Load the transform properties saved with {\ttfamily \doxylink{classengine_1_1Transform_abb99eabbb47da3bf89d080408783abb9}{Save()}} into the transform
+
+\begin{DoxyReturn}{Returns}
+true on success, false on failure 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Saveable}{engine::\+\+Saveable}}.
+
+\Hypertarget{classengine_1_1Transform_a5fd0181eae24a3d795f59399f5271eb9}\index{engine::Transform@{engine::Transform}!ProcessEditorRender@{ProcessEditorRender}}
+\index{ProcessEditorRender@{ProcessEditorRender}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{ProcessEditorRender()}{ProcessEditorRender()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a5fd0181eae24a3d795f59399f5271eb9} 
+void engine::\+\+Transform::\+\+Process\+Editor\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+This is the render function called by the editor \Hypertarget{classengine_1_1Transform_a3dd693d3c79e7776e71ffb49d0bd4cc7}\index{engine::Transform@{engine::Transform}!ProcessInit@{ProcessInit}}
+\index{ProcessInit@{ProcessInit}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{ProcessInit()}{ProcessInit()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a3dd693d3c79e7776e71ffb49d0bd4cc7} 
+void engine::\+\+Transform::\+\+Process\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+This is the initialization function called to initialize components. \Hypertarget{classengine_1_1Transform_a1c72a895004e2e70647b485fa461a665}\index{engine::Transform@{engine::Transform}!ProcessRender@{ProcessRender}}
+\index{ProcessRender@{ProcessRender}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{ProcessRender()}{ProcessRender()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a1c72a895004e2e70647b485fa461a665} 
+void engine::\+\+Transform::\+\+Process\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+This is the render function called by the game \Hypertarget{classengine_1_1Transform_abee42f4bcaf5036b63fa21f44fe9d247}\index{engine::Transform@{engine::Transform}!ProcessTick@{ProcessTick}}
+\index{ProcessTick@{ProcessTick}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{ProcessTick()}{ProcessTick()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_abee42f4bcaf5036b63fa21f44fe9d247} 
+void engine::\+\+Transform::\+\+Process\+Tick (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+Runs once per frame when the game simulation is running \Hypertarget{classengine_1_1Transform_a7e1f9c74c9702d23fd1cddcaa5500ab1}\index{engine::Transform@{engine::Transform}!RemoveChild@{RemoveChild}}
+\index{RemoveChild@{RemoveChild}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{RemoveChild()}{RemoveChild()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a7e1f9c74c9702d23fd1cddcaa5500ab1} 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+\+Remove\+Child (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*}}]{tr}{}\end{DoxyParamCaption})}
+
+Removes the given transform from the children array, and returns it
+
+Does not automatically destroy the transform
+
+If the given transform does not exist in the child array, return nullptr
+
+
+\begin{DoxyParams}{Parameters}
+{\em tr} & The transform to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transform that was removed 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a0351370683b969a078ab36f9921b0bf5}\index{engine::Transform@{engine::Transform}!Right@{Right}}
+\index{Right@{Right}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Right()}{Right()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a0351370683b969a078ab36f9921b0bf5} 
+glm::\+vec3 engine::\+\+Transform::\+\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the right direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the right direction of the transform 
+\end{DoxyReturn}
+\Hypertarget{classengine_1_1Transform_a0bec1267afde9b3436b6505637aff1b1}\index{engine::Transform@{engine::Transform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a0bec1267afde9b3436b6505637aff1b1} 
+void engine::\+\+Transform::\+\+Rotate (\begin{DoxyParamCaption}\item[{glm::\+vec3}]{axis}{, }\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+Rotates the transform along the given axis by the given amount
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate around \\
+\hline
+{\em amount} & The rotation amount, in degrees \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_abb99eabbb47da3bf89d080408783abb9}\index{engine::Transform@{engine::Transform}!Save@{Save}}
+\index{Save@{Save}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_abb99eabbb47da3bf89d080408783abb9} 
+\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} engine::\+\+Transform::\+\+Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Save\textquotesingle{}s the transform\textquotesingle{}s properties to a JSON object
+
+\begin{DoxyReturn}{Returns}
+the JSON object representing the transform 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Saveable}{engine::\+\+Saveable}}.
+
+\Hypertarget{classengine_1_1Transform_aad9dbec2a459f2773e5f7f19d5c6aa8f}\index{engine::Transform@{engine::Transform}!Scale@{Scale}}
+\index{Scale@{Scale}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Scale()}{Scale()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aad9dbec2a459f2773e5f7f19d5c6aa8f} 
+void engine::\+\+Transform::\+\+Scale (\begin{DoxyParamCaption}\item[{glm::\+vec3}]{amount}{}\end{DoxyParamCaption})}
+
+Scales this transform by the given multiplier
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The vector to multiply the scale by \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_ab831ecea9fe5cfaa0ef497b49fe9fc5e}\index{engine::Transform@{engine::Transform}!SetName@{SetName}}
+\index{SetName@{SetName}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ab831ecea9fe5cfaa0ef497b49fe9fc5e} 
+void engine::\+\+Transform::\+\+Set\+Name (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+Sets the node\textquotesingle{}s name
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The desired node name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_a777c8c11cd2040dd6a020102275cddfa}\index{engine::Transform@{engine::Transform}!Translate@{Translate}}
+\index{Translate@{Translate}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a777c8c11cd2040dd6a020102275cddfa} 
+void engine::\+\+Transform::\+\+Translate (\begin{DoxyParamCaption}\item[{glm::\+vec3}]{offset}{}\end{DoxyParamCaption})}
+
+Translates this transform in local coordinates
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The vector to translate the transform by \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classengine_1_1Transform_a724751e08122fa27683bf0254ba89f09}\index{engine::Transform@{engine::Transform}!Up@{Up}}
+\index{Up@{Up}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{Up()}{Up()}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a724751e08122fa27683bf0254ba89f09} 
+glm::\+vec3 engine::\+\+Transform::\+\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Returns the up direction of this transform
+
+\begin{DoxyReturn}{Returns}
+the up direction of the transform 
+\end{DoxyReturn}
+
+
+\label{classengine_1_1Transform_doc-variable-members}
+\Hypertarget{classengine_1_1Transform_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1Transform_ad45a4f44fa2bea6627355afa1a285d3e}\index{engine::Transform@{engine::Transform}!children@{children}}
+\index{children@{children}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ad45a4f44fa2bea6627355afa1a285d3e} 
+std::\+vector$<$\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}} \texorpdfstring{$\ast$}{*}$>$ engine::\+\+Transform::\+children}
+
+\Hypertarget{classengine_1_1Transform_ab4680440e109804fcc164e1398e44bef}\index{engine::Transform@{engine::Transform}!components@{components}}
+\index{components@{components}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{components}{components}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_ab4680440e109804fcc164e1398e44bef} 
+std::\+vector$<$\doxymbox{\hyperlink{classengine_1_1Component}{Component}}\texorpdfstring{$\ast$}{*}$>$ engine::\+\+Transform::\+components}
+
+\Hypertarget{classengine_1_1Transform_a0df0665afa2f729d274f56bf93c8dad4}\index{engine::Transform@{engine::Transform}!name@{name}}
+\index{name@{name}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a0df0665afa2f729d274f56bf93c8dad4} 
+std::\+string engine::\+\+Transform::\+name}
+
+\Hypertarget{classengine_1_1Transform_a30f7473f1ea5909a65042cb61526519e}\index{engine::Transform@{engine::Transform}!parent@{parent}}
+\index{parent@{parent}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a30f7473f1ea5909a65042cb61526519e} 
+\doxymbox{\hyperlink{classengine_1_1Transform_a841085735bd5a1b74920e70129d026e9}{Transform}}\texorpdfstring{$\ast$}{*} engine::\+\+Transform::\+parent = nullptr}
+
+\Hypertarget{classengine_1_1Transform_af179d6bf6bf590bd9c0383f3eca2c861}\index{engine::Transform@{engine::Transform}!position@{position}}
+\index{position@{position}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_af179d6bf6bf590bd9c0383f3eca2c861} 
+glm::\+vec3 engine::\+\+Transform::\+position}
+
+\Hypertarget{classengine_1_1Transform_aa2159ccddff0e6230106a119b459fe9d}\index{engine::Transform@{engine::Transform}!rotation@{rotation}}
+\index{rotation@{rotation}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aa2159ccddff0e6230106a119b459fe9d} 
+glm::\+quat engine::\+\+Transform::\+rotation}
+
+\Hypertarget{classengine_1_1Transform_a6c0a71386f7b21c1db704b21ac5814fc}\index{engine::Transform@{engine::Transform}!rotationEuler@{rotationEuler}}
+\index{rotationEuler@{rotationEuler}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{rotationEuler}{rotationEuler}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a6c0a71386f7b21c1db704b21ac5814fc} 
+glm::\+vec3 engine::\+\+Transform::\+rotation\+Euler}
+
+\Hypertarget{classengine_1_1Transform_aa5ead1547ef6d5e46617b0f245041934}\index{engine::Transform@{engine::Transform}!scale@{scale}}
+\index{scale@{scale}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_aa5ead1547ef6d5e46617b0f245041934} 
+glm::\+vec3 engine::\+\+Transform::\+scale}
+
+\Hypertarget{classengine_1_1Transform_a7c2a09e567c5b7ea16c3a4f4b0aa9587}\index{engine::Transform@{engine::Transform}!uid@{uid}}
+\index{uid@{uid}!engine::Transform@{engine::Transform}}
+\doxysubsubsection{\texorpdfstring{uid}{uid}}
+{\footnotesize\ttfamily \label{classengine_1_1Transform_a7c2a09e567c5b7ea16c3a4f4b0aa9587} 
+uint64\+\_\+t engine::\+\+Transform::\+uid}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{transform_8h}{transform.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{transform_8cpp}{transform.\+cpp}}\end{DoxyCompactItemize}

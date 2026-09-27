@@ -1,0 +1,174 @@
+\doxysection{engine::Mesh\+Component Class Reference}
+\hypertarget{classengine_1_1MeshComponent}{}\label{classengine_1_1MeshComponent}\index{engine::MeshComponent@{engine::MeshComponent}}
+
+
+{\ttfamily \+\#include $<$mesh\+\_\+component.\+h$>$}
+
+Inheritance diagram for engine::Mesh\+Component:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classengine_1_1MeshComponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1MeshComponent_a995d2fdda45cb4fa5503b2726f8ddbc9}{render}} () override
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1MeshComponent_afa79e449382d5bbd2c8eb962718ecdf4}{init}} () override
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1MeshComponent_a4073494cfd62a60bc81a9de012714b02}{destroy}} () override
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1MeshComponent_ab89475a319686d4366bd1b4ef2ee798c}{Set\+Mesh}} (std::\+string mesh)
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1MeshComponent_a65d8c44eea178be48ccfa461c7008b5f}{Set\+Material}} (std::\+string material)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1MeshComponent_aff82cdd31ff813229c26358220dc80c9}{Draw\+Widget}} () override
+\item 
+\doxymbox{\hyperlink{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf}{Mesh\+Component}} (std::\+string name)
+\item 
+\doxymbox{\hyperlink{classengine_1_1MeshComponent_a9f070d4aeab58b10d23476c473ac91d6}{Mesh\+Component}} (\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value)
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1MeshComponent_a1318ef74f32dbef435dee1ba4bb77fa0}{Load}} (\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value) override
+\item 
+\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \doxymbox{\hyperlink{classengine_1_1MeshComponent_acb0020ca349037eb1cd04d7ad2e984e9}{Save}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classengine_1_1Component}{engine::\+\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component_a4e81aba4597073e379864f2c87eeb046}{Component}} (std::\+string name)
+\item 
+virtual \doxymbox{\hyperlink{classengine_1_1Component_afb81293002dc9dfad30b10e9e4b5dbe0}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_aca4b10dc9dfaea7658fa4b8b1f18df63}{begin\+\_\+play}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a89550d5d0687b33c875a2e0ebc4028f5}{end\+\_\+play}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a80908ab0182f92efd224871e41d9772a}{editor\+\_\+render}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a25d9511b2eda6e70d2d8470914559def}{tick}} (float dt)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Component_a66c43e51b17b62beeb6eaae848d4fd03}{Get\+Owner}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Component_a396de9576b41433bc45dcde1e3f069a8}{Set\+Owner}} (\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*}own)
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_a25bf3ea6d9fdb8df957bd1fb51966bee}{Get\+Name}} ()
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Component_ab1e215688940524dfb6f75be1637154b}{Get\+UID}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Component_a1f2d35e9159dd20f21451703cc35b121}{Component\+Display}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classengine_1_1Component}{engine::\+\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_ae6cfde4b98fc230b6a86f1e6094cf167}{component\+\_\+type}}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Component_a8b3ae0eedab887e5c3cfceb25728ecff}{uid}}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Component_af33085299072d46f1b8ad00a837ebdf7}{owner}}
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1MeshComponent_doc-constructors}
+\Hypertarget{classengine_1_1MeshComponent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf}\index{engine::MeshComponent@{engine::MeshComponent}!MeshComponent@{MeshComponent}}
+\index{MeshComponent@{MeshComponent}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{MeshComponent()}{MeshComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf} 
+engine::\+\+Mesh\+Component::\+\+Mesh\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1MeshComponent_a9f070d4aeab58b10d23476c473ac91d6}\index{engine::MeshComponent@{engine::MeshComponent}!MeshComponent@{MeshComponent}}
+\index{MeshComponent@{MeshComponent}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{MeshComponent()}{MeshComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a9f070d4aeab58b10d23476c473ac91d6} 
+engine::\+\+Mesh\+Component::\+\+Mesh\+Component (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+\label{classengine_1_1MeshComponent_doc-func-members}
+\Hypertarget{classengine_1_1MeshComponent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1MeshComponent_a4073494cfd62a60bc81a9de012714b02}\index{engine::MeshComponent@{engine::MeshComponent}!destroy@{destroy}}
+\index{destroy@{destroy}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a4073494cfd62a60bc81a9de012714b02} 
+void engine::\+\+Mesh\+Component::\+destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classengine_1_1Component_ad2dc0a3dae4f15bf374d09a95e511f22}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_aff82cdd31ff813229c26358220dc80c9}\index{engine::MeshComponent@{engine::MeshComponent}!DrawWidget@{DrawWidget}}
+\index{DrawWidget@{DrawWidget}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{DrawWidget()}{DrawWidget()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_aff82cdd31ff813229c26358220dc80c9} 
+void engine::\+\+Mesh\+Component::\+\+Draw\+Widget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_ad7bc5cc3fcdf97ebca54f1dc5bd7b47a}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_afa79e449382d5bbd2c8eb962718ecdf4}\index{engine::MeshComponent@{engine::MeshComponent}!init@{init}}
+\index{init@{init}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_afa79e449382d5bbd2c8eb962718ecdf4} 
+void engine::\+\+Mesh\+Component::\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classengine_1_1Component_a8267fe7a8dcc9fffb316ec6a822b0bd8}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_a1318ef74f32dbef435dee1ba4bb77fa0}\index{engine::MeshComponent@{engine::MeshComponent}!Load@{Load}}
+\index{Load@{Load}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a1318ef74f32dbef435dee1ba4bb77fa0} 
+bool engine::\+\+Mesh\+Component::\+\+Load (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_a7f95764e2eb5a135d45ae8e0a726ce22}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_a995d2fdda45cb4fa5503b2726f8ddbc9}\index{engine::MeshComponent@{engine::MeshComponent}!render@{render}}
+\index{render@{render}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a995d2fdda45cb4fa5503b2726f8ddbc9} 
+void engine::\+\+Mesh\+Component::\+render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classengine_1_1Component_a84f2ad4f7fbaad3c2711c8c64d0e5916}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_acb0020ca349037eb1cd04d7ad2e984e9}\index{engine::MeshComponent@{engine::MeshComponent}!Save@{Save}}
+\index{Save@{Save}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_acb0020ca349037eb1cd04d7ad2e984e9} 
+\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} engine::\+\+Mesh\+Component::\+\+Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_a8a01779ac974d3d20c456c03469d3a32}{engine::\+\+Component}}.
+
+\Hypertarget{classengine_1_1MeshComponent_a65d8c44eea178be48ccfa461c7008b5f}\index{engine::MeshComponent@{engine::MeshComponent}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{SetMaterial()}{SetMaterial()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_a65d8c44eea178be48ccfa461c7008b5f} 
+bool engine::\+\+Mesh\+Component::\+\+Set\+Material (\begin{DoxyParamCaption}\item[{std::\+string}]{material}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1MeshComponent_ab89475a319686d4366bd1b4ef2ee798c}\index{engine::MeshComponent@{engine::MeshComponent}!SetMesh@{SetMesh}}
+\index{SetMesh@{SetMesh}!engine::MeshComponent@{engine::MeshComponent}}
+\doxysubsubsection{\texorpdfstring{SetMesh()}{SetMesh()}}
+{\footnotesize\ttfamily \label{classengine_1_1MeshComponent_ab89475a319686d4366bd1b4ef2ee798c} 
+bool engine::\+\+Mesh\+Component::\+\+Set\+Mesh (\begin{DoxyParamCaption}\item[{std::\+string}]{mesh}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{mesh__component_8h}{mesh\+\_\+component.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{mesh__component_8cpp}{mesh\+\_\+component.\+cpp}}\end{DoxyCompactItemize}

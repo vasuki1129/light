@@ -1,0 +1,78 @@
+\doxysection{shader.\+h}
+\hypertarget{shader_8h_source}{}\label{shader_8h_source}\index{src/engine/shader.h@{src/engine/shader.h}}
+\doxymbox{\hyperlink{shader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../dflib/dflib.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{asset_8h}{asset.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Asset}{Asset}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__i_a7b66530da22723b17493fb9565ee41e2}{Uniform\_i}}\ \{}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structengine_1_1Uniform__i_a0d60b022bf89b5251842563e59ef92b6}{value}};}
+\DoxyCodeLine{00017\ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__i_a7b66530da22723b17493fb9565ee41e2}{Uniform\_i}}(\textcolor{keywordtype}{int}\ v)}
+\DoxyCodeLine{00018\ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__i_a0d60b022bf89b5251842563e59ef92b6}{value}}\ =\ v;}
+\DoxyCodeLine{00020\ \ \ \}}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__ui}{Uniform\_ui}}\ \{}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{structengine_1_1Uniform__ui_addea7051990a03e80a64ce813b7640ae}{value}};}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__f_ae8e890d875703600a82228762f15074e}{Uniform\_f}}\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{structengine_1_1Uniform__f_a77580ebf538bb6ac78e0576f3e6fe41a}{value}};}
+\DoxyCodeLine{00027\ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__f_ae8e890d875703600a82228762f15074e}{Uniform\_f}}(\textcolor{keywordtype}{float}\ f)}
+\DoxyCodeLine{00028\ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__f_a77580ebf538bb6ac78e0576f3e6fe41a}{value}}\ =\ f;}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__d}{Uniform\_d}}\ \{}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{structengine_1_1Uniform__d_a16076e4db07a026cf689d8afa21b3848}{value}};}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__mat4_a9a0a406e19e6216a41e0693a77109ca3}{Uniform\_mat4}}\ \{}
+\DoxyCodeLine{00036\ \ \ glm::mat4\ \doxymbox{\hyperlink{structengine_1_1Uniform__mat4_aa0da69d5f7fee1147b9e038c41498ce3}{value}};}
+\DoxyCodeLine{00037\ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__mat4_a9a0a406e19e6216a41e0693a77109ca3}{Uniform\_mat4}}(glm::mat4\ m)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__mat4_aa0da69d5f7fee1147b9e038c41498ce3}{value}}\ =\ m;}
+\DoxyCodeLine{00039\ \ \ \}}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Uniform__vec3_ae2bd2201d43029feeb0b216eec866904}{Uniform\_vec3}}\ \{}
+\DoxyCodeLine{00043\ \ \ glm::vec3\ \doxymbox{\hyperlink{structengine_1_1Uniform__vec3_a7be4ffe8c19c08149466be97e7649476}{value}};}
+\DoxyCodeLine{00044\ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__vec3_ae2bd2201d43029feeb0b216eec866904}{Uniform\_vec3}}(glm::vec3\ v)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \doxymbox{\hyperlink{structengine_1_1Uniform__vec3_a7be4ffe8c19c08149466be97e7649476}{value}}\ =\ v;}
+\DoxyCodeLine{00046\ \ \ \}}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespaceengine_ac830a3ce386fce2d03932c7fe348bb09}{Uniform}}\ =}
+\DoxyCodeLine{00050\ \ \ \ \ std::variant<Uniform\_vec3,Uniform\_i,\ Uniform\_ui,\ Uniform\_f,\ Uniform\_d,\ Uniform\_mat4>;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1UniformList}{UniformList}}\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ std::map<std::string,Uniform>\ \doxymbox{\hyperlink{classengine_1_1UniformList_a5ce8c08ebf2078b11d94188c476ba62a}{uniforms}};}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1}{Shader}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Asset}{Asset}}\{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \doxymbox{\hyperlink{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1}{Shader}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Asset_aafc1efc73bdefb91c99948da97eb0fcb}{path}});}
+\DoxyCodeLine{00061\ \ \ \doxymbox{\hyperlink{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1}{\string~Shader}}();}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Shader_a899689b8e8b53b310878f5b55776c0d6}{SetUniforms}}(\doxymbox{\hyperlink{classengine_1_1UniformList}{UniformList}}\&\ u);}
+\DoxyCodeLine{00063\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Shader_a11b1eaf2f6c6cee8fb18a65a7cc46dd0}{SetUniform}}(std::string\ key,\ \doxymbox{\hyperlink{namespaceengine_ac830a3ce386fce2d03932c7fe348bb09}{Uniform}}\ u);}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Shader_a5cc728ed0aa5b0a1ffdf79f7467f3189}{Reload}}();}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Shader_aaeae5f6faf57261b09d809264db6db95}{Bind}}();}
+\DoxyCodeLine{00066\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classengine_1_1Shader_ab381d0a8fcdfbf61631604e9e43d2f95}{shader\_handle}}\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1Shader_a701e364f64a37e64b9df3f19657393bf}{vertex\_src\_str}};}
+\DoxyCodeLine{00069\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1Shader_aa5934ffe7737bdcf03f56fb76a931a78}{fragment\_src\_str}};}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,110 @@
+\doxysection{engine::Mesh Class Reference}
+\hypertarget{classengine_1_1Mesh}{}\label{classengine_1_1Mesh}\index{engine::Mesh@{engine::Mesh}}
+
+
+{\ttfamily \+\#include $<$mesh.\+h$>$}
+
+Inheritance diagram for engine::Mesh:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classengine_1_1Mesh}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Mesh_a9f53b67e5cd794e0557ab3d8fe9b8e35}{Mesh}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Mesh_aa416eeb4103ce9ccef4225207b934aab}{\texorpdfstring{$\sim$}{\string~}\+Mesh}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Mesh_a2b41e97bc786c765dcddf44a997aa13b}{Set\+Vertices}} (std::\+vector$<$ \doxymbox{\hyperlink{structVertex}{Vertex}} $>$ v)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Mesh_a4bd7dff9b9d11b17f30879dc833353eb}{Set\+Indices}} (std::\+vector$<$ unsigned int $>$ v)
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Mesh_aa38d22623d078d4ca0fd9a84b0d9034c}{Rebuffer}} ()
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Mesh_a697f3e85564ca7c8814d2a6774d773c1}{Draw}} (\doxymbox{\hyperlink{structBaseUniforms}{Base\+Uniforms}} base, \doxymbox{\hyperlink{classengine_1_1Material}{Material}} \texorpdfstring{$\ast$}{*}material)
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Mesh_a586abe74575c457e9d5abd642ff4e51e}{Draw\+Wireframe}} (\doxymbox{\hyperlink{structBaseUniforms}{Base\+Uniforms}} base, \doxymbox{\hyperlink{classengine_1_1Material}{Material}} \texorpdfstring{$\ast$}{*}material)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classengine_1_1Asset}{engine::\+\+Asset}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \doxymbox{\hyperlink{classengine_1_1Asset_a6e552698910360d8ba8633ee0db0165b}{Is\+Valid}} ()
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_a06454c8fda40192e07d585e2334ca2aa}{Get\+Name}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Asset_a65969d502e6e6b8202f438233b70d83f}{Set\+Name}} (std::\+string name)
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_ad709d2df7abbab2156524a5f0ea4f2fe}{Get\+Path}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Asset_ae341cd3bd9e1d8ccb197a76bc9d5e36d}{Set\+Path}} (std::\+string path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{classengine_1_1Asset}{engine::\+\+Asset}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Asset_afb748936539c0107bb5cb53f9100c346}{valid}} = false
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_a05a67f80fa6f68b1d3c21eea518f8b30}{name}} = "{}?????"{}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_aafc1efc73bdefb91c99948da97eb0fcb}{path}} = "{}INVALID"{}
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1Mesh_doc-constructors}
+\Hypertarget{classengine_1_1Mesh_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1Mesh_a9f53b67e5cd794e0557ab3d8fe9b8e35}\index{engine::Mesh@{engine::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_a9f53b67e5cd794e0557ab3d8fe9b8e35} 
+engine::\+\+Mesh::\+\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Mesh_aa416eeb4103ce9ccef4225207b934aab}\index{engine::Mesh@{engine::Mesh}!````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}}
+\index{````~Mesh@{\texorpdfstring{$\sim$}{\string~}Mesh}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Mesh()}{\string~Mesh()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_aa416eeb4103ce9ccef4225207b934aab} 
+engine::\+\+Mesh::\+\texorpdfstring{$\sim$}{\string~}\+Mesh (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{classengine_1_1Mesh_doc-func-members}
+\Hypertarget{classengine_1_1Mesh_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1Mesh_a697f3e85564ca7c8814d2a6774d773c1}\index{engine::Mesh@{engine::Mesh}!Draw@{Draw}}
+\index{Draw@{Draw}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_a697f3e85564ca7c8814d2a6774d773c1} 
+bool engine::\+\+Mesh::\+\+Draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structBaseUniforms}{Base\+Uniforms}}}]{base}{, }\item[{\doxymbox{\hyperlink{classengine_1_1Material}{Material}} \texorpdfstring{$\ast$}{*}}]{material}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Mesh_a586abe74575c457e9d5abd642ff4e51e}\index{engine::Mesh@{engine::Mesh}!DrawWireframe@{DrawWireframe}}
+\index{DrawWireframe@{DrawWireframe}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{DrawWireframe()}{DrawWireframe()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_a586abe74575c457e9d5abd642ff4e51e} 
+bool engine::\+\+Mesh::\+\+Draw\+Wireframe (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structBaseUniforms}{Base\+Uniforms}}}]{base}{, }\item[{\doxymbox{\hyperlink{classengine_1_1Material}{Material}} \texorpdfstring{$\ast$}{*}}]{material}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Mesh_aa38d22623d078d4ca0fd9a84b0d9034c}\index{engine::Mesh@{engine::Mesh}!Rebuffer@{Rebuffer}}
+\index{Rebuffer@{Rebuffer}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{Rebuffer()}{Rebuffer()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_aa38d22623d078d4ca0fd9a84b0d9034c} 
+bool engine::\+\+Mesh::\+\+Rebuffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Mesh_a4bd7dff9b9d11b17f30879dc833353eb}\index{engine::Mesh@{engine::Mesh}!SetIndices@{SetIndices}}
+\index{SetIndices@{SetIndices}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{SetIndices()}{SetIndices()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_a4bd7dff9b9d11b17f30879dc833353eb} 
+void engine::\+\+Mesh::\+\+Set\+Indices (\begin{DoxyParamCaption}\item[{std::\+vector$<$ unsigned int $>$}]{v}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Mesh_a2b41e97bc786c765dcddf44a997aa13b}\index{engine::Mesh@{engine::Mesh}!SetVertices@{SetVertices}}
+\index{SetVertices@{SetVertices}!engine::Mesh@{engine::Mesh}}
+\doxysubsubsection{\texorpdfstring{SetVertices()}{SetVertices()}}
+{\footnotesize\ttfamily \label{classengine_1_1Mesh_a2b41e97bc786c765dcddf44a997aa13b} 
+void engine::\+\+Mesh::\+\+Set\+Vertices (\begin{DoxyParamCaption}\item[{std::\+vector$<$ \doxymbox{\hyperlink{structVertex}{Vertex}} $>$}]{v}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{mesh_8h}{mesh.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{mesh_8cpp}{mesh.\+cpp}}\end{DoxyCompactItemize}

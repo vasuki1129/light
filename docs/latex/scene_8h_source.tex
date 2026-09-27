@@ -1,0 +1,50 @@
+\doxysection{scene.\+h}
+\hypertarget{scene_8h_source}{}\label{scene_8h_source}\index{src/engine/scene.h@{src/engine/scene.h}}
+\doxymbox{\hyperlink{scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{transform_8h}{transform.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{camera__component_8h}{camera\_component.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{saveable_8h}{saveable.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Saveable}{Saveable}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}();}
+\DoxyCodeLine{00015\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}(std::string\ name);}
+\DoxyCodeLine{00016\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene_af9a03c6a66bc5b1591519e42abd22269}{\string~Scene}}();}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_a695cdfb6167e6bfcf175954c0acf9536}{Render}}();}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_afcb8275ccf9ed19e1546497326301ad3}{Tick}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_ad97f90526a2919927dddf426e2b11883}{EditorRender}}();}
+\DoxyCodeLine{00020\ \ \ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ \doxymbox{\hyperlink{classengine_1_1Scene_a2fb14290d5cfa1910e5a4f58c7feea4a}{Save}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Scene_a0c481acf9e72a1f2dc4fcf44f6076d38}{Load}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}\ *\doxymbox{\hyperlink{classengine_1_1Scene_a15f2e5d1704905952e83b0131e7bba28}{GetRoot}}();}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Scene_aafb4af720e25a23154cac662a9a275c8}{IsValid}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_ac1f99268c666c23302203fa5749fe34b}{SetCamera}}(\doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ cam);}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_ad7b32a1bca513bfd9bce05bcce44c8af}{SetMainCamera}}(\doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ cam);}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Scene_ac398f8b2ae2afbaeadfa4735c72cef14}{SetCameraToMain}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene_af9a03c6a66bc5b1591519e42abd22269}{Scene}}\ *\doxymbox{\hyperlink{classengine_1_1Scene_a3809f1cf89e368735cc776b5518f0494}{Clone}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ glm::mat4\ \doxymbox{\hyperlink{classengine_1_1Scene_a52b20d41724aa4ce5f3d8b484d37939c}{GetCurrentCameraMatrix}}();}
+\DoxyCodeLine{00033\ \ \ glm::vec3\ \doxymbox{\hyperlink{classengine_1_1Scene_a2a463f3179fa061a8a12f1622f818e9a}{GetCurrentCameraPosition}}();}
+\DoxyCodeLine{00034\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ \doxymbox{\hyperlink{classengine_1_1Scene_ae3056b6a1222072de6e593d18d552366}{GetCurrentCamera}}();}
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ current\_camera;}
+\DoxyCodeLine{00037\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}}*\ main\_camera;}
+\DoxyCodeLine{00038\ \ \ std::string\ name;}
+\DoxyCodeLine{00039\ \ \ std::string\ path;}
+\DoxyCodeLine{00040\ \ \ \doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}*\ root;}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ finalized;}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}

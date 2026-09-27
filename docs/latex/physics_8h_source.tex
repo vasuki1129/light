@@ -1,0 +1,67 @@
+\doxysection{physics.\+h}
+\hypertarget{physics_8h_source}{}\label{physics_8h_source}\index{src/engine/physics.h@{src/engine/physics.h}}
+\doxymbox{\hyperlink{physics_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{camera__component_8h}{camera\_component.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }CollisionComponent;}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }TriggerComponent;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Ray}{Ray}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ glm::vec3\ \doxymbox{\hyperlink{structengine_1_1Ray_a7cac3e811480359564d405d8a548b7d0}{position}};}
+\DoxyCodeLine{00014\ \ \ glm::vec3\ \doxymbox{\hyperlink{structengine_1_1Ray_a1ea1f5497bd28c86dc66389317da6149}{direction}};}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{namespaceengine_aede3e459270a350cf116e892866a18b0}{TestRayOBBIntersection}}(}
+\DoxyCodeLine{00020\ \ \ \ \ glm::vec3\ ray\_origin,\ \ \ \ \textcolor{comment}{//\ Ray\ origin,\ in\ world\ space}}
+\DoxyCodeLine{00021\ \ \ \ \ glm::vec3\ ray\_direction,\ \textcolor{comment}{//\ Ray\ direction\ (NOT\ target\ position!),\ in\ world}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ space.\ Must\ be\ normalize()'d.}}
+\DoxyCodeLine{00023\ \ \ \ \ glm::vec3\ aabb\_min,\ \textcolor{comment}{//\ Minimum\ X,Y,Z\ coords\ of\ the\ mesh\ when\ not\ transformed}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ at\ all.}}
+\DoxyCodeLine{00025\ \ \ \ \ glm::vec3\ aabb\_max,\ \textcolor{comment}{//\ Maximum\ X,Y,Z\ coords.\ Often\ aabb\_min*-\/1\ if\ your\ mesh}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ is\ centered,\ but\ it's\ not\ always\ the\ case.}}
+\DoxyCodeLine{00027\ \ \ \ \ glm::mat4\ ModelMatrix,\ \textcolor{comment}{//\ Transformation\ applied\ to\ the\ mesh\ (which\ will}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ thus\ be\ also\ applied\ to\ its\ bounding\ box)}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \&intersection\_distance\ \textcolor{comment}{//\ Output\ :\ distance\ between\ ray\_origin\ and\ the}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ intersection\ with\ the\ OBB}}
+\DoxyCodeLine{00031\ );}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1PhysicsHandler}{PhysicsHandler}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a42b08f14e754a77b692405dc817bd567}{CheckTrigger}}(CollisionComponent*\ collider,\ \textcolor{keywordtype}{int}\ trigger\_group);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_aa318bb66ba8496a16edefad975afbbe2}{RegisterCollider}}(CollisionComponent*\ collider);}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a87a4c32f1ae8483468a4a3f8157c66f3}{DeregisterCollider}}(CollisionComponent\ *collider);}
+\DoxyCodeLine{00039\ \ \ std::vector<CollisionComponent*>*\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a3fb5ca7ad7a9f1e1a57cc982416ca8bf}{GetColliders}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a5d788dfb66648a9f48963c44f57464db}{RegisterTrigger}}(TriggerComponent*\ trigger);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a52c2a093cfd93ef8a1c171916550970b}{DeregisterTrigger}}(TriggerComponent*\ trigger);}
+\DoxyCodeLine{00043\ \ \ std::vector<TriggerComponent*>*\ \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a62345ef17868f9f63e19e1cadeb1790d}{GetTriggers}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ std::vector<CollisionComponent*>\ registered\_colliders;}
+\DoxyCodeLine{00047\ \ \ std::vector<TriggerComponent*>\ registered\_triggers;}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}

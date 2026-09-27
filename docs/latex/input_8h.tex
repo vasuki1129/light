@@ -1,0 +1,33 @@
+\doxysection{src/\+engine/\+input.h File Reference}
+\hypertarget{input_8h}{}\label{input_8h}\index{src/engine/input.h@{src/engine/input.h}}
+{\ttfamily \+\#include $<$GLFW/\+glfw3.\+h$>$}\newline
+{\ttfamily \+\#include $<$map$>$}\newline
+{\ttfamily \+\#include $<$glm/\+glm.\+hpp$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{classengine_1_1InputHandler}{engine::\+\+Input\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceengine}{engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742e}{engine::\+\+Key\+State}} \{ \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742eac248b44c41333613a8ad29b656f8950e}{engine::\+\+KEY\+\_\+\+UP}}
+, \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742ea7ef8949a37c02f94d7975401b455b7f0}{engine::\+\+KEY\+\_\+\+PRESSED}}
+, \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742eae27439eebd778013c33fbb14dd19fd04}{engine::\+\+KEY\+\_\+\+DOWN}}
+, \doxymbox{\hyperlink{namespaceengine_a2c4a5d8c1d9775a380a7e4d8d44d742ea7a3d6a7a7b70e89ce7bc767aed974062}{engine::\+\+KEY\+\_\+\+RELEASED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{namespaceengine_a455ebc9eab5dcb5f4e7e2d1886e0fdad}{engine::\+\+Input\+Handler\+Key\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int key, int scancode, int action, int mods)
+\item 
+void \doxymbox{\hyperlink{namespaceengine_a722c8d81699d0df1aa98a8a43d42102d}{engine::\+\+Input\+Handler\+Mouse\+Position\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, double xpos, double ypos)
+\item 
+void \doxymbox{\hyperlink{namespaceengine_af4e7dabcf4367c1d4e4ffe1d05755515}{engine::\+\+Input\+Handler\+Mouse\+Button\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int button, int action, int mods)
+\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\doxysection{material.\+h}
+\hypertarget{material_8h_source}{}\label{material_8h_source}\index{src/engine/material.h@{src/engine/material.h}}
+\doxymbox{\hyperlink{material_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{texture_8h}{texture.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{shader_8h}{shader.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{asset_8h}{asset.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{gl__util_8h}{gl\_util.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Shader}{Shader}};}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Asset}{Asset}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//we\ hold\ the\ uniform\ sets\ for\ each\ given\ material\ in\ memory}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//and\ they\ are\ automatically\ uploaded,\ so\ to\ change\ a\ uniform,}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//change\ the\ uniform\ list\ on\ the\ material\ and\ it\ will\ automatically}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{//propagate\ to\ the\ gpu}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Material_ac1840fc2205225ad75a5e0738a091c90}{Material}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Asset}{Asset}}}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classengine_1_1Material_ac1840fc2205225ad75a5e0738a091c90}{Material}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Asset_aafc1efc73bdefb91c99948da97eb0fcb}{path}});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Material_a5d5287d0b35df04f2c7b2950a4dc3f27}{Reload}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Material_a3fec96e6a8d572f1b6747b464bab5e84}{Bind}}(\doxymbox{\hyperlink{structBaseUniforms}{BaseUniforms}}\ base);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Material_aa23595fa7dcee0259c2b569b43c639af}{DrawEditWidget}}();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ texture\_path;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ shader\_path;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classengine_1_1Shader}{Shader}}*\ shader;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classengine_1_1Texture}{Texture}}*\ texture;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{classengine_1_1UniformList}{UniformList}}\ uniform\_set;}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ \};}
+
+\end{DoxyCode}

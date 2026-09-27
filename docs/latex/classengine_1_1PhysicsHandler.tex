@@ -1,0 +1,76 @@
+\doxysection{engine::Physics\+Handler Class Reference}
+\hypertarget{classengine_1_1PhysicsHandler}{}\label{classengine_1_1PhysicsHandler}\index{engine::PhysicsHandler@{engine::PhysicsHandler}}
+
+
+{\ttfamily \+\#include $<$physics.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a42b08f14e754a77b692405dc817bd567}{Check\+Trigger}} (Collision\+Component \texorpdfstring{$\ast$}{*}collider, int trigger\+\_\+group)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_aa318bb66ba8496a16edefad975afbbe2}{Register\+Collider}} (Collision\+Component \texorpdfstring{$\ast$}{*}collider)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a87a4c32f1ae8483468a4a3f8157c66f3}{Deregister\+Collider}} (Collision\+Component \texorpdfstring{$\ast$}{*}collider)
+\item 
+std::\+vector$<$ Collision\+Component \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a3fb5ca7ad7a9f1e1a57cc982416ca8bf}{Get\+Colliders}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a5d788dfb66648a9f48963c44f57464db}{Register\+Trigger}} (Trigger\+Component \texorpdfstring{$\ast$}{*}trigger)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a52c2a093cfd93ef8a1c171916550970b}{Deregister\+Trigger}} (Trigger\+Component \texorpdfstring{$\ast$}{*}trigger)
+\item 
+std::\+vector$<$ Trigger\+Component \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1PhysicsHandler_a62345ef17868f9f63e19e1cadeb1790d}{Get\+Triggers}} ()
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1PhysicsHandler_doc-func-members}
+\Hypertarget{classengine_1_1PhysicsHandler_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1PhysicsHandler_a42b08f14e754a77b692405dc817bd567}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!CheckTrigger@{CheckTrigger}}
+\index{CheckTrigger@{CheckTrigger}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{CheckTrigger()}{CheckTrigger()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a42b08f14e754a77b692405dc817bd567} 
+bool engine::\+\+Physics\+Handler::\+\+Check\+Trigger (\begin{DoxyParamCaption}\item[{Collision\+Component \texorpdfstring{$\ast$}{*}}]{collider}{, }\item[{int}]{trigger\+\_\+group}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_a87a4c32f1ae8483468a4a3f8157c66f3}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!DeregisterCollider@{DeregisterCollider}}
+\index{DeregisterCollider@{DeregisterCollider}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{DeregisterCollider()}{DeregisterCollider()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a87a4c32f1ae8483468a4a3f8157c66f3} 
+void engine::\+\+Physics\+Handler::\+\+Deregister\+Collider (\begin{DoxyParamCaption}\item[{Collision\+Component \texorpdfstring{$\ast$}{*}}]{collider}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_a52c2a093cfd93ef8a1c171916550970b}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!DeregisterTrigger@{DeregisterTrigger}}
+\index{DeregisterTrigger@{DeregisterTrigger}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{DeregisterTrigger()}{DeregisterTrigger()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a52c2a093cfd93ef8a1c171916550970b} 
+void engine::\+\+Physics\+Handler::\+\+Deregister\+Trigger (\begin{DoxyParamCaption}\item[{Trigger\+Component \texorpdfstring{$\ast$}{*}}]{trigger}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_a3fb5ca7ad7a9f1e1a57cc982416ca8bf}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!GetColliders@{GetColliders}}
+\index{GetColliders@{GetColliders}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{GetColliders()}{GetColliders()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a3fb5ca7ad7a9f1e1a57cc982416ca8bf} 
+std::\+vector$<$ Collision\+Component \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} engine::\+\+Physics\+Handler::\+\+Get\+Colliders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_a62345ef17868f9f63e19e1cadeb1790d}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!GetTriggers@{GetTriggers}}
+\index{GetTriggers@{GetTriggers}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{GetTriggers()}{GetTriggers()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a62345ef17868f9f63e19e1cadeb1790d} 
+std::\+vector$<$ Trigger\+Component \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} engine::\+\+Physics\+Handler::\+\+Get\+Triggers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_aa318bb66ba8496a16edefad975afbbe2}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!RegisterCollider@{RegisterCollider}}
+\index{RegisterCollider@{RegisterCollider}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterCollider()}{RegisterCollider()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_aa318bb66ba8496a16edefad975afbbe2} 
+void engine::\+\+Physics\+Handler::\+\+Register\+Collider (\begin{DoxyParamCaption}\item[{Collision\+Component \texorpdfstring{$\ast$}{*}}]{collider}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1PhysicsHandler_a5d788dfb66648a9f48963c44f57464db}\index{engine::PhysicsHandler@{engine::PhysicsHandler}!RegisterTrigger@{RegisterTrigger}}
+\index{RegisterTrigger@{RegisterTrigger}!engine::PhysicsHandler@{engine::PhysicsHandler}}
+\doxysubsubsection{\texorpdfstring{RegisterTrigger()}{RegisterTrigger()}}
+{\footnotesize\ttfamily \label{classengine_1_1PhysicsHandler_a5d788dfb66648a9f48963c44f57464db} 
+void engine::\+\+Physics\+Handler::\+\+Register\+Trigger (\begin{DoxyParamCaption}\item[{Trigger\+Component \texorpdfstring{$\ast$}{*}}]{trigger}{}\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{physics_8h}{physics.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{physics_8cpp}{physics.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\doxysection{scene\+\_\+loader.\+h}
+\hypertarget{scene__loader_8h_source}{}\label{scene__loader_8h_source}\index{src/engine/scene\_loader.h@{src/engine/scene\_loader.h}}
+\doxymbox{\hyperlink{scene__loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{scene_8h}{scene.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../dflib/dflib.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Scene}{Scene}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1SceneLoader_a812aa73abd53d129de5143e449bb0c00}{SceneLoader}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a812aa73abd53d129de5143e449bb0c00}{SceneLoader}}();}
+\DoxyCodeLine{00014\ \ \ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a812aa73abd53d129de5143e449bb0c00}{\string~SceneLoader}}();}
+\DoxyCodeLine{00015\ \ \ \textcolor{comment}{//std::future<Scene*>\ CueScene(std::string\ path);\ //\ async\ load\ scene\ from\ json\ dump\ to\ on\ deck\ scene,\ for\ streaming\ or\ quickswapping\ scenes,}}
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_ac174feec55878dadbaf92887f1a06cc2}{LoadScene}}(std::string\ path,\ \textcolor{keywordtype}{void}*\ data);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a2898d4987e0963fb2208c87e6c98994c}{LoadDefaultScene}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ immediately\ load\ the\ startup\ scene}}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a0c0cc8aae9c666514e3939d44bd8b667}{SaveScene}}(std::string\ path);}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a3d2ab226207c6a7131c12615208f0be5}{DeloadScene}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_aa80d18ce1d000f0a8c1914d5931b5aa8}{UpdateCurrentScene}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a4b96b5e35b5389ddde48cc2fc909ceb0}{RenderCurrentScene}}();}
+\DoxyCodeLine{00024\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene}{Scene}}*\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_ae038aa08dd99ff5cb5b38e752b5798a0}{GetCurrentScene}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a5034e2c643b7c2e1e5931d9fde767cb7}{SaveAsCheckpoint}}();}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_ad831638a77ad5570bf070a309d6cfe4e}{RewindToCheckpoint}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}*\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_a0427ac60e13fdec4e0f308d693b417a2}{GetPersistentData}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}*\ persistant\_data\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00035\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene}{Scene}}\ *current\_scene\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene}{Scene}}\ *rewind\_scene\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ \ \ \doxymbox{\hyperlink{classengine_1_1Scene}{Scene}}*\ scene\_in\_progress\_load\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1SceneLoader_ac174feec55878dadbaf92887f1a06cc2}{LoadScene}}(std::string\ path);\ \textcolor{comment}{//\ sync\ load\ scene\ from\ json\ dump\ to\ current\ scene}}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}

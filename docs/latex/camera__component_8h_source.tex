@@ -1,0 +1,55 @@
+\doxysection{camera\+\_\+component.\+h}
+\hypertarget{camera__component_8h_source}{}\label{camera__component_8h_source}\index{src/engine/camera\_component.h@{src/engine/camera\_component.h}}
+\doxymbox{\hyperlink{camera__component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../json/json.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{physics_8h}{physics.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \doxymbox{\hyperlink{namespaceengine_a0a432a147824dfadd53db3e6140f1a4f}{FACTORY}}(\doxymbox{\hyperlink{classengine_1_1EditorCameraComponent}{EditorCameraComponent}});}
+\DoxyCodeLine{00010\ \doxymbox{\hyperlink{namespaceengine_a0a432a147824dfadd53db3e6140f1a4f}{FACTORY}}(\doxymbox{\hyperlink{classengine_1_1CameraComponent}{CameraComponent}});}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{structengine_1_1Ray}{Ray}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{CameraComponent}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{CameraComponent}}();}
+\DoxyCodeLine{00020\ \ \ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{CameraComponent}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}});}
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{\string~CameraComponent}}();}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_a9ad840b5824a68b390bb37037377b149}{tick}}(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{virtual}\ glm::mat4\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ad14105745180429acb4fc0790dccf1a0}{GetCameraMatrix}}();}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{structengine_1_1Ray}{Ray}}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ae3119dcdd8a612c3b2c9ce074831b9bd}{ScreenPointToRay}}(glm::vec2\ screen\_point);}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_a877c8c4c94525f8675dcae6a512164e0}{Save}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_a0093ca84debef95fdaf6d948b0d0f8dc}{Load}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_a4d0b9afe0d36c11bfd4de579430374eb}{DrawWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5018feab9deb37f151840dc906542aad}{EditorCameraComponent}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{CameraComponent}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5018feab9deb37f151840dc906542aad}{EditorCameraComponent}}();}
+\DoxyCodeLine{00033\ \ \ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5018feab9deb37f151840dc906542aad}{EditorCameraComponent}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}});}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5018feab9deb37f151840dc906542aad}{\string~EditorCameraComponent}}();}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a90b4a165413c8c1e2c6b02ad52514b0e}{tick}}(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_afc6fde5240f8b8d08751a6d841a082e4}{DrawWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a3c39ddf4842af84c70f6444a7fad79d6}{Save}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5bfd669285105e9186c0e90fa013712a}{Load}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_af5004ebcf54451d2d7599e80d458933c}{movement\_speed}}\ =\ 25.0f;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

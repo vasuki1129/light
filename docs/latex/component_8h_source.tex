@@ -1,0 +1,61 @@
+\doxysection{component.\+h}
+\hypertarget{component_8h_source}{}\label{component_8h_source}\index{src/engine/component.h@{src/engine/component.h}}
+\doxymbox{\hyperlink{component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{transform_8h}{transform.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{saveable_8h}{saveable.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../imgui/imgui.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ FACTORY(type)\ engine::Component\ *\_\_Get\ \#\#\ type()}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ FACTORY\_DEF(type)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ engine\ ::Component\ *\_\_Get\#\#type()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ return\ (engine::Component\ *)(new\ type());\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ FACTORY\_REF(type)\ \_\_Get\ \#\#\ type}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }Transform;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Saveable}{Saveable}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}();}
+\DoxyCodeLine{00024\ \ \ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}});}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{\string~Component}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_aca4b10dc9dfaea7658fa4b8b1f18df63}{begin\_play}}();}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a89550d5d0687b33c875a2e0ebc4028f5}{end\_play}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a84f2ad4f7fbaad3c2711c8c64d0e5916}{render}}();}
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a80908ab0182f92efd224871e41d9772a}{editor\_render}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a25d9511b2eda6e70d2d8470914559def}{tick}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a8267fe7a8dcc9fffb316ec6a822b0bd8}{init}}();}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_ad2dc0a3dae4f15bf374d09a95e511f22}{destroy}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_ad7bc5cc3fcdf97ebca54f1dc5bd7b47a}{DrawWidget}}()\ =0;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}*\ \doxymbox{\hyperlink{classengine_1_1Component_a66c43e51b17b62beeb6eaae848d4fd03}{GetOwner}}();}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a396de9576b41433bc45dcde1e3f069a8}{SetOwner}}(\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}*\ own);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a25bf3ea6d9fdb8df957bd1fb51966bee}{GetName}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ \doxymbox{\hyperlink{classengine_1_1Component_a8a01779ac974d3d20c456c03469d3a32}{Save}}()\ \textcolor{keyword}{override}\ =0;}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1Component_a7f95764e2eb5a135d45ae8e0a726ce22}{Load}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)\ \textcolor{keyword}{override}\ =0;}
+\DoxyCodeLine{00046\ \ \ uint64\_t\ \doxymbox{\hyperlink{classengine_1_1Component_ab1e215688940524dfb6f75be1637154b}{GetUID}}();}
+\DoxyCodeLine{00047\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}};}
+\DoxyCodeLine{00048\ \ \ std::string\ \doxymbox{\hyperlink{classengine_1_1Component_ae6cfde4b98fc230b6a86f1e6094cf167}{component\_type}};}
+\DoxyCodeLine{00049\ \ \ uint64\_t\ \doxymbox{\hyperlink{classengine_1_1Component_a8b3ae0eedab887e5c3cfceb25728ecff}{uid}};}
+\DoxyCodeLine{00050\ \ \ \doxymbox{\hyperlink{classengine_1_1Transform}{Transform}}*\ \doxymbox{\hyperlink{classengine_1_1Component_af33085299072d46f1b8ad00a837ebdf7}{owner}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1Component_a1f2d35e9159dd20f21451703cc35b121}{ComponentDisplay}}();}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}

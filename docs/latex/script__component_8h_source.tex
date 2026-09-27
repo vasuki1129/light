@@ -1,0 +1,27 @@
+\doxysection{script\+\_\+component.\+h}
+\hypertarget{script__component_8h_source}{}\label{script__component_8h_source}\index{src/engine/script\_component.h@{src/engine/script\_component.h}}
+\doxymbox{\hyperlink{script__component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{script__engine_8h}{script\_engine.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../s7/s7.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1ScriptComponent}{ScriptComponent}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1ScriptComponent_a7692242112effee13550ee9807c6e811}{tick}}(\textcolor{keywordtype}{float}\ dt)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1ScriptComponent_aec150c8957b0f30baaa0225a6f21e3b4}{init}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1ScriptComponent_a7fe0273cc3392e26dfe9c5f84ae3b55f}{destroy}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1ScriptComponent_a0ed9dd76589f15965a8d4a7f76e59dec}{ReloadScripts}}();}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \doxymbox{\hyperlink{namespaceengine_a319f34e5af855b09004e044e75c677a2}{ScriptData}}\ init\_script;}
+\DoxyCodeLine{00017\ \ \ \doxymbox{\hyperlink{namespaceengine_a319f34e5af855b09004e044e75c677a2}{ScriptData}}\ tick\_script;}
+\DoxyCodeLine{00018\ \ \ \doxymbox{\hyperlink{namespaceengine_a319f34e5af855b09004e044e75c677a2}{ScriptData}}\ destroy\_script;}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}

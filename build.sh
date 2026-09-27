@@ -10,10 +10,15 @@ mkdir -p build_linux/release/s7
 mkdir -p build_linux/release/imgui
 mkdir -p build_linux/release/miniaudio
 
+mkdir -p build_linux/test
+
 mkdir -p bin/linux/x64/release
 mkdir -p bin/linux/x64/debug
+
+mkdir -p bin/linux/x64/test
 
 make linux_all -j 8
 
 cp bin/linux/x64/release/light ./light_release
 cp bin/linux/x64/debug/light ./light_debug
+cp bin/linux/x64/test/light_test .

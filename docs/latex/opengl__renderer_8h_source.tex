@@ -1,0 +1,40 @@
+\doxysection{opengl\+\_\+renderer.\+h}
+\hypertarget{opengl__renderer_8h_source}{}\label{opengl__renderer_8h_source}\index{src/engine/opengl\_renderer.h@{src/engine/opengl\_renderer.h}}
+\doxymbox{\hyperlink{opengl__renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <GL/glew.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_ac196e4b6e6be16da39bdff1cd2f0737b}{OpenGLRenderer}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \ \ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_ac196e4b6e6be16da39bdff1cd2f0737b}{OpenGLRenderer}}(GLFWwindow**\ smuggle,\ \textcolor{keyword}{struct}\ \doxymbox{\hyperlink{structengine_1_1EngineCreateInfo}{EngineCreateInfo}}\&\ create\_info);}
+\DoxyCodeLine{00011\ \ \ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_ac196e4b6e6be16da39bdff1cd2f0737b}{\string~OpenGLRenderer}}();}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_a12906544162a9e4f493b592dc76d5e49}{ShouldClose}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{float}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_aaae898975da28185f38067524826d532}{DeltaTime}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_a5129a938bf7a04a827f0d30171101237}{StartFrame}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_a16ed1bc211d843f33064d6233d1363e6}{EndFrame}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_a87daadb1140b9cbb0fbaf3b8491d77cc}{InitForImGui}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_a2f6c0f973e941814adba82fe2b128cf0}{WindowWidth}}();}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{classengine_1_1OpenGLRenderer_aad057b3197cb05956e2f2707efc715a6}{WindowHeight}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{int}\ window\_width;}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{int}\ window\_height;}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{double}\ last;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{float}\ delta\_time;}
+\DoxyCodeLine{00032\ \ \ GLFWwindow*\ window;}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}

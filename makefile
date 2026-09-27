@@ -3,6 +3,9 @@ PROJ_NAME := light
 #LINUX (any posix probably idfk)
 LIN_FLAGS := -g -std=c++24 -w
 
+LIN_DEPS_TEST := build_linux/test/test_runner.o
+LIN_DEPS_TEST += build_linux/test/transform_test.o
+
 LIN_DEPS := build_linux/release/engine/camera_component.o
 LIN_DEPS += build_linux/release/engine/mesh_component.o
 LIN_DEPS += build_linux/release/engine/component.o
@@ -27,7 +30,7 @@ LIN_DEPS += build_linux/release/engine/physics.o
 LIN_DEPS += build_linux/release/engine/sound_manager.o
 LIN_DEPS += build_linux/release/engine/sound.o
 
-LIN_DEPS += build_linux/release/game/entry.o
+#LIN_DEPS += build_linux/release/game/entry.o
 LIN_DEPS += build_linux/release/game/test_component.o
 LIN_DEPS += build_linux/release/game/player_component.o
 LIN_DEPS += build_linux/release/game/collision_component.o
@@ -74,7 +77,7 @@ LIN_DEPS_DEBUG += build_linux/debug/engine/physics.o
 LIN_DEPS_DEBUG += build_linux/debug/engine/sound_manager.o
 LIN_DEPS_DEBUG += build_linux/debug/engine/sound.o
 
-LIN_DEPS_DEBUG += build_linux/debug/game/entry.o
+#LIN_DEPS_DEBUG += build_linux/debug/game/entry.o
 LIN_DEPS_DEBUG += build_linux/debug/game/test_component.o
 LIN_DEPS_DEBUG += build_linux/debug/game/player_component.o
 LIN_DEPS_DEBUG += build_linux/debug/game/collision_component.o
@@ -99,12 +102,15 @@ LIN_DEPS_DEBUG += build_linux/debug/imgui/imgui_widgets.o
 
 LIN_LIBS := -lglfw -lGLEW -lGL -lassimp
 
-linux_all : linux_debug linux
+linux_all : linux_debug linux linux_test
 
-linux_debug : $(LIN_DEPS_DEBUG)
-	g++ $(LIN_DEPS_DEBUG) -o bin/linux/x64/debug/light $(LIN_LIBS) -g
-linux : $(LIN_DEPS)
-	g++ $(LIN_DEPS) -o bin/linux/x64/release/light $(LIN_LIBS)
+linux_debug : $(LIN_DEPS_DEBUG) build_linux/debug/game/entry.o
+	g++ $(LIN_DEPS_DEBUG) build_linux/debug/game/entry.o -o bin/linux/x64/debug/light $(LIN_LIBS) -g
+linux : $(LIN_DEPS) build_linux/release/game/entry.o
+	g++ $(LIN_DEPS) build_linux/release/game/entry.o -o bin/linux/x64/release/light $(LIN_LIBS)
+
+linux_test : $(LIN_DEPS_DEBUG) $(LIN_DEPS_TEST)
+	g++ $(LIN_DEPS_DEBUG) $(LIN_DEPS_TEST) -o bin/linux/x64/test/light_test $(LIN_LIBS) -g
 
 build_linux/debug/engine/%.o : src/engine/%.cpp
 	g++ -c -o $@ $< -std=c++23 -g
@@ -116,6 +122,8 @@ build_linux/debug/imgui/%.o : src/imgui/%.cpp
 	g++ -c -o $@ $< -std=c++23 -g
 build_linux/debug/miniaudio/%.o : src/miniaudio/%.c
 	gcc -c -o $@ $< -g
+build_linux/debug/test/%.o : src/test/%.cpp
+	gcc -c -o $@ $<
 
 build_linux/release/engine/%.o : src/engine/%.cpp
 	g++ -c -o $@ $< -std=c++23
@@ -126,7 +134,11 @@ build_linux/release/s7/%.o : src/s7/%.c
 build_linux/release/imgui/%.o : src/imgui/%.cpp
 	g++ -c -o $@ $< -std=c++23
 build_linux/release/miniaudio/%.o : src/miniaudio/%.c
-	gcc -c -o $@ $< 
+	gcc -c -o $@ $<
+
+build_linux/test/%.o : src/test/%.cpp
+	gcc -c -o $@ $<
+
 
 #WINDOWS
 NT_FLAGS := /FS /DGLEW_STATIC /Zi /MDd /EHsc /IC:\lib\glm\include /IC:\lib\glew\include /IC:\lib\glfw\include /IC:\lib\assimp\include

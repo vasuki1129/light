@@ -1,0 +1,32 @@
+\doxysection{engine\+\_\+config.\+h}
+\hypertarget{engine__config_8h_source}{}\label{engine__config_8h_source}\index{src/engine/engine\_config.h@{src/engine/engine\_config.h}}
+\doxymbox{\hyperlink{engine__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../json/json.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ =\ nlohmann::json;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{namespaceengine_a02819b6af04d3e033cadd17e7aa48ace}{ConfigValue}}\ =\ std::variant<int,\ float,\ std::string,glm::vec2,\ glm::vec3,\ glm::vec4>;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1EngineConfig_ad65e516814aad9051e1d1a789d80d01b}{EngineConfig}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineConfig_ad65e516814aad9051e1d1a789d80d01b}{EngineConfig}}();}
+\DoxyCodeLine{00017\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineConfig_ad65e516814aad9051e1d1a789d80d01b}{EngineConfig}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value);}
+\DoxyCodeLine{00018\ \ \ \doxymbox{\hyperlink{classengine_1_1EngineConfig_ad65e516814aad9051e1d1a789d80d01b}{\string~EngineConfig}}();}
+\DoxyCodeLine{00019\ \ \ std::map<std::string,ConfigValue>\ \doxymbox{\hyperlink{classengine_1_1EngineConfig_a756c4d0bff12a2a3b112f0ec327ce3f8}{current\_config}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \doxymbox{\hyperlink{namespaceengine_a02819b6af04d3e033cadd17e7aa48ace}{ConfigValue}}\ \doxymbox{\hyperlink{classengine_1_1EngineConfig_abd88fd8d031b089a02a84ba1a3173a97}{GetConfigValue}}(std::string\ val);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}

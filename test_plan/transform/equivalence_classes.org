@@ -1,0 +1,121 @@
+* transform.cpp
+** Equivalence Classes
+*** Transform::AddChild(Transform* tr)
+|----------------------------+-------+-----------------------------------------------------+-----------------|
+| Eq. Class ID               | Param | Description                                         | Representative  |
+|----------------------------+-------+-----------------------------------------------------+-----------------|
+| Transform::AddChild::EC1.1 | tr    | tr is a valid pointer to a transform                | new Transform() |
+| Transform::AddChild::EC1.a | tr    | tr is nullptr                                       | nullptr         |
+| Transform::AddChild::EC1.b | tr    | tr is a pointer to something other than a transform | new Component() |
+|----------------------------+-------+-----------------------------------------------------+-----------------|
+
+*** Transform::AddComponent(Component* component)
+|--------------------------------+-----------+-----------------------------------------------+-----------------|
+| Eq. Class ID                   | Param     | Description                                   | Representative  |
+|--------------------------------+-----------+-----------------------------------------------+-----------------|
+| Transform::AddComponent::EC1.1 | component | a valid pointer to a transform                | new Component() |
+| Transform::AddComponent::EC1.a | component | an invalid pointer                            | nullptr         |
+| Transform::AddComponent::EC1.b | component | a pointer to something other than a component | new Transform() |
+|--------------------------------+-----------+-----------------------------------------------+-----------------|
+
+*** Transform::FindChildByName(std::string name)
+|-----------------------------------+-------+--------------+----------------|
+| Eq. Class ID                      | Param | Description  | Representative |
+|-----------------------------------+-------+--------------+----------------|
+| Transform::FindChildByName::EC1.1 | name  | A string     | "string"       |
+| Transform::FindChildByName::EC1.a | name  | Not a string | 1              |
+|-----------------------------------+-------+--------------+----------------|
+
+*** Transform::FindComponentByUID(uint64_t id)
+|--------------------------------------+-------+--------------------+----------------|
+| Eq. Class ID                         | Param | Description        | Representative |
+|--------------------------------------+-------+--------------------+----------------|
+| Transform::FindComponentByUID::EC1.1 | id    | A positive integer |              1 |
+| Transform::FindComponentByUID::EC1.2 | id    | Zero               |              0 |
+| Transform::FindComponentByUID::EC1.a | id    | A negative integer |             -1 |
+|--------------------------------------+-------+--------------------+----------------|
+*** Transform::FindTransformByUID(uint64_t id)
+Equivalence classes same as Transform::FindComponentByUID.
+
+*** Transform::GetChildren()
+Returns an instance variable that will always be valid.
+
+*** Transform::GetComponent(std::string name)
+Possible issues with specification:
+- The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme
+
+ The equivalence classes are the same as Transform::FindChildByName.
+
+*** Transform::GetGlobalPosition()
+|-------------------------------------+--------+---------------------------------------------------------------+-----------------|
+| Eq. Class ID                        | Param  | Description                                                   | Representative  |
+|-------------------------------------+--------+---------------------------------------------------------------+-----------------|
+| Transform::GetGlobalPosition::EC1.1 | parent | parent = nullptr                                              | nullptr         |
+| Transform::GetGlobalPosition::EC1.2 | parent | parent is a valid pointer to a Transform                      | new Transform() |
+| Transform::GetGlobalPosition::EC1.a | parent | parent is a valid pointer to something other than a Transform | new Component() |
+|-------------------------------------+--------+---------------------------------------------------------------+-----------------|
+*** Transform::GetGlobalRotation()
+Equivalence classes same as Transform::GetGlobalPosition.
+
+*** Transform::GetGlobalScale()
+Equivalence classes same as Transform::GetGlobalScale.
+
+*** Transform::GetLocalPosition()
+This is a simple getter and will always return a valid position
+
+*** Transform::GetLocalRotation()
+This is a simple getter and will always return a valid position
+
+*** Transform::GetLocalScale()
+This is a simple getter and will always return a valid position
+
+*** Transform::Rotate(glm::vec3 axis, float amount)
+|--------------------------+--------+--------------------------------------+---------------------|
+| Eq. Class ID             | Param  | Description                          | Representative      |
+|--------------------------+--------+--------------------------------------+---------------------|
+| Transform::Rotate::EC1.1 | axis   | axis is a vector with nonzero length | {x=1.0,y=0.0,z=0.0} |
+| Transform::Rotate::EC1.a | axis   | axis is a vector with zero length    | {x=0,y=0,z=0}       |
+| Transform::Rotate::EC1.b | axis   | axis is not a vector                 | 1                   |
+| Transform::Rotate::EC2.1 | amount | amount is a float                    | 90.0f               |
+| Transform::Rotate::EC2.2 | amount | amount is an integer                 | 90                  |
+| Transform::Rotate::EC2.a | amount | amount is not a number               | "90"                |
+|--------------------------+--------+--------------------------------------+---------------------|
+
+*** Transform::Scale(glm::vec3 amount)
+|-------------------------+--------+----------------------+---------------------|
+| Eq. Class ID            | Param  | Description          | Representative      |
+|-------------------------+--------+----------------------+---------------------|
+| Transform::Scale::EC1.1 | amount | Any vector           | {x=2.0,y=3.0,z=2.0} |
+| Transform::Scale::EC1.2 | amount | The identity element | {x=1.0,y=1.0,z=1.0} |
+| Transform::Scale::EC1.3 | amount | The zero vector      | {x=0.0,y=0.0,z=0.0} |
+| Transform::Scale::EC1.a | amount | Not a vector         | 1                   |
+|-------------------------+--------+----------------------+---------------------|
+
+*** Transform::Translate(glm::vec3 offset)
+|-----------------------------+--------+----------------------+---------------------|
+| Eq. Class ID                | Param  | Description          | Representative      |
+|-----------------------------+--------+----------------------+---------------------|
+| Transform::Translate::EC1.1 | amount | Any vector           | {x=2.0,y=3.0,z=2.0} |
+| Transform::Translate::EC1.2 | amount | The identity         | {x=0.0,y=0.0,z=0.0} |
+| Transform::Translate::EC1.a | amount | Not a vector         | 1                   |
+|-----------------------------+--------+----------------------+---------------------|
+
+*** Transform::Forward()
+|---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
+| Eq. Class ID              | Param               | Description                                                        | Representative    |
+|---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
+| Transform::Forward::EC1.1 | rotation (implicit) | Any unit quaternion \({x \in \mathbb{H}:\lvert x \rvert =1}\)      | {x=0,y=0,z=0,w=1} |
+| Transform::Forward::EC1.a | rotation (implicit) | A non-unit quaternion \({x \in \mathbb{H}:\lvert x \rvert \neq 1\) | {x=0,y=0,z=0,w=2} |
+| Transform::Forward::EC1.b | rotation (implicit) | Not a quaternion \( {x \notin \mathbb{H}} \)                       | 1                 |
+|---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
+*** Transform::Backward()
+Equivalence classes same as Transform::Forward.
+*** Transform::Left()
+Equivalence classes same as Transform::Forward.
+*** Transform::Right()
+Equivalence classes same as Transform::Forward.
+*** Transform::Up()
+Equivalence classes same as Transform::Forward.
+*** Transform::Down()
+Equivalence classes same as Transform::Forward.
+

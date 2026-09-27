@@ -1,0 +1,45 @@
+\doxysection{src/\+engine/\+opengl\+\_\+renderer.cpp File Reference}
+\hypertarget{opengl__renderer_8cpp}{}\label{opengl__renderer_8cpp}\index{src/engine/opengl\_renderer.cpp@{src/engine/opengl\_renderer.cpp}}
+{\ttfamily \+\#include "{}opengl\+\_\+renderer.\+h"{}}\newline
+{\ttfamily \+\#include $<$GLFW/\+glfw3.\+h$>$}\newline
+{\ttfamily \+\#include "{}../\+imgui/\+imgui.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+imgui/\+imgui\+\_\+impl\+\_\+glfw.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+imgui/\+imgui\+\_\+impl\+\_\+opengl3.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+imgui/\+icon\+\_\+fonts.\+h"{}}\newline
+{\ttfamily \+\#include "{}input.\+h"{}}\newline
+{\ttfamily \+\#include "{}../\+stb/\+stb\+\_\+image.\+h"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \doxymbox{\hyperlink{namespaceengine}{engine}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{opengl__renderer_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void APIENTRY \doxymbox{\hyperlink{namespaceengine_afd92eaf1cc53b0f5c1d122470858013d}{engine::\+\+Message\+Callback}} (GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar \texorpdfstring{$\ast$}{*}message, const void \texorpdfstring{$\ast$}{*}user\+Param)
+\item 
+void \doxymbox{\hyperlink{namespaceengine_a63501fe0631bccef7560f4d9c983fef5}{engine::\+window\+\_\+size\+\_\+callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int width, int height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \doxymbox{\hyperlink{namespaceengine_ade3757671efb74cdda2a879c232773b5}{engine::\+window\+\_\+w}} = 0
+\item 
+int \doxymbox{\hyperlink{namespaceengine_a8df450ee862fa763e5e748917214c975}{engine::\+window\+\_\+h}} = 0
+\end{DoxyCompactItemize}
+
+
+\label{opengl__renderer_8cpp_doc-define-members}
+\Hypertarget{opengl__renderer_8cpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{opengl__renderer_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\index{opengl\_renderer.cpp@{opengl\_renderer.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!opengl\_renderer.cpp@{opengl\_renderer.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{opengl__renderer_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\+\#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+

@@ -1,0 +1,33 @@
+\doxysection{saveable.\+h}
+\hypertarget{saveable_8h_source}{}\label{saveable_8h_source}\index{src/engine/saveable.h@{src/engine/saveable.h}}
+\doxymbox{\hyperlink{saveable_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../json/json.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ }\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ =\ nlohmann::json;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ PROPERTY\_SAVE(prop)\ value[\#prop]\ =\ prop;}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ PROPERTY\_LOAD(prop)\ if(value.contains(\#prop))\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{prop\ =\ value[\#prop];\ \(\backslash\)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\}\ else\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{std::cout\ <<\ "{}property\ \`{}"{}\ <<\ \#prop\ <<\ "{}\`{}\ failed\ to\ load\ on\ component\ "{}\ <<\ this-\/>name.c\_str()\ <<"{}\ UID:\ "{}\ <<\ this-\/>uid\ <<\ "{}\(\backslash\)n"{};\ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ return\ false;\ \}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ PROPERTY\_CHECK(prop)\ if(!value.contains(\#prop))\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{std::cout\ <<\ "{}property\ \`{}"{}\ <<\ \#prop\ <<\ "{}\`{}\ failed\ to\ load\ on\ component\ "{}\ <<\ this-\/>name.c\_str()\ <<"{}\ UID:\ "{}\ <<\ this-\/>uid\ <<\ "{}\(\backslash\)n"{};\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ return\ false;\}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1Saveable}{Saveable}}\ \{}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ Save()\ =0;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ Load(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)=0;}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}

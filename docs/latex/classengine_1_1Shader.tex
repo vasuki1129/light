@@ -1,0 +1,133 @@
+\doxysection{engine::Shader Class Reference}
+\hypertarget{classengine_1_1Shader}{}\label{classengine_1_1Shader}\index{engine::Shader@{engine::Shader}}
+
+
+{\ttfamily \+\#include $<$shader.\+h$>$}
+
+Inheritance diagram for engine::Shader:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classengine_1_1Shader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1}{Shader}} (std::\+string path)
+\item 
+\doxymbox{\hyperlink{classengine_1_1Shader_a78e9a962adc862ca6f9c796b22491ffe}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Shader_a899689b8e8b53b310878f5b55776c0d6}{Set\+Uniforms}} (\doxymbox{\hyperlink{classengine_1_1UniformList}{Uniform\+List}} \&u)
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Shader_a11b1eaf2f6c6cee8fb18a65a7cc46dd0}{Set\+Uniform}} (std::\+string key, \doxymbox{\hyperlink{namespaceengine_ac830a3ce386fce2d03932c7fe348bb09}{Uniform}} u)
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Shader_a5cc728ed0aa5b0a1ffdf79f7467f3189}{Reload}} ()
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Shader_aaeae5f6faf57261b09d809264db6db95}{Bind}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classengine_1_1Asset}{engine::\+\+Asset}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \doxymbox{\hyperlink{classengine_1_1Asset_a6e552698910360d8ba8633ee0db0165b}{Is\+Valid}} ()
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_a06454c8fda40192e07d585e2334ca2aa}{Get\+Name}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Asset_a65969d502e6e6b8202f438233b70d83f}{Set\+Name}} (std::\+string name)
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_ad709d2df7abbab2156524a5f0ea4f2fe}{Get\+Path}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Asset_ae341cd3bd9e1d8ccb197a76bc9d5e36d}{Set\+Path}} (std::\+string path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \doxymbox{\hyperlink{classengine_1_1Shader_ab381d0a8fcdfbf61631604e9e43d2f95}{shader\+\_\+handle}} = 0
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Shader_a701e364f64a37e64b9df3f19657393bf}{vertex\+\_\+src\+\_\+str}}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Shader_aa5934ffe7737bdcf03f56fb76a931a78}{fragment\+\_\+src\+\_\+str}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{classengine_1_1Asset}{engine::\+\+Asset}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{classengine_1_1Asset_afb748936539c0107bb5cb53f9100c346}{valid}} = false
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_a05a67f80fa6f68b1d3c21eea518f8b30}{name}} = "{}?????"{}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Asset_aafc1efc73bdefb91c99948da97eb0fcb}{path}} = "{}INVALID"{}
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1Shader_doc-constructors}
+\Hypertarget{classengine_1_1Shader_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1}\index{engine::Shader@{engine::Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a0a50c6ee4496e515588ce00e505c18b1} 
+engine::\+\+Shader::\+\+Shader (\begin{DoxyParamCaption}\item[{std::\+string}]{path}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Shader_a78e9a962adc862ca6f9c796b22491ffe}\index{engine::Shader@{engine::Shader}!````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}}
+\index{````~Shader@{\texorpdfstring{$\sim$}{\string~}Shader}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Shader()}{\string~Shader()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a78e9a962adc862ca6f9c796b22491ffe} 
+engine::\+\+Shader::\+\texorpdfstring{$\sim$}{\string~}\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{classengine_1_1Shader_doc-func-members}
+\Hypertarget{classengine_1_1Shader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1Shader_aaeae5f6faf57261b09d809264db6db95}\index{engine::Shader@{engine::Shader}!Bind@{Bind}}
+\index{Bind@{Bind}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_aaeae5f6faf57261b09d809264db6db95} 
+bool engine::\+\+Shader::\+\+Bind (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Shader_a5cc728ed0aa5b0a1ffdf79f7467f3189}\index{engine::Shader@{engine::Shader}!Reload@{Reload}}
+\index{Reload@{Reload}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{Reload()}{Reload()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a5cc728ed0aa5b0a1ffdf79f7467f3189} 
+void engine::\+\+Shader::\+\+Reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Shader_a11b1eaf2f6c6cee8fb18a65a7cc46dd0}\index{engine::Shader@{engine::Shader}!SetUniform@{SetUniform}}
+\index{SetUniform@{SetUniform}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniform()}{SetUniform()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a11b1eaf2f6c6cee8fb18a65a7cc46dd0} 
+bool engine::\+\+Shader::\+\+Set\+Uniform (\begin{DoxyParamCaption}\item[{std::\+string}]{key}{, }\item[{\doxymbox{\hyperlink{namespaceengine_ac830a3ce386fce2d03932c7fe348bb09}{Uniform}}}]{u}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1Shader_a899689b8e8b53b310878f5b55776c0d6}\index{engine::Shader@{engine::Shader}!SetUniforms@{SetUniforms}}
+\index{SetUniforms@{SetUniforms}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{SetUniforms()}{SetUniforms()}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a899689b8e8b53b310878f5b55776c0d6} 
+bool engine::\+\+Shader::\+\+Set\+Uniforms (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{classengine_1_1UniformList}{Uniform\+List}} \&}]{u}{}\end{DoxyParamCaption})}
+
+
+
+\label{classengine_1_1Shader_doc-variable-members}
+\Hypertarget{classengine_1_1Shader_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classengine_1_1Shader_aa5934ffe7737bdcf03f56fb76a931a78}\index{engine::Shader@{engine::Shader}!fragment\_src\_str@{fragment\_src\_str}}
+\index{fragment\_src\_str@{fragment\_src\_str}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{fragment\_src\_str}{fragment\_src\_str}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_aa5934ffe7737bdcf03f56fb76a931a78} 
+std::\+string engine::\+\+Shader::\+fragment\+\_\+src\+\_\+str\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classengine_1_1Shader_ab381d0a8fcdfbf61631604e9e43d2f95}\index{engine::Shader@{engine::Shader}!shader\_handle@{shader\_handle}}
+\index{shader\_handle@{shader\_handle}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{shader\_handle}{shader\_handle}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_ab381d0a8fcdfbf61631604e9e43d2f95} 
+unsigned int engine::\+\+Shader::\+shader\+\_\+handle = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classengine_1_1Shader_a701e364f64a37e64b9df3f19657393bf}\index{engine::Shader@{engine::Shader}!vertex\_src\_str@{vertex\_src\_str}}
+\index{vertex\_src\_str@{vertex\_src\_str}!engine::Shader@{engine::Shader}}
+\doxysubsubsection{\texorpdfstring{vertex\_src\_str}{vertex\_src\_str}}
+{\footnotesize\ttfamily \label{classengine_1_1Shader_a701e364f64a37e64b9df3f19657393bf} 
+std::\+string engine::\+\+Shader::\+vertex\+\_\+src\+\_\+str\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{shader_8h}{shader.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{shader_8cpp}{shader.\+cpp}}\end{DoxyCompactItemize}

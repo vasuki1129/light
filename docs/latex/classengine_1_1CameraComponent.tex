@@ -1,0 +1,178 @@
+\doxysection{engine::Camera\+Component Class Reference}
+\hypertarget{classengine_1_1CameraComponent}{}\label{classengine_1_1CameraComponent}\index{engine::CameraComponent@{engine::CameraComponent}}
+
+
+{\ttfamily \+\#include $<$camera\+\_\+component.\+h$>$}
+
+Inheritance diagram for engine::Camera\+Component:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classengine_1_1CameraComponent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}{Camera\+Component}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1CameraComponent_ad9b80267e07f9602b88d5a2bd841f7ca}{Camera\+Component}} (std::\+string name)
+\item 
+virtual \doxymbox{\hyperlink{classengine_1_1CameraComponent_a2fef3c997b99634ce935db622299f087}{\texorpdfstring{$\sim$}{\string~}\+Camera\+Component}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1CameraComponent_a9ad840b5824a68b390bb37037377b149}{tick}} (float dt) override
+\item 
+virtual glm::\+mat4 \doxymbox{\hyperlink{classengine_1_1CameraComponent_ad14105745180429acb4fc0790dccf1a0}{Get\+Camera\+Matrix}} ()
+\item 
+virtual \doxymbox{\hyperlink{structengine_1_1Ray}{Ray}} \doxymbox{\hyperlink{classengine_1_1CameraComponent_ae3119dcdd8a612c3b2c9ce074831b9bd}{Screen\+Point\+To\+Ray}} (glm::\+vec2 screen\+\_\+point)
+\item 
+virtual \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \doxymbox{\hyperlink{classengine_1_1CameraComponent_a877c8c4c94525f8675dcae6a512164e0}{Save}} () override
+\item 
+virtual bool \doxymbox{\hyperlink{classengine_1_1CameraComponent_a0093ca84debef95fdaf6d948b0d0f8dc}{Load}} (\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} value) override
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1CameraComponent_a4d0b9afe0d36c11bfd4de579430374eb}{Draw\+Widget}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{classengine_1_1Component}{engine::\+\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Component_a4e81aba4597073e379864f2c87eeb046}{Component}} (std::\+string name)
+\item 
+virtual \doxymbox{\hyperlink{classengine_1_1Component_afb81293002dc9dfad30b10e9e4b5dbe0}{\texorpdfstring{$\sim$}{\string~}\+Component}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_aca4b10dc9dfaea7658fa4b8b1f18df63}{begin\+\_\+play}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a89550d5d0687b33c875a2e0ebc4028f5}{end\+\_\+play}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a84f2ad4f7fbaad3c2711c8c64d0e5916}{render}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a80908ab0182f92efd224871e41d9772a}{editor\+\_\+render}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_a8267fe7a8dcc9fffb316ec6a822b0bd8}{init}} ()
+\item 
+virtual void \doxymbox{\hyperlink{classengine_1_1Component_ad2dc0a3dae4f15bf374d09a95e511f22}{destroy}} ()
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Component_a66c43e51b17b62beeb6eaae848d4fd03}{Get\+Owner}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Component_a396de9576b41433bc45dcde1e3f069a8}{Set\+Owner}} (\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*}own)
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_a25bf3ea6d9fdb8df957bd1fb51966bee}{Get\+Name}} ()
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Component_ab1e215688940524dfb6f75be1637154b}{Get\+UID}} ()
+\item 
+void \doxymbox{\hyperlink{classengine_1_1Component_a1f2d35e9159dd20f21451703cc35b121}{Component\+Display}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \doxymbox{\hyperlink{classengine_1_1Component}{engine::\+\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}}
+\item 
+std::\+string \doxymbox{\hyperlink{classengine_1_1Component_ae6cfde4b98fc230b6a86f1e6094cf167}{component\+\_\+type}}
+\item 
+uint64\+\_\+t \doxymbox{\hyperlink{classengine_1_1Component_a8b3ae0eedab887e5c3cfceb25728ecff}{uid}}
+\item 
+\doxymbox{\hyperlink{classengine_1_1Transform}{Transform}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classengine_1_1Component_af33085299072d46f1b8ad00a837ebdf7}{owner}}
+\end{DoxyCompactItemize}
+
+
+\label{classengine_1_1CameraComponent_doc-constructors}
+\Hypertarget{classengine_1_1CameraComponent_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0}\index{engine::CameraComponent@{engine::CameraComponent}!CameraComponent@{CameraComponent}}
+\index{CameraComponent@{CameraComponent}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{CameraComponent()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_ac3b9078b5e83fa327809c7b00ff223b0} 
+engine::\+\+Camera\+Component::\+\+Camera\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1CameraComponent_ad9b80267e07f9602b88d5a2bd841f7ca}\index{engine::CameraComponent@{engine::CameraComponent}!CameraComponent@{CameraComponent}}
+\index{CameraComponent@{CameraComponent}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{CameraComponent()}{CameraComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_ad9b80267e07f9602b88d5a2bd841f7ca} 
+engine::\+\+Camera\+Component::\+\+Camera\+Component (\begin{DoxyParamCaption}\item[{std::\+string}]{name}{}\end{DoxyParamCaption})}
+
+\Hypertarget{classengine_1_1CameraComponent_a2fef3c997b99634ce935db622299f087}\index{engine::CameraComponent@{engine::CameraComponent}!````~CameraComponent@{\texorpdfstring{$\sim$}{\string~}CameraComponent}}
+\index{````~CameraComponent@{\texorpdfstring{$\sim$}{\string~}CameraComponent}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CameraComponent()}{\string~CameraComponent()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_a2fef3c997b99634ce935db622299f087} 
+engine::\+\+Camera\+Component::\+\texorpdfstring{$\sim$}{\string~}\+Camera\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{classengine_1_1CameraComponent_doc-func-members}
+\Hypertarget{classengine_1_1CameraComponent_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classengine_1_1CameraComponent_a4d0b9afe0d36c11bfd4de579430374eb}\index{engine::CameraComponent@{engine::CameraComponent}!DrawWidget@{DrawWidget}}
+\index{DrawWidget@{DrawWidget}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{DrawWidget()}{DrawWidget()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_a4d0b9afe0d36c11bfd4de579430374eb} 
+void engine::\+\+Camera\+Component::\+\+Draw\+Widget (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_ad7bc5cc3fcdf97ebca54f1dc5bd7b47a}{engine::\+\+Component}}.
+
+
+
+Reimplemented in \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_afc6fde5240f8b8d08751a6d841a082e4}{engine::\+\+Editor\+Camera\+Component}}.
+
+\Hypertarget{classengine_1_1CameraComponent_ad14105745180429acb4fc0790dccf1a0}\index{engine::CameraComponent@{engine::CameraComponent}!GetCameraMatrix@{GetCameraMatrix}}
+\index{GetCameraMatrix@{GetCameraMatrix}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{GetCameraMatrix()}{GetCameraMatrix()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_ad14105745180429acb4fc0790dccf1a0} 
+glm::\+mat4 engine::\+\+Camera\+Component::\+\+Get\+Camera\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classengine_1_1CameraComponent_a0093ca84debef95fdaf6d948b0d0f8dc}\index{engine::CameraComponent@{engine::CameraComponent}!Load@{Load}}
+\index{Load@{Load}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_a0093ca84debef95fdaf6d948b0d0f8dc} 
+bool engine::\+\+Camera\+Component::\+\+Load (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_a7f95764e2eb5a135d45ae8e0a726ce22}{engine::\+\+Component}}.
+
+
+
+Reimplemented in \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a5bfd669285105e9186c0e90fa013712a}{engine::\+\+Editor\+Camera\+Component}}.
+
+\Hypertarget{classengine_1_1CameraComponent_a877c8c4c94525f8675dcae6a512164e0}\index{engine::CameraComponent@{engine::CameraComponent}!Save@{Save}}
+\index{Save@{Save}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_a877c8c4c94525f8675dcae6a512164e0} 
+\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} engine::\+\+Camera\+Component::\+\+Save (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{classengine_1_1Component_a8a01779ac974d3d20c456c03469d3a32}{engine::\+\+Component}}.
+
+
+
+Reimplemented in \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a3c39ddf4842af84c70f6444a7fad79d6}{engine::\+\+Editor\+Camera\+Component}}.
+
+\Hypertarget{classengine_1_1CameraComponent_ae3119dcdd8a612c3b2c9ce074831b9bd}\index{engine::CameraComponent@{engine::CameraComponent}!ScreenPointToRay@{ScreenPointToRay}}
+\index{ScreenPointToRay@{ScreenPointToRay}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{ScreenPointToRay()}{ScreenPointToRay()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_ae3119dcdd8a612c3b2c9ce074831b9bd} 
+\doxymbox{\hyperlink{structengine_1_1Ray}{Ray}} engine::\+\+Camera\+Component::\+\+Screen\+Point\+To\+Ray (\begin{DoxyParamCaption}\item[{glm::\+vec2}]{screen\+\_\+point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{classengine_1_1CameraComponent_a9ad840b5824a68b390bb37037377b149}\index{engine::CameraComponent@{engine::CameraComponent}!tick@{tick}}
+\index{tick@{tick}!engine::CameraComponent@{engine::CameraComponent}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily \label{classengine_1_1CameraComponent_a9ad840b5824a68b390bb37037377b149} 
+void engine::\+\+Camera\+Component::\+tick (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \doxymbox{\hyperlink{classengine_1_1Component_a25d9511b2eda6e70d2d8470914559def}{engine::\+\+Component}}.
+
+
+
+Reimplemented in \doxymbox{\hyperlink{classengine_1_1EditorCameraComponent_a90b4a165413c8c1e2c6b02ad52514b0e}{engine::\+\+Editor\+Camera\+Component}}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+engine/\doxymbox{\hyperlink{camera__component_8h}{camera\+\_\+component.\+h}}\item 
+src/\+engine/\doxymbox{\hyperlink{camera__component_8cpp}{camera\+\_\+component.\+cpp}}\end{DoxyCompactItemize}

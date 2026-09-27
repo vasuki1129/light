@@ -1,0 +1,39 @@
+\doxysection{mesh\+\_\+component.\+h}
+\hypertarget{mesh__component_8h_source}{}\label{mesh__component_8h_source}\index{src/engine/mesh\_component.h@{src/engine/mesh\_component.h}}
+\doxymbox{\hyperlink{mesh__component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{component_8h}{component.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{mesh_8h}{mesh.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{material_8h}{material.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespaceengine}{engine}}\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf}{MeshComponent}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{classengine_1_1Component_a40ea84501ee49c647399bda77653d07a}{Component}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a995d2fdda45cb4fa5503b2726f8ddbc9}{render}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00010\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_afa79e449382d5bbd2c8eb962718ecdf4}{init}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00011\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a4073494cfd62a60bc81a9de012714b02}{destroy}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_ab89475a319686d4366bd1b4ef2ee798c}{SetMesh}}(std::string\ mesh);}
+\DoxyCodeLine{00013\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a65d8c44eea178be48ccfa461c7008b5f}{SetMaterial}}(std::string\ material);}
+\DoxyCodeLine{00014\ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_aff82cdd31ff813229c26358220dc80c9}{DrawWidget}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00015\ \ \ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf}{MeshComponent}}(std::string\ \doxymbox{\hyperlink{classengine_1_1Component_a1006a43e5a682e10d80849bdd5c4a5de}{name}});}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a8b4f73df002883a128df122ad8e754bf}{MeshComponent}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_a1318ef74f32dbef435dee1ba4bb77fa0}{Load}}(\doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ value)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \doxymbox{\hyperlink{asset__manager_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ \doxymbox{\hyperlink{classengine_1_1MeshComponent_acb0020ca349037eb1cd04d7ad2e984e9}{Save}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ std::string\ mesh\_name;}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{bool}\ mesh\_valid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00024\ \ \ std::string\ material\_name;}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{bool}\ material\_valid\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \doxymbox{\hyperlink{namespaceengine_a0a432a147824dfadd53db3e6140f1a4f}{FACTORY}}(\doxymbox{\hyperlink{classengine_1_1MeshComponent}{MeshComponent}});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
