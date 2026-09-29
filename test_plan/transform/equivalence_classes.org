@@ -1,32 +1,49 @@
+#+OPTIONS: toc:nil
+#+TOC: headlines 2
+
 * transform.cpp
-** Equivalence Classes
-*** Transform::AddChild(Transform* tr)
+
+** Transform::AddChild(Transform* tr)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |----------------------------+-------+-----------------------------------------------------+-----------------|
 | Eq. Class ID               | Param | Description                                         | Representative  |
 |----------------------------+-------+-----------------------------------------------------+-----------------|
-| Transform::AddChild::EC1.1 | tr    | tr is a valid pointer to a transform                | new Transform() |
-| Transform::AddChild::EC1.a | tr    | tr is nullptr                                       | nullptr         |
-| Transform::AddChild::EC1.b | tr    | tr is a pointer to something other than a transform | new Component() |
+| Transform::AddChild::EC1.1 | tr    | a valid pointer                                     | new Transform() |
+| Transform::AddChild::EC1.a | tr    | an invalid pointer                                  | nullptr         |
 |----------------------------+-------+-----------------------------------------------------+-----------------|
 
-*** Transform::AddComponent(Component* component)
+
+** Transform::AddComponent(Component* component)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |--------------------------------+-----------+-----------------------------------------------+-----------------|
 | Eq. Class ID                   | Param     | Description                                   | Representative  |
 |--------------------------------+-----------+-----------------------------------------------+-----------------|
-| Transform::AddComponent::EC1.1 | component | a valid pointer to a transform                | new Component() |
+| Transform::AddComponent::EC1.1 | component | a valid pointer                               | new Component() |
 | Transform::AddComponent::EC1.a | component | an invalid pointer                            | nullptr         |
-| Transform::AddComponent::EC1.b | component | a pointer to something other than a component | new Transform() |
 |--------------------------------+-----------+-----------------------------------------------+-----------------|
 
-*** Transform::FindChildByName(std::string name)
-|-----------------------------------+-------+--------------+----------------|
-| Eq. Class ID                      | Param | Description  | Representative |
-|-----------------------------------+-------+--------------+----------------|
-| Transform::FindChildByName::EC1.1 | name  | A string     | "string"       |
-| Transform::FindChildByName::EC1.a | name  | Not a string | 1              |
-|-----------------------------------+-------+--------------+----------------|
+** Transform::FindChildByName(std::string name)
 
-*** Transform::FindComponentByUID(uint64_t id)
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
+|-----------------------------------+-------+------------------+----------------|
+| Eq. Class ID                      | Param | Description      | Representative |
+|-----------------------------------+-------+------------------+----------------|
+| Transform::FindChildByName::EC1.1 | name  | A string         | "string"       |
+| Transform::FindChildByName::EC1.? | name  | The empty string | ""             |
+| Transform::FindChildByName::EC1.a | name  | Not a string     | 1              |
+|-----------------------------------+-------+------------------+----------------|
+
+- The specification is unclear on whether the empty string is a valid name for a Transform
+
+** Transform::FindComponentByUID(uint64_t id)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |--------------------------------------+-------+--------------------+----------------|
 | Eq. Class ID                         | Param | Description        | Representative |
 |--------------------------------------+-------+--------------------+----------------|
@@ -34,19 +51,29 @@
 | Transform::FindComponentByUID::EC1.2 | id    | Zero               |              0 |
 | Transform::FindComponentByUID::EC1.a | id    | A negative integer |             -1 |
 |--------------------------------------+-------+--------------------+----------------|
-*** Transform::FindTransformByUID(uint64_t id)
+** Transform::FindTransformByUID(uint64_t id)
+
+*** Equivalence Classes
 Equivalence classes same as Transform::FindComponentByUID.
 
-*** Transform::GetChildren()
+** Transform::GetChildren()
+
+*** Equivalence Classes
 Returns an instance variable that will always be valid.
 
-*** Transform::GetComponent(std::string name)
+** Transform::GetComponent(std::string name)
+
+*** Equivalence Classes
 Possible issues with specification:
 - The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme
 
  The equivalence classes are the same as Transform::FindChildByName.
 
-*** Transform::GetGlobalPosition()
+
+#+ATTR_LATEX: :environment tabularx :width \linewidth
+** Transform::GetGlobalPosition()
+
+*** Equivalence Classes
 |-------------------------------------+--------+---------------------------------------------------------------+-----------------|
 | Eq. Class ID                        | Param  | Description                                                   | Representative  |
 |-------------------------------------+--------+---------------------------------------------------------------+-----------------|
@@ -54,22 +81,35 @@ Possible issues with specification:
 | Transform::GetGlobalPosition::EC1.2 | parent | parent is a valid pointer to a Transform                      | new Transform() |
 | Transform::GetGlobalPosition::EC1.a | parent | parent is a valid pointer to something other than a Transform | new Component() |
 |-------------------------------------+--------+---------------------------------------------------------------+-----------------|
-*** Transform::GetGlobalRotation()
+** Transform::GetGlobalRotation()
+
+*** Equivalence Classes
 Equivalence classes same as Transform::GetGlobalPosition.
 
-*** Transform::GetGlobalScale()
+** Transform::GetGlobalScale()
+
+*** Equivalence Classes
 Equivalence classes same as Transform::GetGlobalScale.
 
-*** Transform::GetLocalPosition()
-This is a simple getter and will always return a valid position
+** Transform::GetLocalPosition()
 
-*** Transform::GetLocalRotation()
-This is a simple getter and will always return a valid position
+*** Equivalence Classes
+This is a simple getter and only exposes a field.
 
-*** Transform::GetLocalScale()
-This is a simple getter and will always return a valid position
+** Transform::GetLocalRotation()
 
-*** Transform::Rotate(glm::vec3 axis, float amount)
+*** Equivalence Classes
+This is a simple getter and only exposes a field.
+
+** Transform::GetLocalScale()
+
+*** Equivalence Classes
+This is a simple getter and only exposes a field.
+
+** Transform::Rotate(glm::vec3 axis, float amount)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |--------------------------+--------+--------------------------------------+---------------------|
 | Eq. Class ID             | Param  | Description                          | Representative      |
 |--------------------------+--------+--------------------------------------+---------------------|
@@ -81,7 +121,10 @@ This is a simple getter and will always return a valid position
 | Transform::Rotate::EC2.a | amount | amount is not a number               | "90"                |
 |--------------------------+--------+--------------------------------------+---------------------|
 
-*** Transform::Scale(glm::vec3 amount)
+** Transform::Scale(glm::vec3 amount)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |-------------------------+--------+----------------------+---------------------|
 | Eq. Class ID            | Param  | Description          | Representative      |
 |-------------------------+--------+----------------------+---------------------|
@@ -91,7 +134,10 @@ This is a simple getter and will always return a valid position
 | Transform::Scale::EC1.a | amount | Not a vector         | 1                   |
 |-------------------------+--------+----------------------+---------------------|
 
-*** Transform::Translate(glm::vec3 offset)
+** Transform::Translate(glm::vec3 offset)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |-----------------------------+--------+----------------------+---------------------|
 | Eq. Class ID                | Param  | Description          | Representative      |
 |-----------------------------+--------+----------------------+---------------------|
@@ -100,7 +146,10 @@ This is a simple getter and will always return a valid position
 | Transform::Translate::EC1.a | amount | Not a vector         | 1                   |
 |-----------------------------+--------+----------------------+---------------------|
 
-*** Transform::Forward()
+** Transform::Forward()
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \linewidth
 |---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
 | Eq. Class ID              | Param               | Description                                                        | Representative    |
 |---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
@@ -108,14 +157,21 @@ This is a simple getter and will always return a valid position
 | Transform::Forward::EC1.a | rotation (implicit) | A non-unit quaternion \({x \in \mathbb{H}:\lvert x \rvert \neq 1\) | {x=0,y=0,z=0,w=2} |
 | Transform::Forward::EC1.b | rotation (implicit) | Not a quaternion \( {x \notin \mathbb{H}} \)                       | 1                 |
 |---------------------------+---------------------+--------------------------------------------------------------------+-------------------|
-*** Transform::Backward()
+** Transform::Backward()
+
+*** Equivalence Classes
 Equivalence classes same as Transform::Forward.
-*** Transform::Left()
+** Transform::Left()
+
+*** Equivalence Classes
 Equivalence classes same as Transform::Forward.
-*** Transform::Right()
+** Transform::Right()
+*** Equivalence Classes
 Equivalence classes same as Transform::Forward.
-*** Transform::Up()
+** Transform::Up()
+*** Equivalence Classes
 Equivalence classes same as Transform::Forward.
-*** Transform::Down()
+** Transform::Down()
+*** Equivalence Classes
 Equivalence classes same as Transform::Forward.
 

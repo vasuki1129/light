@@ -1,0 +1,262 @@
+% Created 2026-09-29 Tue 18:01
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={English}}
+\begin{document}
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+\section{transform.cpp}
+\label{sec:orgf25cf32}
+
+\subsection{Transform::AddChild(Transform* tr)}
+\label{sec:org09b7f43}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org9d7b115}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::AddChild::EC1.1 & tr & a valid pointer & new Transform()\\
+Transform::AddChild::EC1.a & tr & an invalid pointer & nullptr\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::AddComponent(Component* component)}
+\label{sec:orgae5ea69}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org4281d07}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::AddComponent::EC1.1 & component & a valid pointer & new Component()\\
+Transform::AddComponent::EC1.a & component & an invalid pointer & nullptr\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::FindChildByName(std::string name)}
+\label{sec:org6075d3f}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgab59404}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::FindChildByName::EC1.1 & name & A string & "string"\\
+Transform::FindChildByName::EC1.? & name & The empty string & ""\\
+Transform::FindChildByName::EC1.a & name & Not a string & 1\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+\item The specification is unclear on whether the empty string is a valid name for a Transform
+\end{itemize}
+\subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
+\label{sec:org888f3ca}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org03d11f2}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::FindComponentByUID::EC1.1 & id & A positive integer & 1\\
+Transform::FindComponentByUID::EC1.2 & id & Zero & 0\\
+Transform::FindComponentByUID::EC1.a & id & A negative integer & -1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
+\label{sec:orgb81929e}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org4b5b373}
+Equivalence classes same as Transform::FindComponentByUID.
+\subsection{Transform::GetChildren()}
+\label{sec:orgac0e91f}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgcd247d0}
+Returns an instance variable that will always be valid.
+\subsection{Transform::GetComponent(std::string name)}
+\label{sec:org0ff2f07}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orged321b1}
+Possible issues with specification:
+\begin{itemize}
+\item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme
+
+The equivalence classes are the same as Transform::FindChildByName.
+\end{itemize}
+\subsection{Transform::GetGlobalPosition()}
+\label{sec:org5598b9d}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org47f6ce5}
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::GetGlobalPosition::EC1.1 & parent & parent = nullptr & nullptr\\
+Transform::GetGlobalPosition::EC1.2 & parent & parent is a valid pointer to a Transform & new Transform()\\
+Transform::GetGlobalPosition::EC1.a & parent & parent is a valid pointer to something other than a Transform & new Component()\\
+\hline
+\end{tabular}
+\end{center}
+\subsection{Transform::GetGlobalRotation()}
+\label{sec:orgf14379f}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org35146a8}
+Equivalence classes same as Transform::GetGlobalPosition.
+\subsection{Transform::GetGlobalScale()}
+\label{sec:orgf7fd0bf}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgfb4ef4b}
+Equivalence classes same as Transform::GetGlobalScale.
+\subsection{Transform::GetLocalPosition()}
+\label{sec:org3d77498}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org910e08f}
+This is a simple getter and only exposes a field.
+\subsection{Transform::GetLocalRotation()}
+\label{sec:orge3976a7}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org4768927}
+This is a simple getter and only exposes a field.
+\subsection{Transform::GetLocalScale()}
+\label{sec:org44a4482}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org7b18f8a}
+This is a simple getter and only exposes a field.
+\subsection{Transform::Rotate(glm::vec3 axis, float amount)}
+\label{sec:org3341d82}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org88a5ff3}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::Rotate::EC1.1 & axis & axis is a vector with nonzero length & \{x=1.0,y=0.0,z=0.0\}\\
+Transform::Rotate::EC1.a & axis & axis is a vector with zero length & \{x=0,y=0,z=0\}\\
+Transform::Rotate::EC1.b & axis & axis is not a vector & 1\\
+Transform::Rotate::EC2.1 & amount & amount is a float & 90.0f\\
+Transform::Rotate::EC2.2 & amount & amount is an integer & 90\\
+Transform::Rotate::EC2.a & amount & amount is not a number & "90"\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Scale(glm::vec3 amount)}
+\label{sec:org3d359e6}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org975b409}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::Scale::EC1.1 & amount & Any vector & \{x=2.0,y=3.0,z=2.0\}\\
+Transform::Scale::EC1.2 & amount & The identity element & \{x=1.0,y=1.0,z=1.0\}\\
+Transform::Scale::EC1.3 & amount & The zero vector & \{x=0.0,y=0.0,z=0.0\}\\
+Transform::Scale::EC1.a & amount & Not a vector & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Translate(glm::vec3 offset)}
+\label{sec:org6011923}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org5b12a12}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::Translate::EC1.1 & amount & Any vector & \{x=2.0,y=3.0,z=2.0\}\\
+Transform::Translate::EC1.2 & amount & The identity & \{x=0.0,y=0.0,z=0.0\}\\
+Transform::Translate::EC1.a & amount & Not a vector & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Forward()}
+\label{sec:org473237d}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org6f876cb}
+\begin{center}
+\begin{tabularx}{\linewidth}{lXX}
+\hline
+Eq. Class ID & Param & Description & Representative\\
+\hline
+Transform::Forward::EC1.1 & rotation (implicit) & Any unit quaternion \({x \in \mathbb{H}:\lvert x \rvert =1}\) & \{x=0,y=0,z=0,w=1\}\\
+Transform::Forward::EC1.a & rotation (implicit) & A non-unit quaternion \({x \in \mathbb{H}:\lvert x \rvert \neq 1\) & \{x=0,y=0,z=0,w=2\}\\
+Transform::Forward::EC1.b & rotation (implicit) & Not a quaternion \({x \notin \mathbb{H}}\) & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Backward()}
+\label{sec:org00ceecc}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgab4f882}
+Equivalence classes same as Transform::Forward.
+\subsection{Transform::Left()}
+\label{sec:org40cd88f}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orge0a9558}
+Equivalence classes same as Transform::Forward.
+\subsection{Transform::Right()}
+\label{sec:org3804ecc}
+\subsubsection{Equivalence Classes}
+\label{sec:org700b9c5}
+Equivalence classes same as Transform::Forward.
+\subsection{Transform::Up()}
+\label{sec:orgbfc4b39}
+\subsubsection{Equivalence Classes}
+\label{sec:org5b1b70b}
+Equivalence classes same as Transform::Forward.
+\subsection{Transform::Down()}
+\label{sec:orgd5989c9}
+\subsubsection{Equivalence Classes}
+\label{sec:org9212962}
+Equivalence classes same as Transform::Forward.
+\end{document}
