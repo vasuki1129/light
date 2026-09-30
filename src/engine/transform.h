@@ -297,10 +297,7 @@ public:
    * @returns the scale value of this transform in local coordinates
    */
   glm::vec3 GetLocalScale();
-
-
-
-
+  
   /**
    * Returns the name of this transform
    *

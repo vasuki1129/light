@@ -1,11 +1,5 @@
 #include "screen_shader.h"
 
-
-
-
-
-
-
 namespace engine {
 
 

@@ -296,9 +296,7 @@ void EditorInstance::HierarchyLevel(Transform *tr) {
 
       if (engine->GetSceneLoader()->GetCurrentScene()->GetCurrentCamera() !=
           nullptr) {
-
-
-      
+        
       Ray r = engine->GetSceneLoader()->GetCurrentScene()->GetCurrentCamera()->ScreenPointToRay(Engine()->GetInput()->MousePosition());
       float int_dist;
       if(TestRayOBBIntersection(r.position, r.direction, glm::vec3(0,0,0), glm::vec3(2.0f,0.1f,0.1f), hierarchy_selected->GetModelMatrixUnscaled(), int_dist)
