@@ -1,2 +1,16 @@
 * Light Engine Test Documentation
 ** Project Description
++ Name :: Light
++ Description :: Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority modern hardware.
++ Component Under Test :: The focus of the testing will be the `Transform` class, which stores the contents of a scene as a hierarchical tree structure in which child Transforms inherit their positions, rotations, and scales from their parent Transforms.
+
+** Quality Criteria
+
+|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
+| *Quality Property* | *Definition*                                                        | *Metric* | *Criterion*                                                     |
+|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
+| Correctness        | Test cases yield the expected results anticipated during derivation |          | 100% of test cases pass.                                        |
+|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
+| Usability          |                                                                     |          | Methods, fields and classes are named clearly and in a way that |
+|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
+|                    |                                                                     |          |                                                                 |
