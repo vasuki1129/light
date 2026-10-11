@@ -1,4 +1,4 @@
-% Created 2026-10-02 Fri 00:15
+% Created 2026-10-11 Sun 16:14
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 
@@ -15,7 +15,11 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage[inkscapelatex=false]{svg}
-\usepackage[margin=0.75in]{geometry}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{booktabs}
 \date{\today}
 \title{}
 \hypersetup{
@@ -27,10 +31,10 @@
  pdflang={English}}
 \begin{document}
 
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 \section{Glossary and Conventions}
-\label{sec:org342f6c8}
+\label{sec:org7c0cbf2}
 \begin{center}
 \begin{tabular}{ll}
 \hline
@@ -41,42 +45,489 @@
 \end{tabular}
 \end{center}
 \section{Project}
-\label{sec:orgda8d090}
+\label{sec:org7c2c31f}
 
 \subsection{Light}
-\label{sec:org64a949d}
+\label{sec:orgaece4c3}
 Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
 \subsection{Component Under Test}
-\label{sec:org9333d5d}
+\label{sec:org097a556}
 The focus of the testing will be limited to the `Transform` class due to time constraints. This class is used to build a tree structure representing a 3D scene, along with allowing pieces of C++ code (`Component`s) to be attached to nodes in this tree.  The vast majority of the other features of the engine rely on this class, so it is the most critical to test.  Additionally, it is known to have at least one flaw.
 \section{The Transform Class}
-\label{sec:orge598675}
+\label{sec:org229fc95}
 
-\subsection{Activity Diagram}
-\label{sec:orga9bf70b}
-
-\begin{center}
-\includesvg[width=.9\linewidth]{diagrams/scenegraph_activity_diagram}
-\label{org6695a77}
-\end{center}
 \subsection{Object Diagram}
-\label{sec:org9377fc1}
-\begin{center}
-\includesvg[width=.9\linewidth]{diagrams/scenegraph_object_diagram}
-\label{org3d77c70}
-\end{center}
+\label{sec:org6f5a28c}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{plantuml}
+@startuml
+  allowmixing
+
+  object "t1 : Transform" {
+    name = "t1"
+    id = 1
+    position = <U+0028>0,0,0<U+0029>
+    rotation = <U+0028>0,0,0,1<U+0029>
+    scale = <U+0028>1,1,1<U+0029>
+  }
+
+  object t2
+
+  t2 : name = "t2"
+  t2 : id = 2
+  t2 : position = <U+0028>1,0,0<U+0029>
+  t2 : rotation = <U+0028>0,0,0,1<U+0029>
+  t2 : scale = <U+0028>1,1,1<U+0029>
+
+  object t3
+
+  t3 : name = "t3"
+  t3 : id = 3
+  t3 : position = <U+0028>1,0,1<U+0029>
+  t3 : rotation = <U+0028>0,0,0,1<U+0029>
+  t3 : scale = <U+0028>1,1,1<U+0029>
+
+  object "c1 : Component"
+  "c1 : Component" : name = "c1"
+  "c1 : Component" :  id = 4
+
+  "t1 : Transform" <-- t2
+  "t1 : Transform" <-- t3
+
+  t3 o-right- "c1 : TestComponent"
+
+  object t4 {
+    name = "t4"
+    id = 5
+    position = <U+0028>1,0,1<U+0029>
+    rotation = <U+0028>0,0,0,1<U+0029>
+    scale = <U+0028>1,1,1<U+0029>
+  } 
+
+ t3 <-- t4 
+
+@enduml
+
+\end{minted}
+\newpage
+\subsection{Currently Known Flaw}
+\label{sec:org3b3a3fe}
+
+To illustrate the flaw, imagine a transform called "A" at the origin, with a transform "B" as its child, translated along the Y axis an arbitrary distance.  If the transform "A" is rotated about its Z axis, the child should follow the parent, such that it maintains its position and rotation relative to the parent. Instead, the child rotates independently.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw] at (0,0) {A};
+    \node[draw] at (0,3) {B};
+  \end{tikzpicture}
+  \caption{Initial setup, A is the parent of B}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw,rotate=-45] at (-3,0) {A};
+    \node[draw,rotate=-45] at (-0.9,2.12) {B};
+  \end{tikzpicture}
+  \caption{Intended result after 45 degree clockwise rotation of A}
+  \end{subfigure}
+  \hfill
+    \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw, rotate=-45] at (0,0) {A};
+    \node[draw, rotate=-45] at (0,3) {B};
+  \end{tikzpicture}
+  \caption{Actual result with current code}
+  \end{subfigure}
+\end{figure}
 \section{Quality Criteria}
-\label{sec:org777d7e5}
+\label{sec:org90ce6d1}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Quality Property} & \textbf{Definition} & \textbf{Metric} & \textbf{Criterion}\\
 \hline
-Functional Correctness & Test cases yield the expected results anticipated during derivation &  & 100\% of test cases pass.\\
+Functional Correctness & Test cases yield the expected results anticipated during derivation. & Number of test cases that pass. & 90\% of test cases pass.\\
 \hline
-Fault Tolerance & Software should run as intended even if invalid inputs are supplied. &  & All invalid test cases properly log invalid inputs and ignore them.\\
+Fault Tolerance & Software should run as intended even if invalid inputs are supplied. & Number of test cases that produce an unrecoverable error, such as a segfault. & All test cases properly recover from invalid inputs.\\
 \hline
-Performance &  &  & \\
+Performance & Software should run efficiently enough to allow smooth rendering. & Time taken to update state and render a frame. & Average frame time is under 16ms (60 frames per second or higher)\\
+\hline
+\end{tabularx}
+\end{center}
+\section{transform.cpp}
+\label{sec:org26b15a4}
+
+\subsection{Transform::AddChild(Transform* tr)}
+\label{sec:orged82f2c}
+\subsubsection{Specification}
+\label{sec:org8a493f8}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
+/**
+ * Add a child transform to this transform
+ *
+ * If the desired child is already a child of this transform
+ * log a warning and ignore it
+ *
+ * @param tr the transform to add as a child
+ *
+ */
+void AddChild(Transform *tr);
+
+\end{minted}
+\subsubsection{Equivalence Classes}
+\label{sec:org4f59787}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.1.EC1.1 & tr & a valid pointer & new Transform()\\
+\hline
+1.1.EC1.a & tr & a null pointer & nullptr\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org5fc45a1}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
+ & \textit{tr} & \\
+\hline
+1.1.TC1 & A pointer to some valid Transform & No output\\
+\hline
+1.1.TC2 & nullptr & Error: log message\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Implementation}
+\label{sec:orgeb47571}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
+TEST_CASE("1.1.TC1") {
+
+  Transform* test_transform = new Transform();
+  Transform* child_transform = new Transform();
+
+  //redirect cout to a string so we can check for the error message
+  std::stringstream buffer;
+  std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+  test_transform->AddChild(child_transform);
+
+  std::cout.rdbuf(old_cout);
+  CHECK(buffer.str() == ""); //no output expected
+
+  delete child_transform;
+  delete test_transform;
+}
+
+TEST_CASE("1.1.TC2") {
+
+  Transform* test_transform = new Transform();
+
+  std::stringstream buffer;
+  std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+  test_transform->AddChild(nullptr);
+
+  std::cout.rdbuf(old_cout);
+  CHECK(buffer.str() != ""); //some kind of log output expected    
+
+  delete test_transform;
+}
+
+\end{minted}
+\subsection{Transform::AddComponent(Component* component)}
+\label{sec:org908b2ac}
+\subsubsection{Specification}
+\label{sec:org771da94}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
+
+/**
+ * Add a component to this transform
+ *
+ * If the supplied pointer is null, log error and ignore
+ * If the supplied pointer is not a component, log error and ignore
+ *
+ * @param component A pointer to the component to add
+ */  
+void AddComponent(Component* component);
+\end{minted}
+\subsubsection{Equivalence Classes}
+\label{sec:org6ee9aad}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.2.EC1.1 & component & a valid pointer & new TestComponent()\\
+\hline
+1.2.EC1.a & component & a valid pointer to something other than a Component & new Transform()\\
+\hline
+1.2.EC1.b & component & an invalid pointer & nullptr\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org1afe5f1}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & *Covered EQ Class\\
+ & \textit{tr} &  & \\
+\hline
+1.2.TC1 & new TestComponent() & No output & 1.2.EC1.1\\
+\hline
+1.2.TC2 & new Transform() & Error: log message and ignore & 1.2.EC1.a\\
+\hline
+1.2.TC3 & nullptr & Error: log message and ignore & 1.2.EC1.b\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::FindChildByName(std::string name)}
+\label{sec:org0da6430}
+\subsubsection{Equivalence Classes}
+\label{sec:org7c78249}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.3.EC1.1 & name & A string & "string"\\
+\hline
+1.3.EC1.a? & name & The empty string & ""\\
+\hline
+1.3.EC1.b & name & Not a string & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org91c9ddf}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
+ & \textit{name} & \\
+\hline
+1.1.TC1.1 & "string" & nullptr\\
+\hline
+1.1.TC1.2 & "" & nullptr\\
+\hline
+1.1.TC1.b & 1 & This will be disallowed by type checking, so TC implementation is omitted.\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+\item The specification is unclear on whether the empty string is a valid name for a Transform, so I am assuming it is a valid transform name.
+\end{itemize}
+\subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
+\label{sec:orga14b572}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgef43766}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.4.EC1.1 & id & A positive integer & 1\\
+\hline
+1.4.EC1.2 & id & Zero & 0\\
+\hline
+1.4.EC1.a & id & A negative integer & -1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:orgc50b69d}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{tr} &  & \\
+\hline
+1.4.TC1.1 & 1 & nullptr & 1.4.EC1.1\\
+\hline
+1.4.TC1.2 & 0 & nullptr & 1.4.EC1.2\\
+\hline
+1.4.TC1.a & -1 & Disallowed by type checking, TC implementation omitted & 1.4.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+\item 1.1.TC1.a omitted, as it would be disallowed by the type checker.
+\end{itemize}
+\subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
+\label{sec:org97f9077}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orgc934d2d}
+Equivalence classes same as Transform::FindComponentByUID.
+\subsubsection{Test Cases}
+\label{sec:org9482530}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{tr} &  & \\
+\hline
+1.5.TC1.1 & 1 & nullptr & 1.5.EC1.1\\
+\hline
+1.5.TC1.2 & 0 & nullptr & 1.5.EC1.2\\
+\hline
+1.5.TC1.a & -1 & Disallowed by type checking, TC implementation omitted & 1.5.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::GetComponent(std::string name)}
+\label{sec:orgb782311}
+
+\subsubsection{Equivalence Classes}
+\label{sec:orge71d4e2}
+Possible issues with specification:
+\begin{itemize}
+\item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme as `FindComponentByName`.
+
+The equivalence classes are the same as Transform::FindChildByName.
+\end{itemize}
+\subsection{Transform::GetGlobalPosition()}
+\label{sec:org4c779c9}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org7fa20e2}
+\subsection{Transform::GetGlobalRotation()}
+\label{sec:orgeab7464}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org94192fa}
+Equivalence classes same as Transform::GetGlobalPosition.
+\subsection{Transform::GetGlobalScale()}
+\label{sec:org7d731e4}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org4ab7ca6}
+Equivalence classes same as Transform::GetGlobalScale.
+\subsection{Transform::Rotate(glm::vec3 axis, float amount)}
+\label{sec:org0e9df88}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org54249d8}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.14.EC1.1 & axis & axis is a vector with nonzero length & \{1.0,0.0,0.0\}\\
+\hline
+1.14.EC1.a & axis & axis is a vector with zero length & \{0.0,0.0,0.0\}\\
+\hline
+1.14.EC1.b & axis & axis is not a vector & 1\\
+\hline
+1.14.EC2.1 & amount & amount is a float & 90.0f\\
+\hline
+1.14.EC2.2 & amount & amount is an integer & 90\\
+\hline
+1.14.EC2.a & amount & amount is not a number & "90"\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org70f1ad5}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} &  & \textbf{Expected} & Additional Coverage\\
+ & \textit{axis} & \textit{amount} &  & \\
+\hline
+1.14.TC1 & \{1.0,0.0,0.0\} & 90.0f & No output & 1.14.EC1.1\\
+ &  &  &  & 1.14.EC2.1\\
+\hline
+1.14.TC2 & \{1.0,0.0,0.0\} & 90 & No output & 1.14.EC2.2\\
+\hline
+1.14.TC3 & \{0.0,0.0,0.0\} & 90.0f & Error: log message & 1.14.EC1.a\\
+\hline
+1.14.TC4* & 1 & 90.0f & Disallowed by type checker & 1.14.EC1.b\\
+\hline
+1.14.TC5* & \{1.0,0.0,0.0\} & "90" & Disallowed by type checker & 1.14.EC2.a\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Scale(glm::vec3 amount)}
+\label{sec:org987e865}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org8e78055}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.15.EC1.1 & amount & Any vector other than the zero vector or the identity vector of component-wise multiplication & \{x=2.0,y=3.0,z=2.0\}\\
+\hline
+1.15.EC1.2 & amount & The identity element of component-wise multiplication & \{x=1.0,y=1.0,z=1.0\}\\
+\hline
+1.15.EC1.3 & amount & The zero vector & \{x=0.0,y=0.0,z=0.0\}\\
+\hline
+1.15.EC1.a & amount & Not a vector & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org0ce22d2}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{amount} &  & \\
+\hline
+1.15.TC1 & \{2.0,3.0,2.0\} & No output & 1.15.EC1.1\\
+\hline
+1.15.TC2 & \{1.0,1.0,1.0\} & No output & 1.15.EC1.2\\
+\hline
+1.15.TC3 & \{0.0,0.0,0.0\} & No output & 1.15.EC1.3\\
+\hline
+1.15.TC4* & 1 & Disallowed by type checker & 1.15.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::Translate(glm::vec3 offset)}
+\label{sec:org6ee01d0}
+
+\subsubsection{Equivalence Classes}
+\label{sec:org3f6b233}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\hline
+1.16.EC1.1 & amount & Any vector that is not the identity vector & \{x=2.0,y=3.0,z=2.0\}\\
+\hline
+1.16.EC1.2 & amount & The identity vector for addition & \{x=0.0,y=0.0,z=0.0\}\\
+\hline
+1.16.EC1.a & amount & Not a vector & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection{Test Cases}
+\label{sec:org3c9039a}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{amount} &  & \\
+\hline
+1.16.TC1 & \{2.0,3.0,2.0\} & No output & 1.16.EC1.1\\
+\hline
+1.16.TC2 & \{0.0,0.0,0.0\} & No output & 1.16.EC1.2\\
+\hline
+1.16.TC3 & 1 & Disallowed by type checker & 1.16.EC1.a\\
 \hline
 \end{tabularx}
 \end{center}

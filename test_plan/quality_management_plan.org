@@ -1,14 +1,15 @@
 #+LATEX_HEADER: \usepackage{tabularx}
 #+LATEX_HEADER: \usepackage[inkscapelatex=false]{svg}
-#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage[margin=0.25in]{geometry}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage{subcaption}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usepackage{booktabs}
+
 #+PROPERTY: header-args:plantuml :file-ext svg
 #+OPTIONS: toc:nil
 
-
-#+TOC: headlines 1
-
-
-
+#+TOC: headlines 2
 
 * Glossary and Conventions
 |--------+--------------|
@@ -21,6 +22,7 @@
 
 ** Light
 Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
+
 ** Component Under Test
 The focus of the testing will be limited to the `Transform` class due to time constraints. This class is used to build a tree structure representing a 3D scene, along with allowing pieces of C++ code (`Component`s) to be attached to nodes in this tree.  The vast majority of the other features of the engine rely on this class, so it is the most critical to test.  Additionally, it is known to have at least one flaw.
 
@@ -77,16 +79,363 @@ The focus of the testing will be limited to the `Transform` class due to time co
   @enduml
       
 #+END_SRC
+\newpage
+
+** Currently Known Flaw
+
+To illustrate the flaw, imagine a transform called "A" at the origin, with a transform "B" as its child, translated along the Y axis an arbitrary distance.  If the transform "A" is rotated about its Z axis, the child should follow the parent, such that it maintains its position and rotation relative to the parent. Instead, the child rotates independently.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw] at (0,0) {A};
+    \node[draw] at (0,3) {B};
+  \end{tikzpicture}
+  \caption{Initial setup, A is the parent of B}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw,rotate=-45] at (-3,0) {A};
+    \node[draw,rotate=-45] at (-0.9,2.12) {B};
+  \end{tikzpicture}
+  \caption{Intended result after 45 degree clockwise rotation of A}
+  \end{subfigure}
+  \hfill
+    \begin{subfigure}{0.30\textwidth}
+  \centering
+  \begin{tikzpicture}
+    \node[draw, rotate=-45] at (0,0) {A};
+    \node[draw, rotate=-45] at (0,3) {B};
+  \end{tikzpicture}
+  \caption{Actual result with current code}
+  \end{subfigure}
+\end{figure}
 
 * Quality Criteria
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
-|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
-| *Quality Property*     | *Definition*                                                         | *Metric* | *Criterion*                                                         |
-|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
-| Functional Correctness | Test cases yield the expected results anticipated during derivation  |          | 100% of test cases pass.                                            |
-|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
-| Fault Tolerance        | Software should run as intended even if invalid inputs are supplied. |          | All invalid test cases properly log invalid inputs and ignore them. |
-|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
-| Performance            |                                                                      |          |                                                                     |
-|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+|------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------|
+| *Quality Property*     | *Definition*                                                         | *Metric*                                                                      | *Criterion*                                                       |
+|------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------|
+| Functional Correctness | Test cases yield the expected results anticipated during derivation. | Number of test cases that pass.                                               | 90% of test cases pass.                                           |
+|------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------|
+| Fault Tolerance        | Software should run as intended even if invalid inputs are supplied. | Number of test cases that produce an unrecoverable error, such as a segfault. | All test cases properly recover from invalid inputs.              |
+|------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------|
+| Performance            | Software should run efficiently enough to allow smooth rendering.    | Time taken to update state and render a frame.                                | Average frame time is under 16ms (60 frames per second or higher) |
+|------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------------------------------------------|
+
+
+* transform.cpp
+
+** Transform::AddChild(Transform* tr)
+*** Specification
+#+BEGIN_SRC c++
+  /**
+   * Add a child transform to this transform
+   *
+   * If the desired child is already a child of this transform
+   * log a warning and ignore it
+   *
+   * @param tr the transform to add as a child
+   *
+   */
+  void AddChild(Transform *tr);
+
+#+END_SRC
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+--------------------+-------------------|
+| *Eq. Class ID* | *Param* | *Description*      | *Representative*  |
+|----------------+---------+--------------------+-------------------|
+| 1.1.EC1.1      | tr      | a valid pointer    | new Transform()   |
+|----------------+---------+--------------------+-------------------|
+| 1.1.EC1.a      | tr      | a null pointer     | nullptr           |
+|----------------+---------+--------------------+-------------------|
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-----------------------------------+--------------------|
+| *Test Case ID* | *Param.*                          | *Expected*         |
+|                | \textit{tr}                       |                    |
+|----------------+-----------------------------------+--------------------|
+| 1.1.TC1        | A pointer to some valid Transform | No output          |
+|----------------+-----------------------------------+--------------------|
+| 1.1.TC2        | nullptr                           | Error: log message |
+|----------------+-----------------------------------+--------------------|
+
+*** Test Implementation
+#+BEGIN_SRC c++ :tangle ../../src/test/transform_test.cpp
+  TEST_CASE("1.1.TC1") {
+
+    Transform* test_transform = new Transform();
+    Transform* child_transform = new Transform();
+
+    //redirect cout to a string so we can check for the error message
+    std::stringstream buffer;
+    std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+    test_transform->AddChild(child_transform);
+
+    std::cout.rdbuf(old_cout);
+    CHECK(buffer.str() == ""); //no output expected
+
+    delete child_transform;
+    delete test_transform;
+  }
+
+  TEST_CASE("1.1.TC2") {
+
+    Transform* test_transform = new Transform();
+    
+    std::stringstream buffer;
+    std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+    test_transform->AddChild(nullptr);
+
+    std::cout.rdbuf(old_cout);
+    CHECK(buffer.str() != ""); //some kind of log output expected    
+
+    delete test_transform;
+  }
+  
+#+END_SRC
+
+** Transform::AddComponent(Component* component)
+*** Specification
+#+BEGIN_SRC c++
+
+  /**
+   * Add a component to this transform
+   *
+   * If the supplied pointer is null, log error and ignore
+   * If the supplied pointer is not a component, log error and ignore
+   *
+   * @param component A pointer to the component to add
+   */  
+  void AddComponent(Component* component);
+#+END_SRC
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| *Eq. Class ID* | *Param*   | *Description*                                       | *Representative*    |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.1      | component | a valid pointer                                     | new TestComponent() |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.a      | component | a valid pointer to something other than a Component | new Transform()     |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.b      | component | an invalid pointer                                  | nullptr             |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------------------+-------------------------------+-------------------|
+| *Test Case ID* | *Param.*            | *Expected*                    | *Covered EQ Class |
+|                | \textit{tr}         |                               |                   |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC1        | new TestComponent() | No output                     | 1.2.EC1.1         |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC2        | new Transform()     | Error: log message and ignore | 1.2.EC1.a         |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC3        | nullptr             | Error: log message and ignore | 1.2.EC1.b         |
+|----------------+---------------------+-------------------------------+-------------------|
+
+** Transform::FindChildByName(std::string name)
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+------------------+------------------|
+| *Eq. Class ID* | *Param* | *Description*    | *Representative* |
+|----------------+---------+------------------+------------------|
+| 1.3.EC1.1      | name    | A string         | "string"         |
+|----------------+---------+------------------+------------------|
+| 1.3.EC1.a?     | name    | The empty string | ""               |
+|----------------+---------+------------------+------------------|
+| 1.3.EC1.b      | name    | Not a string     | 1                |
+|----------------+---------+------------------+------------------|
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------------+----------------------------------------------------------------------------|
+| *Test Case ID* | *Param.*      | *Expected*                                                                 |
+|                | \textit{name} |                                                                            |
+|----------------+---------------+----------------------------------------------------------------------------|
+| 1.1.TC1.1      | "string"      | nullptr                                                                    |
+|----------------+---------------+----------------------------------------------------------------------------|
+| 1.1.TC1.2      | ""            | nullptr                                                                    |
+|----------------+---------------+----------------------------------------------------------------------------|
+| 1.1.TC1.b      | 1             | This will be disallowed by type checking, so TC implementation is omitted. |
+|----------------+---------------+----------------------------------------------------------------------------|
+
+- The specification is unclear on whether the empty string is a valid name for a Transform, so I am assuming it is a valid transform name.
+
+** Transform::FindComponentByUID(uint64_t id)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+--------------------+------------------|
+| *Eq. Class ID* | *Param* | *Description*      | *Representative* |
+|----------------+---------+--------------------+------------------|
+| 1.4.EC1.1      | id      | A positive integer |                1 |
+|----------------+---------+--------------------+------------------|
+| 1.4.EC1.2      | id      | Zero               |                0 |
+|----------------+---------+--------------------+------------------|
+| 1.4.EC1.a      | id      | A negative integer |               -1 |
+|----------------+---------+--------------------+------------------|
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-------------+--------------------------------------------------------+-----------|
+| *Test Case ID* |    *Param.* | *Expected*                                             | Coverage  |
+|                | \textit{tr} |                                                        |           |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.4.TC1.1      |           1 | nullptr                                                | 1.4.EC1.1 |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.4.TC1.2      |           0 | nullptr                                                | 1.4.EC1.2 |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.4.TC1.a      |          -1 | Disallowed by type checking, TC implementation omitted | 1.4.EC1.a |
+|----------------+-------------+--------------------------------------------------------+-----------|
+
+- 1.1.TC1.a omitted, as it would be disallowed by the type checker.
+
+** Transform::FindTransformByUID(uint64_t id)
+
+*** Equivalence Classes
+Equivalence classes same as Transform::FindComponentByUID.
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-------------+--------------------------------------------------------+-----------|
+| *Test Case ID* |    *Param.* | *Expected*                                             | Coverage  |
+|                | \textit{tr} |                                                        |           |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.5.TC1.1      |           1 | nullptr                                                | 1.5.EC1.1 |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.5.TC1.2      |           0 | nullptr                                                | 1.5.EC1.2 |
+|----------------+-------------+--------------------------------------------------------+-----------|
+| 1.5.TC1.a      |          -1 | Disallowed by type checking, TC implementation omitted | 1.5.EC1.a |
+|----------------+-------------+--------------------------------------------------------+-----------|
+
+
+** Transform::GetComponent(std::string name)
+
+*** Equivalence Classes
+Possible issues with specification:
+- The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme as `FindComponentByName`.
+
+ The equivalence classes are the same as Transform::FindChildByName.
+
+** Transform::GetGlobalPosition()
+
+*** Equivalence Classes
+
+** Transform::GetGlobalRotation()
+
+*** Equivalence Classes
+Equivalence classes same as Transform::GetGlobalPosition.
+
+** Transform::GetGlobalScale()
+
+*** Equivalence Classes
+Equivalence classes same as Transform::GetGlobalScale.
+
+
+** Transform::Rotate(glm::vec3 axis, float amount)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+--------------------------------------+---------------------|
+| *Eq. Class ID* | *Param* | *Description*                        | *Representative*    |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC1.1     | axis    | axis is a vector with nonzero length | {1.0,0.0,0.0}       |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC1.a     | axis    | axis is a vector with zero length    | {0.0,0.0,0.0}       |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC1.b     | axis    | axis is not a vector                 | 1                   |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC2.1     | amount  | amount is a float                    | 90.0f               |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC2.2     | amount  | amount is an integer                 | 90                  |
+|----------------+---------+--------------------------------------+---------------------|
+| 1.14.EC2.a     | amount  | amount is not a number               | "90"                |
+|----------------+---------+--------------------------------------+---------------------|
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXXX :hline \hline
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| *Test Case ID* | *Param.*      |                 | *Expected*                 | Additional Coverage |
+|                | \textit{axis} | \textit{amount} |                            |                     |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| 1.14.TC1       | {1.0,0.0,0.0} | 90.0f           | No output                  | 1.14.EC1.1          |
+|                |               |                 |                            | 1.14.EC2.1          |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| 1.14.TC2       | {1.0,0.0,0.0} | 90              | No output                  | 1.14.EC2.2          |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| 1.14.TC3       | {0.0,0.0,0.0} | 90.0f           | Error: log message         | 1.14.EC1.a          |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| 1.14.TC4*      | 1             | 90.0f           | Disallowed by type checker | 1.14.EC1.b          |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+| 1.14.TC5*      | {1.0,0.0,0.0} | "90"            | Disallowed by type checker | 1.14.EC2.a          |
+|----------------+---------------+-----------------+----------------------------+---------------------|
+
+** Transform::Scale(glm::vec3 amount)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+| *Eq. Class ID* | *Param* | *Description*                                                                                 | *Representative*    |
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+| 1.15.EC1.1     | amount  | Any vector other than the zero vector or the identity vector of component-wise multiplication | {x=2.0,y=3.0,z=2.0} |
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+| 1.15.EC1.2     | amount  | The identity element of component-wise multiplication                                         | {x=1.0,y=1.0,z=1.0} |
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+| 1.15.EC1.3     | amount  | The zero vector                                                                               | {x=0.0,y=0.0,z=0.0} |
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+| 1.15.EC1.a     | amount  | Not a vector                                                                                  | 1                   |
+|----------------+---------+-----------------------------------------------------------------------------------------------+---------------------|
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-----------------+----------------------------+------------|
+| *Test Case ID* | *Param.*        | *Expected*                 | Coverage   |
+|                | \textit{amount} |                            |            |
+|----------------+-----------------+----------------------------+------------|
+| 1.15.TC1       | {2.0,3.0,2.0}   | No output                  | 1.15.EC1.1 |
+|----------------+-----------------+----------------------------+------------|
+| 1.15.TC2       | {1.0,1.0,1.0}   | No output                  | 1.15.EC1.2 |
+|----------------+-----------------+----------------------------+------------|
+| 1.15.TC3       | {0.0,0.0,0.0}   | No output                  | 1.15.EC1.3 |
+|----------------+-----------------+----------------------------+------------|
+| 1.15.TC4*      | 1               | Disallowed by type checker | 1.15.EC1.a |
+|----------------+-----------------+----------------------------+------------|
+
+
+
+** Transform::Translate(glm::vec3 offset)
+
+*** Equivalence Classes
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+---------+--------------------------------------------+---------------------|
+| *Eq. Class ID* | *Param* | *Description*                              | *Representative*    |
+|----------------+---------+--------------------------------------------+---------------------|
+| 1.16.EC1.1     | amount  | Any vector that is not the identity vector | {x=2.0,y=3.0,z=2.0} |
+|----------------+---------+--------------------------------------------+---------------------|
+| 1.16.EC1.2     | amount  | The identity vector for addition           | {x=0.0,y=0.0,z=0.0} |
+|----------------+---------+--------------------------------------------+---------------------|
+| 1.16.EC1.a     | amount  | Not a vector                               | 1                   |
+|----------------+---------+--------------------------------------------+---------------------|
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------------+-----------------+----------------------------+------------|
+| *Test Case ID* | *Param.*        | *Expected*                 | Coverage   |
+|                | \textit{amount} |                            |            |
+|----------------+-----------------+----------------------------+------------|
+| 1.16.TC1       | {2.0,3.0,2.0}   | No output                  | 1.16.EC1.1 |
+|----------------+-----------------+----------------------------+------------|
+| 1.16.TC2       | {0.0,0.0,0.0}   | No output                  | 1.16.EC1.2 |
+|----------------+-----------------+----------------------------+------------|
+| 1.16.TC3       | 1               | Disallowed by type checker | 1.16.EC1.a |
+|----------------+-----------------+----------------------------+------------|
+
 

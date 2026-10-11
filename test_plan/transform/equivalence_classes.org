@@ -38,7 +38,7 @@
 |----------------+-----------------------------------+--------------------|
 | 1.1.TC1        | A pointer to some valid Transform | No output          |
 |----------------+-----------------------------------+--------------------|
-| 1.1.TC1a       | nullptr                           | Error: log message |
+| 1.1.TC2        | nullptr                           | Error: log message |
 |----------------+-----------------------------------+--------------------|
 
 *** Test Implementation
@@ -79,26 +79,44 @@
 #+END_SRC
 
 ** Transform::AddComponent(Component* component)
+*** Specification
+#+BEGIN_SRC c++
+
+  /**
+   * Add a component to this transform
+   *
+   * If the supplied pointer is null, log error and ignore
+   * If the supplied pointer is not a component, log error and ignore
+   *
+   * @param component A pointer to the component to add
+   */  
+  void AddComponent(Component* component);
+#+END_SRC
+
 *** Equivalence Classes
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
-|----------------+-----------+--------------------+------------------|
-| *Eq. Class ID* | *Param*   | *Description*      | *Representative* |
-|----------------+-----------+--------------------+------------------|
-| 1.2.EC1.1      | component | a valid pointer    | new Component()  |
-|----------------+-----------+--------------------+------------------|
-| 1.2.EC1.a      | component | an invalid pointer | nullptr          |
-|----------------+-----------+--------------------+------------------|
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| *Eq. Class ID* | *Param*   | *Description*                                       | *Representative*    |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.1      | component | a valid pointer                                     | new TestComponent() |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.a      | component | a valid pointer to something other than a Component | new Transform()     |
+|----------------+-----------+-----------------------------------------------------+---------------------|
+| 1.2.EC1.b      | component | an invalid pointer                                  | nullptr             |
+|----------------+-----------+-----------------------------------------------------+---------------------|
 
 *** Test Cases
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
-|----------------+-----------------------------------+-------------------------------|
-| *Test Case ID* | *Param.*                          | *Expected*                    |
-|                | \textit{tr}                       |                               |
-|----------------+-----------------------------------+-------------------------------|
-| 1.1.TC1        | A pointer to some valid Transform | No output                     |
-|----------------+-----------------------------------+-------------------------------|
-| 1.1.TC1a       | nullptr                           | Error: log message and ignore |
-|----------------+-----------------------------------+-------------------------------|
+|----------------+---------------------+-------------------------------+-------------------|
+| *Test Case ID* | *Param.*            | *Expected*                    | *Covered EQ Class |
+|                | \textit{tr}         |                               |                   |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC1        | new TestComponent() | No output                     | 1.2.EC1.1         |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC2        | new Transform()     | Error: log message and ignore | 1.2.EC1.a         |
+|----------------+---------------------+-------------------------------+-------------------|
+| 1.2.TC3        | nullptr             | Error: log message and ignore | 1.2.EC1.b         |
+|----------------+---------------------+-------------------------------+-------------------|
 
 ** Transform::FindChildByName(std::string name)
 *** Equivalence Classes
@@ -120,12 +138,12 @@
 |----------------+---------------+----------------------------------------------------------------------------|
 | 1.1.TC1.1      | "string"      | nullptr                                                                    |
 |----------------+---------------+----------------------------------------------------------------------------|
-| 1.1.TC1.a?     | ""            | ???                                                                        |
+| 1.1.TC1.2      | ""            | nullptr                                                                    |
 |----------------+---------------+----------------------------------------------------------------------------|
 | 1.1.TC1.b      | 1             | This will be disallowed by type checking, so TC implementation is omitted. |
 |----------------+---------------+----------------------------------------------------------------------------|
 
-- The specification is unclear on whether the empty string is a valid name for a Transform
+- The specification is unclear on whether the empty string is a valid name for a Transform, so I am assuming it is a valid transform name.
 
 ** Transform::FindComponentByUID(uint64_t id)
 
@@ -174,10 +192,6 @@ Equivalence classes same as Transform::FindComponentByUID.
 | 1.5.TC1.a      |          -1 | Disallowed by type checking, TC implementation omitted | 1.5.EC1.a |
 |----------------+-------------+--------------------------------------------------------+-----------|
 
-** Transform::GetChildren()
-
-*** Equivalence Classes
-Returns an instance variable that will always be valid.
 
 ** Transform::GetComponent(std::string name)
 
@@ -190,14 +204,7 @@ Possible issues with specification:
 ** Transform::GetGlobalPosition()
 
 *** Equivalence Classes
-#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
-|----------------+-------------------+------------------------------+------------------|
-| *Eq. Class ID* | *Param*           | *Description*                | *Representative* |
-|----------------+-------------------+------------------------------+------------------|
-| 1.8.EC1.1      | parent (implicit) | parent is an invalid pointer | nullptr          |
-|----------------+-------------------+------------------------------+------------------|
-| 1.8.EC1.2      | parent (implicit) | parent is a valid pointer    | new Transform()  |
-|----------------+-------------------+------------------------------+------------------|
+
 ** Transform::GetGlobalRotation()
 
 *** Equivalence Classes
@@ -208,20 +215,6 @@ Equivalence classes same as Transform::GetGlobalPosition.
 *** Equivalence Classes
 Equivalence classes same as Transform::GetGlobalScale.
 
-** Transform::GetLocalPosition()
-
-*** Equivalence Classes
-This is a simple getter and only exposes a field.
-
-** Transform::GetLocalRotation()
-
-*** Equivalence Classes
-This is a simple getter and only exposes a field.
-
-** Transform::GetLocalScale()
-
-*** Equivalence Classes
-This is a simple getter and only exposes a field.
 
 ** Transform::Rotate(glm::vec3 axis, float amount)
 
@@ -320,23 +313,3 @@ This is a simple getter and only exposes a field.
 |----------------+-----------------+----------------------------+------------|
 | 1.16.TC3       | 1               | Disallowed by type checker | 1.16.EC1.a |
 |----------------+-----------------+----------------------------+------------|
-
-** Transform::Forward()
-*** Equivalence Classes
-Method has no parameters.
-** Transform::Backward()
-*** Equivalence Classes
-Method has no parameters.
-** Transform::Left()
-*** Equivalence Classes
-Method has no parameters.
-** Transform::Right()
-*** Equivalence Classes
-Method has no parameters.
-** Transform::Up()
-*** Equivalence Classes
-Method has no parameters.
-** Transform::Down()
-*** Equivalence Classes
-Method has no parameters.
-

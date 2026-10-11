@@ -83,8 +83,11 @@ public:
    */  
   void ProcessInit();
 
-  /**
+   /**
    * Add a component to this transform
+   *
+   * If the supplied pointer is null, log error and ignore
+   * If the supplied pointer is not a component, log error and ignore
    *
    * @param component A pointer to the component to add
    */  

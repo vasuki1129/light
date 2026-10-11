@@ -1,4 +1,4 @@
-% Created 2026-10-02 Fri 01:40
+% Created 2026-10-11 Sun 16:13
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 
@@ -13,7 +13,6 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
-\usepackage{minted}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage[margin=0.75in]{geometry}
@@ -32,13 +31,13 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 \section{transform.cpp}
-\label{sec:orge2f6a6a}
+\label{sec:orgf2b9a9a}
 
 \subsection{Transform::AddChild(Transform* tr)}
-\label{sec:org3c2db77}
+\label{sec:org97b054c}
 \subsubsection*{Specification}
-\label{sec:org06b11fc}
-\begin{minted}[]{c++}
+\label{sec:orgbd688dd}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
 /**
  * Add a child transform to this transform
  *
@@ -52,7 +51,7 @@ void AddChild(Transform *tr);
 
 \end{minted}
 \subsubsection*{Equivalence Classes}
-\label{sec:org0425f75}
+\label{sec:org93c335f}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -65,7 +64,7 @@ void AddChild(Transform *tr);
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org17595b1}
+\label{sec:orgf5a1e24}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -74,13 +73,13 @@ void AddChild(Transform *tr);
 \hline
 1.1.TC1 & A pointer to some valid Transform & No output\\
 \hline
-1.1.TC1a & nullptr & Error: log message\\
+1.1.TC2 & nullptr & Error: log message\\
 \hline
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:org9af301f}
-\begin{minted}[]{c++}
+\label{sec:org8113c33}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
 TEST_CASE("1.1.TC1") {
 
   Transform* test_transform = new Transform();
@@ -116,38 +115,56 @@ TEST_CASE("1.1.TC2") {
 
 \end{minted}
 \subsection{Transform::AddComponent(Component* component)}
-\label{sec:orgbd75e50}
+\label{sec:orga144f2b}
+\subsubsection*{Specification}
+\label{sec:org1a52272}
+\begin{minted}[breaklines=true,breakanywhere=true,fontsize=\small]{c++}
+
+/**
+ * Add a component to this transform
+ *
+ * If the supplied pointer is null, log error and ignore
+ * If the supplied pointer is not a component, log error and ignore
+ *
+ * @param component A pointer to the component to add
+ */  
+void AddComponent(Component* component);
+\end{minted}
 \subsubsection*{Equivalence Classes}
-\label{sec:org22e758c}
+\label{sec:org4fc956e}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.2.EC1.1 & component & a valid pointer & new Component()\\
+1.2.EC1.1 & component & a valid pointer & new TestComponent()\\
 \hline
-1.2.EC1.a & component & an invalid pointer & nullptr\\
+1.2.EC1.a & component & a valid pointer to something other than a Component & new Transform()\\
+\hline
+1.2.EC1.b & component & an invalid pointer & nullptr\\
 \hline
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org250c1c3}
+\label{sec:orga9c85fa}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
-\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
- & \textit{tr} & \\
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & *Covered EQ Class\\
+ & \textit{tr} &  & \\
 \hline
-1.1.TC1 & A pointer to some valid Transform & No output\\
+1.2.TC1 & new TestComponent() & No output & 1.2.EC1.1\\
 \hline
-1.1.TC1a & nullptr & Error: log message and ignore\\
+1.2.TC2 & new Transform() & Error: log message and ignore & 1.2.EC1.a\\
+\hline
+1.2.TC3 & nullptr & Error: log message and ignore & 1.2.EC1.b\\
 \hline
 \end{tabularx}
 \end{center}
 \subsection{Transform::FindChildByName(std::string name)}
-\label{sec:org56dc0ce}
+\label{sec:orgab10137}
 \subsubsection*{Equivalence Classes}
-\label{sec:orgdd533cb}
+\label{sec:orgd8ce0a0}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -162,7 +179,7 @@ TEST_CASE("1.1.TC2") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:orgd503e7f}
+\label{sec:orgf16f02d}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -171,7 +188,7 @@ TEST_CASE("1.1.TC2") {
 \hline
 1.1.TC1.1 & "string" & nullptr\\
 \hline
-1.1.TC1.a? & "" & ???\\
+1.1.TC1.2 & "" & nullptr\\
 \hline
 1.1.TC1.b & 1 & This will be disallowed by type checking, so TC implementation is omitted.\\
 \hline
@@ -179,13 +196,13 @@ TEST_CASE("1.1.TC2") {
 \end{center}
 
 \begin{itemize}
-\item The specification is unclear on whether the empty string is a valid name for a Transform
+\item The specification is unclear on whether the empty string is a valid name for a Transform, so I am assuming it is a valid transform name.
 \end{itemize}
 \subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
-\label{sec:org0949d44}
+\label{sec:org2d04288}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org88dc3bc}
+\label{sec:orgcd78968}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -200,7 +217,7 @@ TEST_CASE("1.1.TC2") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org1e94503}
+\label{sec:org4e090db}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -220,13 +237,13 @@ TEST_CASE("1.1.TC2") {
 \item 1.1.TC1.a omitted, as it would be disallowed by the type checker.
 \end{itemize}
 \subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
-\label{sec:org2b45b33}
+\label{sec:org509a155}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org5471068}
+\label{sec:org70c832f}
 Equivalence classes same as Transform::FindComponentByUID.
 \subsubsection*{Test Cases}
-\label{sec:orgc25a673}
+\label{sec:org3a25389}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -241,17 +258,11 @@ Equivalence classes same as Transform::FindComponentByUID.
 \hline
 \end{tabularx}
 \end{center}
-\subsection{Transform::GetChildren()}
-\label{sec:orgc4c45b5}
-
-\subsubsection*{Equivalence Classes}
-\label{sec:org545d157}
-Returns an instance variable that will always be valid.
 \subsection{Transform::GetComponent(std::string name)}
-\label{sec:org7c1c059}
+\label{sec:orgd00d5e4}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org5971dbe}
+\label{sec:orgac6308a}
 Possible issues with specification:
 \begin{itemize}
 \item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme as `FindComponentByName`.
@@ -259,56 +270,27 @@ Possible issues with specification:
 The equivalence classes are the same as Transform::FindChildByName.
 \end{itemize}
 \subsection{Transform::GetGlobalPosition()}
-\label{sec:orgd491cdb}
+\label{sec:org9ac7cf9}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org8b85199}
-\begin{center}
-\begin{tabularx}{\textwidth}{lXXX}
-\hline
-\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
-\hline
-1.8.EC1.1 & parent (implicit) & parent is an invalid pointer & nullptr\\
-\hline
-1.8.EC1.2 & parent (implicit) & parent is a valid pointer & new Transform()\\
-\hline
-\end{tabularx}
-\end{center}
+\label{sec:org870d2e9}
 \subsection{Transform::GetGlobalRotation()}
-\label{sec:orgf49063b}
+\label{sec:orgcda697f}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:orgea8ecb8}
+\label{sec:orgede1bd1}
 Equivalence classes same as Transform::GetGlobalPosition.
 \subsection{Transform::GetGlobalScale()}
-\label{sec:orgaca46ea}
+\label{sec:org3ae0441}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org2c3b1d9}
+\label{sec:orge975a93}
 Equivalence classes same as Transform::GetGlobalScale.
-\subsection{Transform::GetLocalPosition()}
-\label{sec:org7340154}
-
-\subsubsection*{Equivalence Classes}
-\label{sec:org91eb789}
-This is a simple getter and only exposes a field.
-\subsection{Transform::GetLocalRotation()}
-\label{sec:org8b4ec90}
-
-\subsubsection*{Equivalence Classes}
-\label{sec:org7a4ee44}
-This is a simple getter and only exposes a field.
-\subsection{Transform::GetLocalScale()}
-\label{sec:orgfa8bf17}
-
-\subsubsection*{Equivalence Classes}
-\label{sec:org22d37d7}
-This is a simple getter and only exposes a field.
 \subsection{Transform::Rotate(glm::vec3 axis, float amount)}
-\label{sec:org3534dca}
+\label{sec:org3db331e}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org4beac2b}
+\label{sec:org121c7ac}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -329,7 +311,7 @@ This is a simple getter and only exposes a field.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org5ea806a}
+\label{sec:org3018579}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXXX}
 \hline
@@ -350,10 +332,10 @@ This is a simple getter and only exposes a field.
 \end{tabularx}
 \end{center}
 \subsection{Transform::Scale(glm::vec3 amount)}
-\label{sec:org6f4bf9f}
+\label{sec:org72e55ac}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org2be11be}
+\label{sec:org8aed2c0}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -370,7 +352,7 @@ This is a simple getter and only exposes a field.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:orgbbac659}
+\label{sec:orgc52b0e2}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -388,10 +370,10 @@ This is a simple getter and only exposes a field.
 \end{tabularx}
 \end{center}
 \subsection{Transform::Translate(glm::vec3 offset)}
-\label{sec:org089e5a5}
+\label{sec:orgf9a1e2e}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org5c8e452}
+\label{sec:org74dbeef}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -406,7 +388,7 @@ This is a simple getter and only exposes a field.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org32d385f}
+\label{sec:org9947f59}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -421,34 +403,4 @@ This is a simple getter and only exposes a field.
 \hline
 \end{tabularx}
 \end{center}
-\subsection{Transform::Forward()}
-\label{sec:org08bc334}
-\subsubsection*{Equivalence Classes}
-\label{sec:org75c82d4}
-Method has no parameters.
-\subsection{Transform::Backward()}
-\label{sec:org85db5c5}
-\subsubsection*{Equivalence Classes}
-\label{sec:org110166a}
-Method has no parameters.
-\subsection{Transform::Left()}
-\label{sec:org496847e}
-\subsubsection*{Equivalence Classes}
-\label{sec:org8e47aae}
-Method has no parameters.
-\subsection{Transform::Right()}
-\label{sec:org2b8c158}
-\subsubsection*{Equivalence Classes}
-\label{sec:org94406d0}
-Method has no parameters.
-\subsection{Transform::Up()}
-\label{sec:org54f4a5b}
-\subsubsection*{Equivalence Classes}
-\label{sec:org07dd1c7}
-Method has no parameters.
-\subsection{Transform::Down()}
-\label{sec:org2a98043}
-\subsubsection*{Equivalence Classes}
-\label{sec:orgf330b6c}
-Method has no parameters.
 \end{document}
