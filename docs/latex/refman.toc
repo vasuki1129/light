@@ -1,0 +1,584 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Namespace Index}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Namespace List}{5}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Hierarchical Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class Hierarchy}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Index}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Class List}{9}{section.4.1}%
+\contentsline {chapter}{\numberline {5}File Index}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}File List}{11}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Directory Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine Directory Reference}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}src Directory Reference}{14}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Namespace Documentation}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}engine Namespace Reference}{15}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Typedef Documentation}{17}{subsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.1}ConfigValue}{17}{subsubsection.7.1.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1.2}ScriptData}{17}{subsubsection.7.1.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.1.3}Uniform}{17}{subsubsection.7.1.1.3}%
+\contentsline {subsection}{\numberline {7.1.2}Enumeration Type Documentation}{17}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}KeyState}{17}{subsubsection.7.1.2.1}%
+\contentsline {subsection}{\numberline {7.1.3}Function Documentation}{17}{subsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.1}CreateEngine()}{17}{subsubsection.7.1.3.1}%
+\contentsline {subsubsection}{\numberline {7.1.3.2}Engine()}{17}{subsubsection.7.1.3.2}%
+\contentsline {subsubsection}{\numberline {7.1.3.3}FACTORY()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{18}{subsubsection.7.1.3.3}%
+\contentsline {subsubsection}{\numberline {7.1.3.4}FACTORY()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{18}{subsubsection.7.1.3.4}%
+\contentsline {subsubsection}{\numberline {7.1.3.5}FACTORY()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{18}{subsubsection.7.1.3.5}%
+\contentsline {subsubsection}{\numberline {7.1.3.6}FACTORY\_DEF()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.7.1.3.6}%
+\contentsline {subsubsection}{\numberline {7.1.3.7}FACTORY\_DEF()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.7.1.3.7}%
+\contentsline {subsubsection}{\numberline {7.1.3.8}GetModel()}{18}{subsubsection.7.1.3.8}%
+\contentsline {subsubsection}{\numberline {7.1.3.9}init()}{18}{subsubsection.7.1.3.9}%
+\contentsline {subsubsection}{\numberline {7.1.3.10}InputHandlerKeyCallback()}{18}{subsubsection.7.1.3.10}%
+\contentsline {subsubsection}{\numberline {7.1.3.11}InputHandlerMouseButtonCallback()}{19}{subsubsection.7.1.3.11}%
+\contentsline {subsubsection}{\numberline {7.1.3.12}InputHandlerMousePositionCallback()}{19}{subsubsection.7.1.3.12}%
+\contentsline {subsubsection}{\numberline {7.1.3.13}MakeKeyval()}{19}{subsubsection.7.1.3.13}%
+\contentsline {subsubsection}{\numberline {7.1.3.14}MessageCallback()}{19}{subsubsection.7.1.3.14}%
+\contentsline {subsubsection}{\numberline {7.1.3.15}TestRayOBBIntersection()}{19}{subsubsection.7.1.3.15}%
+\contentsline {subsubsection}{\numberline {7.1.3.16}tick()}{19}{subsubsection.7.1.3.16}%
+\contentsline {subsubsection}{\numberline {7.1.3.17}trim\_str()}{20}{subsubsection.7.1.3.17}%
+\contentsline {subsubsection}{\numberline {7.1.3.18}window\_size\_callback()}{20}{subsubsection.7.1.3.18}%
+\contentsline {subsection}{\numberline {7.1.4}Variable Documentation}{20}{subsection.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.1.4.1}instance}{20}{subsubsection.7.1.4.1}%
+\contentsline {subsubsection}{\numberline {7.1.4.2}modelCache}{20}{subsubsection.7.1.4.2}%
+\contentsline {subsubsection}{\numberline {7.1.4.3}quad\_data}{20}{subsubsection.7.1.4.3}%
+\contentsline {subsubsection}{\numberline {7.1.4.4}window\_h}{20}{subsubsection.7.1.4.4}%
+\contentsline {subsubsection}{\numberline {7.1.4.5}window\_w}{20}{subsubsection.7.1.4.5}%
+\contentsline {section}{\numberline {7.2}engine::editor Namespace Reference}{21}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Enumeration Type Documentation}{21}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}PrefsPage}{21}{subsubsection.7.2.1.1}%
+\contentsline {subsection}{\numberline {7.2.2}Function Documentation}{21}{subsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.2.1}saveBrowser()}{21}{subsubsection.7.2.2.1}%
+\contentsline {subsection}{\numberline {7.2.3}Variable Documentation}{22}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}actions\_vis}{22}{subsubsection.7.2.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.3.2}asset\_panel\_vis}{22}{subsubsection.7.2.3.2}%
+\contentsline {subsubsection}{\numberline {7.2.3.3}current\_page}{22}{subsubsection.7.2.3.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.4}debug\_panel\_vis}{22}{subsubsection.7.2.3.4}%
+\contentsline {subsubsection}{\numberline {7.2.3.5}fps\_smooth\_samples}{22}{subsubsection.7.2.3.5}%
+\contentsline {subsubsection}{\numberline {7.2.3.6}hierarchy\_vis}{22}{subsubsection.7.2.3.6}%
+\contentsline {subsubsection}{\numberline {7.2.3.7}inspector\_vis}{22}{subsubsection.7.2.3.7}%
+\contentsline {subsubsection}{\numberline {7.2.3.8}loadBrowser}{22}{subsubsection.7.2.3.8}%
+\contentsline {subsubsection}{\numberline {7.2.3.9}preferences\_vis}{22}{subsubsection.7.2.3.9}%
+\contentsline {subsubsection}{\numberline {7.2.3.10}scene\_load\_menu\_open}{22}{subsubsection.7.2.3.10}%
+\contentsline {section}{\numberline {7.3}engine::gui Namespace Reference}{23}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Function Documentation}{23}{subsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.1.1}TextCentered()}{23}{subsubsection.7.3.1.1}%
+\contentsline {chapter}{\numberline {8}Class Documentation}{25}{chapter.8}%
+\contentsline {section}{\numberline {8.1}engine::Asset Class Reference}{25}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Member Function Documentation}{25}{subsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.1.1}GetName()}{25}{subsubsection.8.1.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.1.2}GetPath()}{26}{subsubsection.8.1.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.1.3}IsValid()}{26}{subsubsection.8.1.1.3}%
+\contentsline {subsubsection}{\numberline {8.1.1.4}SetName()}{26}{subsubsection.8.1.1.4}%
+\contentsline {subsubsection}{\numberline {8.1.1.5}SetPath()}{26}{subsubsection.8.1.1.5}%
+\contentsline {subsection}{\numberline {8.1.2}Member Data Documentation}{26}{subsection.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.1}name}{26}{subsubsection.8.1.2.1}%
+\contentsline {subsubsection}{\numberline {8.1.2.2}path}{26}{subsubsection.8.1.2.2}%
+\contentsline {subsubsection}{\numberline {8.1.2.3}valid}{26}{subsubsection.8.1.2.3}%
+\contentsline {section}{\numberline {8.2}engine::Asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{26}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Member Function Documentation}{27}{subsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.1.1}GetMaterialOrNull()}{27}{subsubsection.8.2.1.1}%
+\contentsline {subsubsection}{\numberline {8.2.1.2}GetMeshOrNull()}{27}{subsubsection.8.2.1.2}%
+\contentsline {subsubsection}{\numberline {8.2.1.3}GetShaderOrNull()}{27}{subsubsection.8.2.1.3}%
+\contentsline {subsubsection}{\numberline {8.2.1.4}GetSoundOrNull()}{27}{subsubsection.8.2.1.4}%
+\contentsline {subsubsection}{\numberline {8.2.1.5}GetTextureOrNull()}{27}{subsubsection.8.2.1.5}%
+\contentsline {subsubsection}{\numberline {8.2.1.6}Rescan()}{28}{subsubsection.8.2.1.6}%
+\contentsline {subsection}{\numberline {8.2.2}Member Data Documentation}{28}{subsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.2.1}loaded\_materials}{28}{subsubsection.8.2.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2.2}loaded\_meshes}{28}{subsubsection.8.2.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.2.3}loaded\_models}{28}{subsubsection.8.2.2.3}%
+\contentsline {subsubsection}{\numberline {8.2.2.4}loaded\_shaders}{28}{subsubsection.8.2.2.4}%
+\contentsline {subsubsection}{\numberline {8.2.2.5}loaded\_sounds}{28}{subsubsection.8.2.2.5}%
+\contentsline {subsubsection}{\numberline {8.2.2.6}loaded\_textures}{28}{subsubsection.8.2.2.6}%
+\contentsline {section}{\numberline {8.3}Base\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Uniforms Struct Reference}{28}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Member Data Documentation}{29}{subsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.1.1}camera}{29}{subsubsection.8.3.1.1}%
+\contentsline {subsubsection}{\numberline {8.3.1.2}model}{29}{subsubsection.8.3.1.2}%
+\contentsline {section}{\numberline {8.4}engine::Camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Class Reference}{29}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Constructor \& Destructor Documentation}{30}{subsection.8.4.1}%
+\contentsline {subsubsection}{\numberline {8.4.1.1}CameraComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{30}{subsubsection.8.4.1.1}%
+\contentsline {subsubsection}{\numberline {8.4.1.2}CameraComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{30}{subsubsection.8.4.1.2}%
+\contentsline {subsubsection}{\numberline {8.4.1.3}$\sim $CameraComponent()}{30}{subsubsection.8.4.1.3}%
+\contentsline {subsection}{\numberline {8.4.2}Member Function Documentation}{30}{subsection.8.4.2}%
+\contentsline {subsubsection}{\numberline {8.4.2.1}DrawWidget()}{30}{subsubsection.8.4.2.1}%
+\contentsline {subsubsection}{\numberline {8.4.2.2}GetCameraMatrix()}{31}{subsubsection.8.4.2.2}%
+\contentsline {subsubsection}{\numberline {8.4.2.3}Load()}{31}{subsubsection.8.4.2.3}%
+\contentsline {subsubsection}{\numberline {8.4.2.4}Save()}{31}{subsubsection.8.4.2.4}%
+\contentsline {subsubsection}{\numberline {8.4.2.5}ScreenPointToRay()}{31}{subsubsection.8.4.2.5}%
+\contentsline {subsubsection}{\numberline {8.4.2.6}tick()}{31}{subsubsection.8.4.2.6}%
+\contentsline {section}{\numberline {8.5}engine::Component Class Reference}{31}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Constructor \& Destructor Documentation}{32}{subsection.8.5.1}%
+\contentsline {subsubsection}{\numberline {8.5.1.1}Component()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{32}{subsubsection.8.5.1.1}%
+\contentsline {subsubsection}{\numberline {8.5.1.2}Component()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{32}{subsubsection.8.5.1.2}%
+\contentsline {subsubsection}{\numberline {8.5.1.3}$\sim $Component()}{32}{subsubsection.8.5.1.3}%
+\contentsline {subsection}{\numberline {8.5.2}Member Function Documentation}{32}{subsection.8.5.2}%
+\contentsline {subsubsection}{\numberline {8.5.2.1}begin\_play()}{32}{subsubsection.8.5.2.1}%
+\contentsline {subsubsection}{\numberline {8.5.2.2}ComponentDisplay()}{33}{subsubsection.8.5.2.2}%
+\contentsline {subsubsection}{\numberline {8.5.2.3}destroy()}{33}{subsubsection.8.5.2.3}%
+\contentsline {subsubsection}{\numberline {8.5.2.4}DrawWidget()}{33}{subsubsection.8.5.2.4}%
+\contentsline {subsubsection}{\numberline {8.5.2.5}editor\_render()}{33}{subsubsection.8.5.2.5}%
+\contentsline {subsubsection}{\numberline {8.5.2.6}end\_play()}{33}{subsubsection.8.5.2.6}%
+\contentsline {subsubsection}{\numberline {8.5.2.7}GetName()}{33}{subsubsection.8.5.2.7}%
+\contentsline {subsubsection}{\numberline {8.5.2.8}GetOwner()}{33}{subsubsection.8.5.2.8}%
+\contentsline {subsubsection}{\numberline {8.5.2.9}GetUID()}{33}{subsubsection.8.5.2.9}%
+\contentsline {subsubsection}{\numberline {8.5.2.10}init()}{33}{subsubsection.8.5.2.10}%
+\contentsline {subsubsection}{\numberline {8.5.2.11}Load()}{34}{subsubsection.8.5.2.11}%
+\contentsline {subsubsection}{\numberline {8.5.2.12}render()}{34}{subsubsection.8.5.2.12}%
+\contentsline {subsubsection}{\numberline {8.5.2.13}Save()}{34}{subsubsection.8.5.2.13}%
+\contentsline {subsubsection}{\numberline {8.5.2.14}SetOwner()}{34}{subsubsection.8.5.2.14}%
+\contentsline {subsubsection}{\numberline {8.5.2.15}tick()}{34}{subsubsection.8.5.2.15}%
+\contentsline {subsection}{\numberline {8.5.3}Member Data Documentation}{34}{subsection.8.5.3}%
+\contentsline {subsubsection}{\numberline {8.5.3.1}component\_type}{34}{subsubsection.8.5.3.1}%
+\contentsline {subsubsection}{\numberline {8.5.3.2}name}{34}{subsubsection.8.5.3.2}%
+\contentsline {subsubsection}{\numberline {8.5.3.3}owner}{35}{subsubsection.8.5.3.3}%
+\contentsline {subsubsection}{\numberline {8.5.3.4}uid}{35}{subsubsection.8.5.3.4}%
+\contentsline {section}{\numberline {8.6}engine::Editor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Class Reference}{35}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}Constructor \& Destructor Documentation}{36}{subsection.8.6.1}%
+\contentsline {subsubsection}{\numberline {8.6.1.1}EditorCameraComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{36}{subsubsection.8.6.1.1}%
+\contentsline {subsubsection}{\numberline {8.6.1.2}EditorCameraComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{36}{subsubsection.8.6.1.2}%
+\contentsline {subsubsection}{\numberline {8.6.1.3}$\sim $EditorCameraComponent()}{36}{subsubsection.8.6.1.3}%
+\contentsline {subsection}{\numberline {8.6.2}Member Function Documentation}{37}{subsection.8.6.2}%
+\contentsline {subsubsection}{\numberline {8.6.2.1}DrawWidget()}{37}{subsubsection.8.6.2.1}%
+\contentsline {subsubsection}{\numberline {8.6.2.2}Load()}{37}{subsubsection.8.6.2.2}%
+\contentsline {subsubsection}{\numberline {8.6.2.3}Save()}{37}{subsubsection.8.6.2.3}%
+\contentsline {subsubsection}{\numberline {8.6.2.4}tick()}{37}{subsubsection.8.6.2.4}%
+\contentsline {subsection}{\numberline {8.6.3}Member Data Documentation}{37}{subsection.8.6.3}%
+\contentsline {subsubsection}{\numberline {8.6.3.1}movement\_speed}{37}{subsubsection.8.6.3.1}%
+\contentsline {section}{\numberline {8.7}engine::editor::Editor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Instance Class Reference}{37}{section.8.7}%
+\contentsline {subsection}{\numberline {8.7.1}Constructor \& Destructor Documentation}{38}{subsection.8.7.1}%
+\contentsline {subsubsection}{\numberline {8.7.1.1}EditorInstance()}{38}{subsubsection.8.7.1.1}%
+\contentsline {subsubsection}{\numberline {8.7.1.2}$\sim $EditorInstance()}{38}{subsubsection.8.7.1.2}%
+\contentsline {subsection}{\numberline {8.7.2}Member Function Documentation}{38}{subsection.8.7.2}%
+\contentsline {subsubsection}{\numberline {8.7.2.1}ActionsPanel()}{38}{subsubsection.8.7.2.1}%
+\contentsline {subsubsection}{\numberline {8.7.2.2}AssetPanel()}{38}{subsubsection.8.7.2.2}%
+\contentsline {subsubsection}{\numberline {8.7.2.3}DebugPanel()}{38}{subsubsection.8.7.2.3}%
+\contentsline {subsubsection}{\numberline {8.7.2.4}DrawGrid()}{39}{subsubsection.8.7.2.4}%
+\contentsline {subsubsection}{\numberline {8.7.2.5}DrawTransformGizmo()}{39}{subsubsection.8.7.2.5}%
+\contentsline {subsubsection}{\numberline {8.7.2.6}Inspector()}{39}{subsubsection.8.7.2.6}%
+\contentsline {subsubsection}{\numberline {8.7.2.7}MenuBar()}{39}{subsubsection.8.7.2.7}%
+\contentsline {subsubsection}{\numberline {8.7.2.8}OpenSceneLoadMenu()}{39}{subsubsection.8.7.2.8}%
+\contentsline {subsubsection}{\numberline {8.7.2.9}OpenSceneSaveMenu()}{39}{subsubsection.8.7.2.9}%
+\contentsline {subsubsection}{\numberline {8.7.2.10}PreferencesWindow()}{39}{subsubsection.8.7.2.10}%
+\contentsline {subsubsection}{\numberline {8.7.2.11}Run()}{39}{subsubsection.8.7.2.11}%
+\contentsline {subsubsection}{\numberline {8.7.2.12}SceneHierarchy()}{39}{subsubsection.8.7.2.12}%
+\contentsline {subsubsection}{\numberline {8.7.2.13}SceneLoadMenu()}{39}{subsubsection.8.7.2.13}%
+\contentsline {subsubsection}{\numberline {8.7.2.14}TransportPanel()}{40}{subsubsection.8.7.2.14}%
+\contentsline {subsection}{\numberline {8.7.3}Member Data Documentation}{40}{subsection.8.7.3}%
+\contentsline {subsubsection}{\numberline {8.7.3.1}engine}{40}{subsubsection.8.7.3.1}%
+\contentsline {section}{\numberline {8.8}engine::Engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{40}{section.8.8}%
+\contentsline {subsection}{\numberline {8.8.1}Constructor \& Destructor Documentation}{40}{subsection.8.8.1}%
+\contentsline {subsubsection}{\numberline {8.8.1.1}EngineConfig()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{40}{subsubsection.8.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.8.1.2}EngineConfig()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{40}{subsubsection.8.8.1.2}%
+\contentsline {subsubsection}{\numberline {8.8.1.3}$\sim $EngineConfig()}{41}{subsubsection.8.8.1.3}%
+\contentsline {subsection}{\numberline {8.8.2}Member Function Documentation}{41}{subsection.8.8.2}%
+\contentsline {subsubsection}{\numberline {8.8.2.1}GetConfigValue()}{41}{subsubsection.8.8.2.1}%
+\contentsline {subsection}{\numberline {8.8.3}Member Data Documentation}{41}{subsection.8.8.3}%
+\contentsline {subsubsection}{\numberline {8.8.3.1}current\_config}{41}{subsubsection.8.8.3.1}%
+\contentsline {section}{\numberline {8.9}engine::Engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Create\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Info Struct Reference}{41}{section.8.9}%
+\contentsline {subsection}{\numberline {8.9.1}Member Data Documentation}{41}{subsection.8.9.1}%
+\contentsline {subsubsection}{\numberline {8.9.1.1}game\_name}{41}{subsubsection.8.9.1.1}%
+\contentsline {subsubsection}{\numberline {8.9.1.2}initial\_window\_height}{41}{subsubsection.8.9.1.2}%
+\contentsline {subsubsection}{\numberline {8.9.1.3}initial\_window\_width}{42}{subsubsection.8.9.1.3}%
+\contentsline {subsubsection}{\numberline {8.9.1.4}startup\_scene}{42}{subsubsection.8.9.1.4}%
+\contentsline {section}{\numberline {8.10}engine::Engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Instance Class Reference}{42}{section.8.10}%
+\contentsline {subsection}{\numberline {8.10.1}Constructor \& Destructor Documentation}{42}{subsection.8.10.1}%
+\contentsline {subsubsection}{\numberline {8.10.1.1}EngineInstance()}{42}{subsubsection.8.10.1.1}%
+\contentsline {subsubsection}{\numberline {8.10.1.2}$\sim $EngineInstance()}{43}{subsubsection.8.10.1.2}%
+\contentsline {subsection}{\numberline {8.10.2}Member Function Documentation}{43}{subsection.8.10.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.1}CreateComponent()}{43}{subsubsection.8.10.2.1}%
+\contentsline {subsubsection}{\numberline {8.10.2.2}GetAssetManager()}{43}{subsubsection.8.10.2.2}%
+\contentsline {subsubsection}{\numberline {8.10.2.3}GetInput()}{43}{subsubsection.8.10.2.3}%
+\contentsline {subsubsection}{\numberline {8.10.2.4}GetLocalPlayer()}{43}{subsubsection.8.10.2.4}%
+\contentsline {subsubsection}{\numberline {8.10.2.5}GetPhysics()}{43}{subsubsection.8.10.2.5}%
+\contentsline {subsubsection}{\numberline {8.10.2.6}GetRegisteredComponentsList()}{43}{subsubsection.8.10.2.6}%
+\contentsline {subsubsection}{\numberline {8.10.2.7}GetRenderer()}{43}{subsubsection.8.10.2.7}%
+\contentsline {subsubsection}{\numberline {8.10.2.8}GetSceneLoader()}{43}{subsubsection.8.10.2.8}%
+\contentsline {subsubsection}{\numberline {8.10.2.9}GetSoundManager()}{43}{subsubsection.8.10.2.9}%
+\contentsline {subsubsection}{\numberline {8.10.2.10}GetVersionString()}{44}{subsubsection.8.10.2.10}%
+\contentsline {subsubsection}{\numberline {8.10.2.11}GetWindow()}{44}{subsubsection.8.10.2.11}%
+\contentsline {subsubsection}{\numberline {8.10.2.12}Initialize()}{44}{subsubsection.8.10.2.12}%
+\contentsline {subsubsection}{\numberline {8.10.2.13}LoadComponent()}{44}{subsubsection.8.10.2.13}%
+\contentsline {subsubsection}{\numberline {8.10.2.14}RegisterComponent()}{44}{subsubsection.8.10.2.14}%
+\contentsline {subsubsection}{\numberline {8.10.2.15}Run()}{44}{subsubsection.8.10.2.15}%
+\contentsline {subsubsection}{\numberline {8.10.2.16}SetLocalPlayer()}{44}{subsubsection.8.10.2.16}%
+\contentsline {subsubsection}{\numberline {8.10.2.17}Stop()}{44}{subsubsection.8.10.2.17}%
+\contentsline {section}{\numberline {8.11}engine::editor::Gizmo Class Reference}{45}{section.8.11}%
+\contentsline {subsection}{\numberline {8.11.1}Constructor \& Destructor Documentation}{45}{subsection.8.11.1}%
+\contentsline {subsubsection}{\numberline {8.11.1.1}Gizmo()}{45}{subsubsection.8.11.1.1}%
+\contentsline {subsection}{\numberline {8.11.2}Member Function Documentation}{45}{subsection.8.11.2}%
+\contentsline {subsubsection}{\numberline {8.11.2.1}draw()}{45}{subsubsection.8.11.2.1}%
+\contentsline {subsection}{\numberline {8.11.3}Member Data Documentation}{45}{subsection.8.11.3}%
+\contentsline {subsubsection}{\numberline {8.11.3.1}vao}{45}{subsubsection.8.11.3.1}%
+\contentsline {subsubsection}{\numberline {8.11.3.2}vbo}{45}{subsubsection.8.11.3.2}%
+\contentsline {section}{\numberline {8.12}engine::Input\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{45}{section.8.12}%
+\contentsline {subsection}{\numberline {8.12.1}Member Function Documentation}{46}{subsection.8.12.1}%
+\contentsline {subsubsection}{\numberline {8.12.1.1}DisableCursor()}{46}{subsubsection.8.12.1.1}%
+\contentsline {subsubsection}{\numberline {8.12.1.2}EnableCursor()}{46}{subsubsection.8.12.1.2}%
+\contentsline {subsubsection}{\numberline {8.12.1.3}KeyDown()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{46}{subsubsection.8.12.1.3}%
+\contentsline {subsubsection}{\numberline {8.12.1.4}KeyDown()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{46}{subsubsection.8.12.1.4}%
+\contentsline {subsubsection}{\numberline {8.12.1.5}KeyPressed()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{46}{subsubsection.8.12.1.5}%
+\contentsline {subsubsection}{\numberline {8.12.1.6}KeyPressed()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{47}{subsubsection.8.12.1.6}%
+\contentsline {subsubsection}{\numberline {8.12.1.7}KeyReleased()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{47}{subsubsection.8.12.1.7}%
+\contentsline {subsubsection}{\numberline {8.12.1.8}KeyReleased()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{47}{subsubsection.8.12.1.8}%
+\contentsline {subsubsection}{\numberline {8.12.1.9}KeyUp()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{47}{subsubsection.8.12.1.9}%
+\contentsline {subsubsection}{\numberline {8.12.1.10}KeyUp()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{47}{subsubsection.8.12.1.10}%
+\contentsline {subsubsection}{\numberline {8.12.1.11}MouseButtonDown()}{47}{subsubsection.8.12.1.11}%
+\contentsline {subsubsection}{\numberline {8.12.1.12}MouseButtonPressed()}{47}{subsubsection.8.12.1.12}%
+\contentsline {subsubsection}{\numberline {8.12.1.13}MouseButtonReleased()}{47}{subsubsection.8.12.1.13}%
+\contentsline {subsubsection}{\numberline {8.12.1.14}MouseDelta()}{48}{subsubsection.8.12.1.14}%
+\contentsline {subsubsection}{\numberline {8.12.1.15}MousePosition()}{48}{subsubsection.8.12.1.15}%
+\contentsline {subsubsection}{\numberline {8.12.1.16}SendInput()}{48}{subsubsection.8.12.1.16}%
+\contentsline {subsubsection}{\numberline {8.12.1.17}SendMouseButton()}{48}{subsubsection.8.12.1.17}%
+\contentsline {subsubsection}{\numberline {8.12.1.18}SendMousePosition()}{48}{subsubsection.8.12.1.18}%
+\contentsline {subsubsection}{\numberline {8.12.1.19}Update()}{48}{subsubsection.8.12.1.19}%
+\contentsline {section}{\numberline {8.13}engine::Material Class Reference}{48}{section.8.13}%
+\contentsline {subsection}{\numberline {8.13.1}Constructor \& Destructor Documentation}{49}{subsection.8.13.1}%
+\contentsline {subsubsection}{\numberline {8.13.1.1}Material()}{49}{subsubsection.8.13.1.1}%
+\contentsline {subsection}{\numberline {8.13.2}Member Function Documentation}{49}{subsection.8.13.2}%
+\contentsline {subsubsection}{\numberline {8.13.2.1}Bind()}{49}{subsubsection.8.13.2.1}%
+\contentsline {subsubsection}{\numberline {8.13.2.2}DrawEditWidget()}{49}{subsubsection.8.13.2.2}%
+\contentsline {subsubsection}{\numberline {8.13.2.3}Reload()}{50}{subsubsection.8.13.2.3}%
+\contentsline {section}{\numberline {8.14}engine::Mesh Class Reference}{50}{section.8.14}%
+\contentsline {subsection}{\numberline {8.14.1}Constructor \& Destructor Documentation}{51}{subsection.8.14.1}%
+\contentsline {subsubsection}{\numberline {8.14.1.1}Mesh()}{51}{subsubsection.8.14.1.1}%
+\contentsline {subsubsection}{\numberline {8.14.1.2}$\sim $Mesh()}{51}{subsubsection.8.14.1.2}%
+\contentsline {subsection}{\numberline {8.14.2}Member Function Documentation}{51}{subsection.8.14.2}%
+\contentsline {subsubsection}{\numberline {8.14.2.1}Draw()}{51}{subsubsection.8.14.2.1}%
+\contentsline {subsubsection}{\numberline {8.14.2.2}DrawWireframe()}{51}{subsubsection.8.14.2.2}%
+\contentsline {subsubsection}{\numberline {8.14.2.3}Rebuffer()}{51}{subsubsection.8.14.2.3}%
+\contentsline {subsubsection}{\numberline {8.14.2.4}SetIndices()}{51}{subsubsection.8.14.2.4}%
+\contentsline {subsubsection}{\numberline {8.14.2.5}SetVertices()}{51}{subsubsection.8.14.2.5}%
+\contentsline {section}{\numberline {8.15}engine::Mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Class Reference}{52}{section.8.15}%
+\contentsline {subsection}{\numberline {8.15.1}Constructor \& Destructor Documentation}{53}{subsection.8.15.1}%
+\contentsline {subsubsection}{\numberline {8.15.1.1}MeshComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{53}{subsubsection.8.15.1.1}%
+\contentsline {subsubsection}{\numberline {8.15.1.2}MeshComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{53}{subsubsection.8.15.1.2}%
+\contentsline {subsection}{\numberline {8.15.2}Member Function Documentation}{53}{subsection.8.15.2}%
+\contentsline {subsubsection}{\numberline {8.15.2.1}destroy()}{53}{subsubsection.8.15.2.1}%
+\contentsline {subsubsection}{\numberline {8.15.2.2}DrawWidget()}{53}{subsubsection.8.15.2.2}%
+\contentsline {subsubsection}{\numberline {8.15.2.3}init()}{53}{subsubsection.8.15.2.3}%
+\contentsline {subsubsection}{\numberline {8.15.2.4}Load()}{53}{subsubsection.8.15.2.4}%
+\contentsline {subsubsection}{\numberline {8.15.2.5}render()}{53}{subsubsection.8.15.2.5}%
+\contentsline {subsubsection}{\numberline {8.15.2.6}Save()}{54}{subsubsection.8.15.2.6}%
+\contentsline {subsubsection}{\numberline {8.15.2.7}SetMaterial()}{54}{subsubsection.8.15.2.7}%
+\contentsline {subsubsection}{\numberline {8.15.2.8}SetMesh()}{54}{subsubsection.8.15.2.8}%
+\contentsline {section}{\numberline {8.16}engine::Model Class Reference}{54}{section.8.16}%
+\contentsline {subsection}{\numberline {8.16.1}Constructor \& Destructor Documentation}{55}{subsection.8.16.1}%
+\contentsline {subsubsection}{\numberline {8.16.1.1}Model()}{55}{subsubsection.8.16.1.1}%
+\contentsline {subsubsection}{\numberline {8.16.1.2}$\sim $Model()}{55}{subsubsection.8.16.1.2}%
+\contentsline {subsection}{\numberline {8.16.2}Member Function Documentation}{55}{subsection.8.16.2}%
+\contentsline {subsubsection}{\numberline {8.16.2.1}GetMeshes()}{55}{subsubsection.8.16.2.1}%
+\contentsline {section}{\numberline {8.17}engine::Open\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}GLRenderer Class Reference}{55}{section.8.17}%
+\contentsline {subsection}{\numberline {8.17.1}Constructor \& Destructor Documentation}{56}{subsection.8.17.1}%
+\contentsline {subsubsection}{\numberline {8.17.1.1}OpenGLRenderer()}{56}{subsubsection.8.17.1.1}%
+\contentsline {subsubsection}{\numberline {8.17.1.2}$\sim $OpenGLRenderer()}{56}{subsubsection.8.17.1.2}%
+\contentsline {subsection}{\numberline {8.17.2}Member Function Documentation}{56}{subsection.8.17.2}%
+\contentsline {subsubsection}{\numberline {8.17.2.1}DeltaTime()}{56}{subsubsection.8.17.2.1}%
+\contentsline {subsubsection}{\numberline {8.17.2.2}EndFrame()}{56}{subsubsection.8.17.2.2}%
+\contentsline {subsubsection}{\numberline {8.17.2.3}InitForImGui()}{56}{subsubsection.8.17.2.3}%
+\contentsline {subsubsection}{\numberline {8.17.2.4}ShouldClose()}{56}{subsubsection.8.17.2.4}%
+\contentsline {subsubsection}{\numberline {8.17.2.5}StartFrame()}{56}{subsubsection.8.17.2.5}%
+\contentsline {subsubsection}{\numberline {8.17.2.6}WindowHeight()}{56}{subsubsection.8.17.2.6}%
+\contentsline {subsubsection}{\numberline {8.17.2.7}WindowWidth()}{57}{subsubsection.8.17.2.7}%
+\contentsline {section}{\numberline {8.18}engine::Physics\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Handler Class Reference}{57}{section.8.18}%
+\contentsline {subsection}{\numberline {8.18.1}Member Function Documentation}{57}{subsection.8.18.1}%
+\contentsline {subsubsection}{\numberline {8.18.1.1}CheckTrigger()}{57}{subsubsection.8.18.1.1}%
+\contentsline {subsubsection}{\numberline {8.18.1.2}DeregisterCollider()}{57}{subsubsection.8.18.1.2}%
+\contentsline {subsubsection}{\numberline {8.18.1.3}DeregisterTrigger()}{57}{subsubsection.8.18.1.3}%
+\contentsline {subsubsection}{\numberline {8.18.1.4}GetColliders()}{57}{subsubsection.8.18.1.4}%
+\contentsline {subsubsection}{\numberline {8.18.1.5}GetTriggers()}{58}{subsubsection.8.18.1.5}%
+\contentsline {subsubsection}{\numberline {8.18.1.6}RegisterCollider()}{58}{subsubsection.8.18.1.6}%
+\contentsline {subsubsection}{\numberline {8.18.1.7}RegisterTrigger()}{58}{subsubsection.8.18.1.7}%
+\contentsline {section}{\numberline {8.19}engine::Ray Struct Reference}{58}{section.8.19}%
+\contentsline {subsection}{\numberline {8.19.1}Member Data Documentation}{58}{subsection.8.19.1}%
+\contentsline {subsubsection}{\numberline {8.19.1.1}direction}{58}{subsubsection.8.19.1.1}%
+\contentsline {subsubsection}{\numberline {8.19.1.2}position}{58}{subsubsection.8.19.1.2}%
+\contentsline {section}{\numberline {8.20}engine::Saveable Class Reference}{59}{section.8.20}%
+\contentsline {section}{\numberline {8.21}engine::Scene Class Reference}{59}{section.8.21}%
+\contentsline {subsection}{\numberline {8.21.1}Constructor \& Destructor Documentation}{60}{subsection.8.21.1}%
+\contentsline {subsubsection}{\numberline {8.21.1.1}Scene()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{60}{subsubsection.8.21.1.1}%
+\contentsline {subsubsection}{\numberline {8.21.1.2}Scene()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{60}{subsubsection.8.21.1.2}%
+\contentsline {subsubsection}{\numberline {8.21.1.3}$\sim $Scene()}{60}{subsubsection.8.21.1.3}%
+\contentsline {subsection}{\numberline {8.21.2}Member Function Documentation}{60}{subsection.8.21.2}%
+\contentsline {subsubsection}{\numberline {8.21.2.1}Clone()}{60}{subsubsection.8.21.2.1}%
+\contentsline {subsubsection}{\numberline {8.21.2.2}EditorRender()}{60}{subsubsection.8.21.2.2}%
+\contentsline {subsubsection}{\numberline {8.21.2.3}GetCurrentCamera()}{60}{subsubsection.8.21.2.3}%
+\contentsline {subsubsection}{\numberline {8.21.2.4}GetCurrentCameraMatrix()}{60}{subsubsection.8.21.2.4}%
+\contentsline {subsubsection}{\numberline {8.21.2.5}GetCurrentCameraPosition()}{60}{subsubsection.8.21.2.5}%
+\contentsline {subsubsection}{\numberline {8.21.2.6}GetRoot()}{60}{subsubsection.8.21.2.6}%
+\contentsline {subsubsection}{\numberline {8.21.2.7}IsValid()}{61}{subsubsection.8.21.2.7}%
+\contentsline {subsubsection}{\numberline {8.21.2.8}Load()}{61}{subsubsection.8.21.2.8}%
+\contentsline {subsubsection}{\numberline {8.21.2.9}Render()}{61}{subsubsection.8.21.2.9}%
+\contentsline {subsubsection}{\numberline {8.21.2.10}Save()}{61}{subsubsection.8.21.2.10}%
+\contentsline {subsubsection}{\numberline {8.21.2.11}SetCamera()}{61}{subsubsection.8.21.2.11}%
+\contentsline {subsubsection}{\numberline {8.21.2.12}SetCameraToMain()}{61}{subsubsection.8.21.2.12}%
+\contentsline {subsubsection}{\numberline {8.21.2.13}SetMainCamera()}{61}{subsubsection.8.21.2.13}%
+\contentsline {subsubsection}{\numberline {8.21.2.14}Tick()}{61}{subsubsection.8.21.2.14}%
+\contentsline {section}{\numberline {8.22}engine::Scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Loader Class Reference}{62}{section.8.22}%
+\contentsline {subsection}{\numberline {8.22.1}Constructor \& Destructor Documentation}{62}{subsection.8.22.1}%
+\contentsline {subsubsection}{\numberline {8.22.1.1}SceneLoader()}{62}{subsubsection.8.22.1.1}%
+\contentsline {subsubsection}{\numberline {8.22.1.2}$\sim $SceneLoader()}{62}{subsubsection.8.22.1.2}%
+\contentsline {subsection}{\numberline {8.22.2}Member Function Documentation}{62}{subsection.8.22.2}%
+\contentsline {subsubsection}{\numberline {8.22.2.1}DeloadScene()}{62}{subsubsection.8.22.2.1}%
+\contentsline {subsubsection}{\numberline {8.22.2.2}GetCurrentScene()}{62}{subsubsection.8.22.2.2}%
+\contentsline {subsubsection}{\numberline {8.22.2.3}GetPersistentData()}{62}{subsubsection.8.22.2.3}%
+\contentsline {subsubsection}{\numberline {8.22.2.4}LoadDefaultScene()}{63}{subsubsection.8.22.2.4}%
+\contentsline {subsubsection}{\numberline {8.22.2.5}LoadScene()}{63}{subsubsection.8.22.2.5}%
+\contentsline {subsubsection}{\numberline {8.22.2.6}RenderCurrentScene()}{63}{subsubsection.8.22.2.6}%
+\contentsline {subsubsection}{\numberline {8.22.2.7}RewindToCheckpoint()}{63}{subsubsection.8.22.2.7}%
+\contentsline {subsubsection}{\numberline {8.22.2.8}SaveAsCheckpoint()}{63}{subsubsection.8.22.2.8}%
+\contentsline {subsubsection}{\numberline {8.22.2.9}SaveScene()}{63}{subsubsection.8.22.2.9}%
+\contentsline {subsubsection}{\numberline {8.22.2.10}UpdateCurrentScene()}{63}{subsubsection.8.22.2.10}%
+\contentsline {section}{\numberline {8.23}engine::Scheme\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine Class Reference}{63}{section.8.23}%
+\contentsline {subsection}{\numberline {8.23.1}Constructor \& Destructor Documentation}{64}{subsection.8.23.1}%
+\contentsline {subsubsection}{\numberline {8.23.1.1}SchemeScriptEngine()}{64}{subsubsection.8.23.1.1}%
+\contentsline {subsubsection}{\numberline {8.23.1.2}$\sim $SchemeScriptEngine()}{64}{subsubsection.8.23.1.2}%
+\contentsline {subsection}{\numberline {8.23.2}Member Function Documentation}{64}{subsection.8.23.2}%
+\contentsline {subsubsection}{\numberline {8.23.2.1}eval\_string()}{64}{subsubsection.8.23.2.1}%
+\contentsline {section}{\numberline {8.24}engine::Screen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Shader Class Reference}{64}{section.8.24}%
+\contentsline {section}{\numberline {8.25}engine::Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Component Class Reference}{65}{section.8.25}%
+\contentsline {subsection}{\numberline {8.25.1}Member Function Documentation}{66}{subsection.8.25.1}%
+\contentsline {subsubsection}{\numberline {8.25.1.1}destroy()}{66}{subsubsection.8.25.1.1}%
+\contentsline {subsubsection}{\numberline {8.25.1.2}init()}{66}{subsubsection.8.25.1.2}%
+\contentsline {subsubsection}{\numberline {8.25.1.3}ReloadScripts()}{67}{subsubsection.8.25.1.3}%
+\contentsline {subsubsection}{\numberline {8.25.1.4}tick()}{67}{subsubsection.8.25.1.4}%
+\contentsline {section}{\numberline {8.26}engine::Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Engine Class Reference}{67}{section.8.26}%
+\contentsline {subsection}{\numberline {8.26.1}Member Function Documentation}{67}{subsection.8.26.1}%
+\contentsline {subsubsection}{\numberline {8.26.1.1}eval\_string()}{67}{subsubsection.8.26.1.1}%
+\contentsline {section}{\numberline {8.27}engine::Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}File Struct Reference}{68}{section.8.27}%
+\contentsline {subsection}{\numberline {8.27.1}Member Data Documentation}{68}{subsection.8.27.1}%
+\contentsline {subsubsection}{\numberline {8.27.1.1}cached\_script}{68}{subsubsection.8.27.1.1}%
+\contentsline {subsubsection}{\numberline {8.27.1.2}script\_path}{68}{subsubsection.8.27.1.2}%
+\contentsline {subsubsection}{\numberline {8.27.1.3}stale}{68}{subsubsection.8.27.1.3}%
+\contentsline {section}{\numberline {8.28}engine::Script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Literal Struct Reference}{68}{section.8.28}%
+\contentsline {subsection}{\numberline {8.28.1}Member Data Documentation}{68}{subsection.8.28.1}%
+\contentsline {subsubsection}{\numberline {8.28.1.1}script}{68}{subsubsection.8.28.1.1}%
+\contentsline {section}{\numberline {8.29}engine::Shader Class Reference}{69}{section.8.29}%
+\contentsline {subsection}{\numberline {8.29.1}Constructor \& Destructor Documentation}{69}{subsection.8.29.1}%
+\contentsline {subsubsection}{\numberline {8.29.1.1}Shader()}{69}{subsubsection.8.29.1.1}%
+\contentsline {subsubsection}{\numberline {8.29.1.2}$\sim $Shader()}{70}{subsubsection.8.29.1.2}%
+\contentsline {subsection}{\numberline {8.29.2}Member Function Documentation}{70}{subsection.8.29.2}%
+\contentsline {subsubsection}{\numberline {8.29.2.1}Bind()}{70}{subsubsection.8.29.2.1}%
+\contentsline {subsubsection}{\numberline {8.29.2.2}Reload()}{70}{subsubsection.8.29.2.2}%
+\contentsline {subsubsection}{\numberline {8.29.2.3}SetUniform()}{70}{subsubsection.8.29.2.3}%
+\contentsline {subsubsection}{\numberline {8.29.2.4}SetUniforms()}{70}{subsubsection.8.29.2.4}%
+\contentsline {subsection}{\numberline {8.29.3}Member Data Documentation}{70}{subsection.8.29.3}%
+\contentsline {subsubsection}{\numberline {8.29.3.1}fragment\_src\_str}{70}{subsubsection.8.29.3.1}%
+\contentsline {subsubsection}{\numberline {8.29.3.2}shader\_handle}{70}{subsubsection.8.29.3.2}%
+\contentsline {subsubsection}{\numberline {8.29.3.3}vertex\_src\_str}{70}{subsubsection.8.29.3.3}%
+\contentsline {section}{\numberline {8.30}engine::Sound Class Reference}{71}{section.8.30}%
+\contentsline {subsection}{\numberline {8.30.1}Constructor \& Destructor Documentation}{71}{subsection.8.30.1}%
+\contentsline {subsubsection}{\numberline {8.30.1.1}Sound()}{71}{subsubsection.8.30.1.1}%
+\contentsline {subsection}{\numberline {8.30.2}Member Function Documentation}{71}{subsection.8.30.2}%
+\contentsline {subsubsection}{\numberline {8.30.2.1}PlayLooped()}{71}{subsubsection.8.30.2.1}%
+\contentsline {section}{\numberline {8.31}engine::Sound\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{72}{section.8.31}%
+\contentsline {subsection}{\numberline {8.31.1}Constructor \& Destructor Documentation}{72}{subsection.8.31.1}%
+\contentsline {subsubsection}{\numberline {8.31.1.1}SoundManager()}{72}{subsubsection.8.31.1.1}%
+\contentsline {subsubsection}{\numberline {8.31.1.2}$\sim $SoundManager()}{72}{subsubsection.8.31.1.2}%
+\contentsline {subsection}{\numberline {8.31.2}Member Function Documentation}{72}{subsection.8.31.2}%
+\contentsline {subsubsection}{\numberline {8.31.2.1}LoadSound()}{72}{subsubsection.8.31.2.1}%
+\contentsline {subsubsection}{\numberline {8.31.2.2}PlaySound()}{72}{subsubsection.8.31.2.2}%
+\contentsline {section}{\numberline {8.32}engine::Texture Class Reference}{73}{section.8.32}%
+\contentsline {subsection}{\numberline {8.32.1}Constructor \& Destructor Documentation}{73}{subsection.8.32.1}%
+\contentsline {subsubsection}{\numberline {8.32.1.1}Texture()}{73}{subsubsection.8.32.1.1}%
+\contentsline {subsubsection}{\numberline {8.32.1.2}$\sim $Texture()}{73}{subsubsection.8.32.1.2}%
+\contentsline {subsection}{\numberline {8.32.2}Member Function Documentation}{74}{subsection.8.32.2}%
+\contentsline {subsubsection}{\numberline {8.32.2.1}Bind()}{74}{subsubsection.8.32.2.1}%
+\contentsline {subsubsection}{\numberline {8.32.2.2}GetTextureHandle()}{74}{subsubsection.8.32.2.2}%
+\contentsline {section}{\numberline {8.33}engine::Transform Class Reference}{74}{section.8.33}%
+\contentsline {subsection}{\numberline {8.33.1}Constructor \& Destructor Documentation}{75}{subsection.8.33.1}%
+\contentsline {subsubsection}{\numberline {8.33.1.1}Transform()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{75}{subsubsection.8.33.1.1}%
+\contentsline {subsubsection}{\numberline {8.33.1.2}Transform()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{76}{subsubsection.8.33.1.2}%
+\contentsline {subsubsection}{\numberline {8.33.1.3}Transform()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{76}{subsubsection.8.33.1.3}%
+\contentsline {subsubsection}{\numberline {8.33.1.4}$\sim $Transform()}{76}{subsubsection.8.33.1.4}%
+\contentsline {subsection}{\numberline {8.33.2}Member Function Documentation}{76}{subsection.8.33.2}%
+\contentsline {subsubsection}{\numberline {8.33.2.1}AddChild()}{76}{subsubsection.8.33.2.1}%
+\contentsline {subsubsection}{\numberline {8.33.2.2}AddComponent()}{77}{subsubsection.8.33.2.2}%
+\contentsline {subsubsection}{\numberline {8.33.2.3}Backward()}{77}{subsubsection.8.33.2.3}%
+\contentsline {subsubsection}{\numberline {8.33.2.4}Down()}{77}{subsubsection.8.33.2.4}%
+\contentsline {subsubsection}{\numberline {8.33.2.5}DrawWidget()}{77}{subsubsection.8.33.2.5}%
+\contentsline {subsubsection}{\numberline {8.33.2.6}FindChildByName()}{78}{subsubsection.8.33.2.6}%
+\contentsline {subsubsection}{\numberline {8.33.2.7}FindComponentByUID()}{78}{subsubsection.8.33.2.7}%
+\contentsline {subsubsection}{\numberline {8.33.2.8}FindTransformByUID()}{78}{subsubsection.8.33.2.8}%
+\contentsline {subsubsection}{\numberline {8.33.2.9}Forward()}{79}{subsubsection.8.33.2.9}%
+\contentsline {subsubsection}{\numberline {8.33.2.10}GetChildren()}{79}{subsubsection.8.33.2.10}%
+\contentsline {subsubsection}{\numberline {8.33.2.11}GetComponent()}{79}{subsubsection.8.33.2.11}%
+\contentsline {subsubsection}{\numberline {8.33.2.12}GetGlobalPosition()}{79}{subsubsection.8.33.2.12}%
+\contentsline {subsubsection}{\numberline {8.33.2.13}GetGlobalRotation()}{80}{subsubsection.8.33.2.13}%
+\contentsline {subsubsection}{\numberline {8.33.2.14}GetGlobalScale()}{80}{subsubsection.8.33.2.14}%
+\contentsline {subsubsection}{\numberline {8.33.2.15}GetLocalPosition()}{80}{subsubsection.8.33.2.15}%
+\contentsline {subsubsection}{\numberline {8.33.2.16}GetLocalRotation()}{80}{subsubsection.8.33.2.16}%
+\contentsline {subsubsection}{\numberline {8.33.2.17}GetLocalScale()}{80}{subsubsection.8.33.2.17}%
+\contentsline {subsubsection}{\numberline {8.33.2.18}GetModelMatrix()}{81}{subsubsection.8.33.2.18}%
+\contentsline {subsubsection}{\numberline {8.33.2.19}GetModelMatrixUnscaled()}{81}{subsubsection.8.33.2.19}%
+\contentsline {subsubsection}{\numberline {8.33.2.20}GetName()}{81}{subsubsection.8.33.2.20}%
+\contentsline {subsubsection}{\numberline {8.33.2.21}GetUID()}{81}{subsubsection.8.33.2.21}%
+\contentsline {subsubsection}{\numberline {8.33.2.22}Left()}{81}{subsubsection.8.33.2.22}%
+\contentsline {subsubsection}{\numberline {8.33.2.23}Load()}{82}{subsubsection.8.33.2.23}%
+\contentsline {subsubsection}{\numberline {8.33.2.24}ProcessEditorRender()}{82}{subsubsection.8.33.2.24}%
+\contentsline {subsubsection}{\numberline {8.33.2.25}ProcessInit()}{82}{subsubsection.8.33.2.25}%
+\contentsline {subsubsection}{\numberline {8.33.2.26}ProcessRender()}{82}{subsubsection.8.33.2.26}%
+\contentsline {subsubsection}{\numberline {8.33.2.27}ProcessTick()}{82}{subsubsection.8.33.2.27}%
+\contentsline {subsubsection}{\numberline {8.33.2.28}RemoveChild()}{83}{subsubsection.8.33.2.28}%
+\contentsline {subsubsection}{\numberline {8.33.2.29}Right()}{83}{subsubsection.8.33.2.29}%
+\contentsline {subsubsection}{\numberline {8.33.2.30}Rotate()}{83}{subsubsection.8.33.2.30}%
+\contentsline {subsubsection}{\numberline {8.33.2.31}Save()}{83}{subsubsection.8.33.2.31}%
+\contentsline {subsubsection}{\numberline {8.33.2.32}Scale()}{84}{subsubsection.8.33.2.32}%
+\contentsline {subsubsection}{\numberline {8.33.2.33}SetName()}{84}{subsubsection.8.33.2.33}%
+\contentsline {subsubsection}{\numberline {8.33.2.34}Translate()}{84}{subsubsection.8.33.2.34}%
+\contentsline {subsubsection}{\numberline {8.33.2.35}Up()}{84}{subsubsection.8.33.2.35}%
+\contentsline {subsection}{\numberline {8.33.3}Member Data Documentation}{84}{subsection.8.33.3}%
+\contentsline {subsubsection}{\numberline {8.33.3.1}children}{84}{subsubsection.8.33.3.1}%
+\contentsline {subsubsection}{\numberline {8.33.3.2}components}{85}{subsubsection.8.33.3.2}%
+\contentsline {subsubsection}{\numberline {8.33.3.3}name}{85}{subsubsection.8.33.3.3}%
+\contentsline {subsubsection}{\numberline {8.33.3.4}parent}{85}{subsubsection.8.33.3.4}%
+\contentsline {subsubsection}{\numberline {8.33.3.5}position}{85}{subsubsection.8.33.3.5}%
+\contentsline {subsubsection}{\numberline {8.33.3.6}rotation}{85}{subsubsection.8.33.3.6}%
+\contentsline {subsubsection}{\numberline {8.33.3.7}rotationEuler}{85}{subsubsection.8.33.3.7}%
+\contentsline {subsubsection}{\numberline {8.33.3.8}scale}{85}{subsubsection.8.33.3.8}%
+\contentsline {subsubsection}{\numberline {8.33.3.9}uid}{85}{subsubsection.8.33.3.9}%
+\contentsline {section}{\numberline {8.34}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}d Struct Reference}{85}{section.8.34}%
+\contentsline {subsection}{\numberline {8.34.1}Member Data Documentation}{86}{subsection.8.34.1}%
+\contentsline {subsubsection}{\numberline {8.34.1.1}value}{86}{subsubsection.8.34.1.1}%
+\contentsline {section}{\numberline {8.35}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}f Struct Reference}{86}{section.8.35}%
+\contentsline {subsection}{\numberline {8.35.1}Constructor \& Destructor Documentation}{86}{subsection.8.35.1}%
+\contentsline {subsubsection}{\numberline {8.35.1.1}Uniform\_f()}{86}{subsubsection.8.35.1.1}%
+\contentsline {subsection}{\numberline {8.35.2}Member Data Documentation}{86}{subsection.8.35.2}%
+\contentsline {subsubsection}{\numberline {8.35.2.1}value}{86}{subsubsection.8.35.2.1}%
+\contentsline {section}{\numberline {8.36}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}i Struct Reference}{87}{section.8.36}%
+\contentsline {subsection}{\numberline {8.36.1}Constructor \& Destructor Documentation}{87}{subsection.8.36.1}%
+\contentsline {subsubsection}{\numberline {8.36.1.1}Uniform\_i()}{87}{subsubsection.8.36.1.1}%
+\contentsline {subsection}{\numberline {8.36.2}Member Data Documentation}{87}{subsection.8.36.2}%
+\contentsline {subsubsection}{\numberline {8.36.2.1}value}{87}{subsubsection.8.36.2.1}%
+\contentsline {section}{\numberline {8.37}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mat4 Struct Reference}{87}{section.8.37}%
+\contentsline {subsection}{\numberline {8.37.1}Constructor \& Destructor Documentation}{88}{subsection.8.37.1}%
+\contentsline {subsubsection}{\numberline {8.37.1.1}Uniform\_mat4()}{88}{subsubsection.8.37.1.1}%
+\contentsline {subsection}{\numberline {8.37.2}Member Data Documentation}{88}{subsection.8.37.2}%
+\contentsline {subsubsection}{\numberline {8.37.2.1}value}{88}{subsubsection.8.37.2.1}%
+\contentsline {section}{\numberline {8.38}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ui Struct Reference}{88}{section.8.38}%
+\contentsline {subsection}{\numberline {8.38.1}Member Data Documentation}{88}{subsection.8.38.1}%
+\contentsline {subsubsection}{\numberline {8.38.1.1}value}{88}{subsubsection.8.38.1.1}%
+\contentsline {section}{\numberline {8.39}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vec3 Struct Reference}{88}{section.8.39}%
+\contentsline {subsection}{\numberline {8.39.1}Constructor \& Destructor Documentation}{89}{subsection.8.39.1}%
+\contentsline {subsubsection}{\numberline {8.39.1.1}Uniform\_vec3()}{89}{subsubsection.8.39.1.1}%
+\contentsline {subsection}{\numberline {8.39.2}Member Data Documentation}{89}{subsection.8.39.2}%
+\contentsline {subsubsection}{\numberline {8.39.2.1}value}{89}{subsubsection.8.39.2.1}%
+\contentsline {section}{\numberline {8.40}engine::Uniform\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List Class Reference}{89}{section.8.40}%
+\contentsline {subsection}{\numberline {8.40.1}Member Data Documentation}{89}{subsection.8.40.1}%
+\contentsline {subsubsection}{\numberline {8.40.1.1}uniforms}{89}{subsubsection.8.40.1.1}%
+\contentsline {section}{\numberline {8.41}Vertex Struct Reference}{89}{section.8.41}%
+\contentsline {subsection}{\numberline {8.41.1}Member Data Documentation}{90}{subsection.8.41.1}%
+\contentsline {subsubsection}{\numberline {8.41.1.1}normal}{90}{subsubsection.8.41.1.1}%
+\contentsline {subsubsection}{\numberline {8.41.1.2}position}{90}{subsubsection.8.41.1.2}%
+\contentsline {subsubsection}{\numberline {8.41.1.3}t\_coord}{90}{subsubsection.8.41.1.3}%
+\contentsline {chapter}{\numberline {9}File Documentation}{91}{chapter.9}%
+\contentsline {section}{\numberline {9.1}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asset.cpp File Reference}{91}{section.9.1}%
+\contentsline {section}{\numberline {9.2}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asset.h File Reference}{91}{section.9.2}%
+\contentsline {section}{\numberline {9.3}asset.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{92}{section.9.3}%
+\contentsline {section}{\numberline {9.4}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.cpp File Reference}{92}{section.9.4}%
+\contentsline {section}{\numberline {9.5}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.h File Reference}{92}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Typedef Documentation}{93}{subsection.9.5.1}%
+\contentsline {subsubsection}{\numberline {9.5.1.1}json}{93}{subsubsection.9.5.1.1}%
+\contentsline {section}{\numberline {9.6}asset\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{93}{section.9.6}%
+\contentsline {section}{\numberline {9.7}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.cpp File Reference}{94}{section.9.7}%
+\contentsline {section}{\numberline {9.8}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.h File Reference}{94}{section.9.8}%
+\contentsline {section}{\numberline {9.9}camera\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{95}{section.9.9}%
+\contentsline {section}{\numberline {9.10}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.cpp File Reference}{95}{section.9.10}%
+\contentsline {section}{\numberline {9.11}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.h File Reference}{95}{section.9.11}%
+\contentsline {subsection}{\numberline {9.11.1}Macro Definition Documentation}{96}{subsection.9.11.1}%
+\contentsline {subsubsection}{\numberline {9.11.1.1}FACTORY}{96}{subsubsection.9.11.1.1}%
+\contentsline {subsubsection}{\numberline {9.11.1.2}FACTORY\_DEF}{96}{subsubsection.9.11.1.2}%
+\contentsline {subsubsection}{\numberline {9.11.1.3}FACTORY\_REF}{96}{subsubsection.9.11.1.3}%
+\contentsline {section}{\numberline {9.12}component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{97}{section.9.12}%
+\contentsline {section}{\numberline {9.13}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}editor.cpp File Reference}{97}{section.9.13}%
+\contentsline {section}{\numberline {9.14}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}editor.h File Reference}{98}{section.9.14}%
+\contentsline {section}{\numberline {9.15}editor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{99}{section.9.15}%
+\contentsline {section}{\numberline {9.16}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine.cpp File Reference}{99}{section.9.16}%
+\contentsline {section}{\numberline {9.17}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine.h File Reference}{100}{section.9.17}%
+\contentsline {section}{\numberline {9.18}engine.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{101}{section.9.18}%
+\contentsline {section}{\numberline {9.19}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config.cpp File Reference}{102}{section.9.19}%
+\contentsline {section}{\numberline {9.20}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config.h File Reference}{102}{section.9.20}%
+\contentsline {section}{\numberline {9.21}engine\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}config.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{103}{section.9.21}%
+\contentsline {section}{\numberline {9.22}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gizmo.h File Reference}{103}{section.9.22}%
+\contentsline {section}{\numberline {9.23}gizmo.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{103}{section.9.23}%
+\contentsline {section}{\numberline {9.24}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gl\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.h File Reference}{103}{section.9.24}%
+\contentsline {section}{\numberline {9.25}gl\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{104}{section.9.25}%
+\contentsline {section}{\numberline {9.26}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.cpp File Reference}{104}{section.9.26}%
+\contentsline {section}{\numberline {9.27}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.h File Reference}{104}{section.9.27}%
+\contentsline {section}{\numberline {9.28}gui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{105}{section.9.28}%
+\contentsline {section}{\numberline {9.29}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}input.cpp File Reference}{105}{section.9.29}%
+\contentsline {section}{\numberline {9.30}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}input.h File Reference}{105}{section.9.30}%
+\contentsline {section}{\numberline {9.31}input.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{106}{section.9.31}%
+\contentsline {section}{\numberline {9.32}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}json\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.h File Reference}{107}{section.9.32}%
+\contentsline {section}{\numberline {9.33}json\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{107}{section.9.33}%
+\contentsline {section}{\numberline {9.34}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}material.cpp File Reference}{107}{section.9.34}%
+\contentsline {section}{\numberline {9.35}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}material.h File Reference}{107}{section.9.35}%
+\contentsline {section}{\numberline {9.36}material.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{108}{section.9.36}%
+\contentsline {section}{\numberline {9.37}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mesh.cpp File Reference}{108}{section.9.37}%
+\contentsline {section}{\numberline {9.38}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mesh.h File Reference}{108}{section.9.38}%
+\contentsline {section}{\numberline {9.39}mesh.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{109}{section.9.39}%
+\contentsline {section}{\numberline {9.40}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.cpp File Reference}{109}{section.9.40}%
+\contentsline {section}{\numberline {9.41}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.h File Reference}{110}{section.9.41}%
+\contentsline {section}{\numberline {9.42}mesh\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{110}{section.9.42}%
+\contentsline {section}{\numberline {9.43}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}model.cpp File Reference}{111}{section.9.43}%
+\contentsline {section}{\numberline {9.44}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}model.h File Reference}{111}{section.9.44}%
+\contentsline {section}{\numberline {9.45}model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{112}{section.9.45}%
+\contentsline {section}{\numberline {9.46}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}opengl\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}renderer.cpp File Reference}{112}{section.9.46}%
+\contentsline {subsection}{\numberline {9.46.1}Macro Definition Documentation}{113}{subsection.9.46.1}%
+\contentsline {subsubsection}{\numberline {9.46.1.1}STB\_IMAGE\_IMPLEMENTATION}{113}{subsubsection.9.46.1.1}%
+\contentsline {section}{\numberline {9.47}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}opengl\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}renderer.h File Reference}{113}{section.9.47}%
+\contentsline {section}{\numberline {9.48}opengl\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}renderer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{113}{section.9.48}%
+\contentsline {section}{\numberline {9.49}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}physics.cpp File Reference}{114}{section.9.49}%
+\contentsline {section}{\numberline {9.50}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}physics.h File Reference}{114}{section.9.50}%
+\contentsline {section}{\numberline {9.51}physics.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{115}{section.9.51}%
+\contentsline {section}{\numberline {9.52}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}saveable.h File Reference}{115}{section.9.52}%
+\contentsline {subsection}{\numberline {9.52.1}Macro Definition Documentation}{116}{subsection.9.52.1}%
+\contentsline {subsubsection}{\numberline {9.52.1.1}PROPERTY\_CHECK}{116}{subsubsection.9.52.1.1}%
+\contentsline {subsubsection}{\numberline {9.52.1.2}PROPERTY\_LOAD}{116}{subsubsection.9.52.1.2}%
+\contentsline {subsubsection}{\numberline {9.52.1.3}PROPERTY\_SAVE}{116}{subsubsection.9.52.1.3}%
+\contentsline {section}{\numberline {9.53}saveable.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{117}{section.9.53}%
+\contentsline {section}{\numberline {9.54}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scene.cpp File Reference}{117}{section.9.54}%
+\contentsline {section}{\numberline {9.55}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scene.h File Reference}{117}{section.9.55}%
+\contentsline {section}{\numberline {9.56}scene.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{118}{section.9.56}%
+\contentsline {section}{\numberline {9.57}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}loader.cpp File Reference}{118}{section.9.57}%
+\contentsline {section}{\numberline {9.58}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}loader.h File Reference}{118}{section.9.58}%
+\contentsline {section}{\numberline {9.59}scene\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}loader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{119}{section.9.59}%
+\contentsline {section}{\numberline {9.60}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}screen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shader.cpp File Reference}{119}{section.9.60}%
+\contentsline {section}{\numberline {9.61}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}screen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shader.h File Reference}{120}{section.9.61}%
+\contentsline {section}{\numberline {9.62}screen\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{120}{section.9.62}%
+\contentsline {section}{\numberline {9.63}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.cpp File Reference}{120}{section.9.63}%
+\contentsline {section}{\numberline {9.64}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.h File Reference}{121}{section.9.64}%
+\contentsline {section}{\numberline {9.65}script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}component.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{121}{section.9.65}%
+\contentsline {section}{\numberline {9.66}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine.h File Reference}{121}{section.9.66}%
+\contentsline {section}{\numberline {9.67}script\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{122}{section.9.67}%
+\contentsline {section}{\numberline {9.68}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shader.cpp File Reference}{122}{section.9.68}%
+\contentsline {section}{\numberline {9.69}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}shader.h File Reference}{123}{section.9.69}%
+\contentsline {section}{\numberline {9.70}shader.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{123}{section.9.70}%
+\contentsline {section}{\numberline {9.71}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sound.cpp File Reference}{124}{section.9.71}%
+\contentsline {section}{\numberline {9.72}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sound.h File Reference}{124}{section.9.72}%
+\contentsline {section}{\numberline {9.73}sound.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{125}{section.9.73}%
+\contentsline {section}{\numberline {9.74}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sound\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.cpp File Reference}{125}{section.9.74}%
+\contentsline {section}{\numberline {9.75}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}sound\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.h File Reference}{125}{section.9.75}%
+\contentsline {section}{\numberline {9.76}sound\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}manager.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{126}{section.9.76}%
+\contentsline {section}{\numberline {9.77}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texture.cpp File Reference}{126}{section.9.77}%
+\contentsline {section}{\numberline {9.78}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}texture.h File Reference}{126}{section.9.78}%
+\contentsline {section}{\numberline {9.79}texture.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{127}{section.9.79}%
+\contentsline {section}{\numberline {9.80}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}theme.h File Reference}{127}{section.9.80}%
+\contentsline {section}{\numberline {9.81}theme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{127}{section.9.81}%
+\contentsline {section}{\numberline {9.82}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}transform.cpp File Reference}{127}{section.9.82}%
+\contentsline {section}{\numberline {9.83}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}transform.h File Reference}{127}{section.9.83}%
+\contentsline {section}{\numberline {9.84}transform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{128}{section.9.84}%
+\contentsline {section}{\numberline {9.85}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.cpp File Reference}{129}{section.9.85}%
+\contentsline {subsection}{\numberline {9.85.1}Function Documentation}{130}{subsection.9.85.1}%
+\contentsline {subsubsection}{\numberline {9.85.1.1}GenerateUID()}{130}{subsubsection.9.85.1.1}%
+\contentsline {subsubsection}{\numberline {9.85.1.2}MoveTowards()}{130}{subsubsection.9.85.1.2}%
+\contentsline {subsubsection}{\numberline {9.85.1.3}SetUIDOffset()}{130}{subsubsection.9.85.1.3}%
+\contentsline {subsection}{\numberline {9.85.2}Variable Documentation}{130}{subsection.9.85.2}%
+\contentsline {subsubsection}{\numberline {9.85.2.1}uid\_ctr}{130}{subsubsection.9.85.2.1}%
+\contentsline {section}{\numberline {9.86}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}engine/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}util.h File Reference}{130}{section.9.86}%
+\contentsline {subsection}{\numberline {9.86.1}Function Documentation}{130}{subsection.9.86.1}%
+\contentsline {subsubsection}{\numberline {9.86.1.1}GenerateUID()}{130}{subsubsection.9.86.1.1}%
+\contentsline {subsubsection}{\numberline {9.86.1.2}MoveTowards()}{131}{subsubsection.9.86.1.2}%
+\contentsline {subsubsection}{\numberline {9.86.1.3}SetUIDOffset()}{131}{subsubsection.9.86.1.3}%
+\contentsline {section}{\numberline {9.87}util.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{131}{section.9.87}%
+\contentsline {chapter}{Index}{133}{section*.231}%

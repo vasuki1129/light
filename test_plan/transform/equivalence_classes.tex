@@ -1,4 +1,4 @@
-% Created 2026-09-29 Tue 18:46
+% Created 2026-10-02 Fri 01:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 
@@ -13,9 +13,11 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage{minted}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage[margin=0.75in]{geometry}
+\setcounter{secnumdepth}{2}
 \date{\today}
 \title{}
 \hypersetup{
@@ -30,27 +32,93 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 \section{transform.cpp}
-\label{sec:orgb1bfb53}
+\label{sec:orge2f6a6a}
 
 \subsection{Transform::AddChild(Transform* tr)}
-\label{sec:org7604f84}
-\subsubsection{Equivalence Classes}
-\label{sec:org9542ffc}
+\label{sec:org3c2db77}
+\subsubsection*{Specification}
+\label{sec:org06b11fc}
+\begin{minted}[]{c++}
+/**
+ * Add a child transform to this transform
+ *
+ * If the desired child is already a child of this transform
+ * log a warning and ignore it
+ *
+ * @param tr the transform to add as a child
+ *
+ */
+void AddChild(Transform *tr);
+
+\end{minted}
+\subsubsection*{Equivalence Classes}
+\label{sec:org0425f75}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.1.EC1.1 & tr & a valid pointer & `new Transform()`\\
+1.1.EC1.1 & tr & a valid pointer & new Transform()\\
 \hline
-1.1.EC1.a & tr & an invalid pointer & nullptr\\
+1.1.EC1.a & tr & a null pointer & nullptr\\
 \hline
 \end{tabularx}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:org17595b1}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
+ & \textit{tr} & \\
+\hline
+1.1.TC1 & A pointer to some valid Transform & No output\\
+\hline
+1.1.TC1a & nullptr & Error: log message\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection*{Test Implementation}
+\label{sec:org9af301f}
+\begin{minted}[]{c++}
+TEST_CASE("1.1.TC1") {
+
+  Transform* test_transform = new Transform();
+  Transform* child_transform = new Transform();
+
+  //redirect cout to a string so we can check for the error message
+  std::stringstream buffer;
+  std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+  test_transform->AddChild(child_transform);
+
+  std::cout.rdbuf(old_cout);
+  CHECK(buffer.str() == ""); //no output expected
+
+  delete child_transform;
+  delete test_transform;
+}
+
+TEST_CASE("1.1.TC2") {
+
+  Transform* test_transform = new Transform();
+
+  std::stringstream buffer;
+  std::streambuf* old_cout = std::cout.rdbuf(buffer.rdbuf());
+
+  test_transform->AddChild(nullptr);
+
+  std::cout.rdbuf(old_cout);
+  CHECK(buffer.str() != ""); //some kind of log output expected    
+
+  delete test_transform;
+}
+
+\end{minted}
 \subsection{Transform::AddComponent(Component* component)}
-\label{sec:org0fa45e9}
-\subsubsection{Equivalence Classes}
-\label{sec:orgc3efb8f}
+\label{sec:orgbd75e50}
+\subsubsection*{Equivalence Classes}
+\label{sec:org22e758c}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -62,10 +130,24 @@
 \hline
 \end{tabularx}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:org250c1c3}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
+ & \textit{tr} & \\
+\hline
+1.1.TC1 & A pointer to some valid Transform & No output\\
+\hline
+1.1.TC1a & nullptr & Error: log message and ignore\\
+\hline
+\end{tabularx}
+\end{center}
 \subsection{Transform::FindChildByName(std::string name)}
-\label{sec:org4602218}
-\subsubsection{Equivalence Classes}
-\label{sec:org0c9e748}
+\label{sec:org56dc0ce}
+\subsubsection*{Equivalence Classes}
+\label{sec:orgdd533cb}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -73,9 +155,25 @@
 \hline
 1.3.EC1.1 & name & A string & "string"\\
 \hline
-1.3.EC1.? & name & The empty string & ""\\
+1.3.EC1.a? & name & The empty string & ""\\
 \hline
-1.3.EC1.a & name & Not a string & 1\\
+1.3.EC1.b & name & Not a string & 1\\
+\hline
+\end{tabularx}
+\end{center}
+\subsubsection*{Test Cases}
+\label{sec:orgd503e7f}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected}\\
+ & \textit{name} & \\
+\hline
+1.1.TC1.1 & "string" & nullptr\\
+\hline
+1.1.TC1.a? & "" & ???\\
+\hline
+1.1.TC1.b & 1 & This will be disallowed by type checking, so TC implementation is omitted.\\
 \hline
 \end{tabularx}
 \end{center}
@@ -84,10 +182,10 @@
 \item The specification is unclear on whether the empty string is a valid name for a Transform
 \end{itemize}
 \subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
-\label{sec:orgab19741}
+\label{sec:org0949d44}
 
-\subsubsection{Equivalence Classes}
-\label{sec:orgedf43a6}
+\subsubsection*{Equivalence Classes}
+\label{sec:org88dc3bc}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -101,88 +199,124 @@
 \hline
 \end{tabularx}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:org1e94503}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{tr} &  & \\
+\hline
+1.4.TC1.1 & 1 & nullptr & 1.4.EC1.1\\
+\hline
+1.4.TC1.2 & 0 & nullptr & 1.4.EC1.2\\
+\hline
+1.4.TC1.a & -1 & Disallowed by type checking, TC implementation omitted & 1.4.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{itemize}
+\item 1.1.TC1.a omitted, as it would be disallowed by the type checker.
+\end{itemize}
 \subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
-\label{sec:orgf02ae06}
+\label{sec:org2b45b33}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org57e2947}
+\subsubsection*{Equivalence Classes}
+\label{sec:org5471068}
 Equivalence classes same as Transform::FindComponentByUID.
+\subsubsection*{Test Cases}
+\label{sec:orgc25a673}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{tr} &  & \\
+\hline
+1.5.TC1.1 & 1 & nullptr & 1.5.EC1.1\\
+\hline
+1.5.TC1.2 & 0 & nullptr & 1.5.EC1.2\\
+\hline
+1.5.TC1.a & -1 & Disallowed by type checking, TC implementation omitted & 1.5.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
 \subsection{Transform::GetChildren()}
-\label{sec:org3a2b4b3}
+\label{sec:orgc4c45b5}
 
-\subsubsection{Equivalence Classes}
-\label{sec:orgd0e6f43}
+\subsubsection*{Equivalence Classes}
+\label{sec:org545d157}
 Returns an instance variable that will always be valid.
 \subsection{Transform::GetComponent(std::string name)}
-\label{sec:orgcf72949}
+\label{sec:org7c1c059}
 
-\subsubsection{Equivalence Classes}
-\label{sec:orgdd24e15}
+\subsubsection*{Equivalence Classes}
+\label{sec:org5971dbe}
 Possible issues with specification:
 \begin{itemize}
-\item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme
+\item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme as `FindComponentByName`.
 
 The equivalence classes are the same as Transform::FindChildByName.
 \end{itemize}
 \subsection{Transform::GetGlobalPosition()}
-\label{sec:orga6fb7b6}
+\label{sec:orgd491cdb}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org707d883}
+\subsubsection*{Equivalence Classes}
+\label{sec:org8b85199}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.8.EC1.1 & parent & parent is an invalid pointer & nullptr\\
+1.8.EC1.1 & parent (implicit) & parent is an invalid pointer & nullptr\\
 \hline
-1.8.EC1.2 & parent & parent is a valid pointer & new Transform()\\
+1.8.EC1.2 & parent (implicit) & parent is a valid pointer & new Transform()\\
 \hline
 \end{tabularx}
 \end{center}
 \subsection{Transform::GetGlobalRotation()}
-\label{sec:org9964e6f}
+\label{sec:orgf49063b}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org6bf8145}
+\subsubsection*{Equivalence Classes}
+\label{sec:orgea8ecb8}
 Equivalence classes same as Transform::GetGlobalPosition.
 \subsection{Transform::GetGlobalScale()}
-\label{sec:org9a69adc}
+\label{sec:orgaca46ea}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org11e704b}
+\subsubsection*{Equivalence Classes}
+\label{sec:org2c3b1d9}
 Equivalence classes same as Transform::GetGlobalScale.
 \subsection{Transform::GetLocalPosition()}
-\label{sec:org0194651}
+\label{sec:org7340154}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org13e5c16}
+\subsubsection*{Equivalence Classes}
+\label{sec:org91eb789}
 This is a simple getter and only exposes a field.
 \subsection{Transform::GetLocalRotation()}
-\label{sec:orgd0dd662}
+\label{sec:org8b4ec90}
 
-\subsubsection{Equivalence Classes}
-\label{sec:orgb2ac08d}
+\subsubsection*{Equivalence Classes}
+\label{sec:org7a4ee44}
 This is a simple getter and only exposes a field.
 \subsection{Transform::GetLocalScale()}
-\label{sec:orgdf22976}
+\label{sec:orgfa8bf17}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org0dca9d3}
+\subsubsection*{Equivalence Classes}
+\label{sec:org22d37d7}
 This is a simple getter and only exposes a field.
 \subsection{Transform::Rotate(glm::vec3 axis, float amount)}
-\label{sec:org3c95687}
+\label{sec:org3534dca}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org431da7d}
+\subsubsection*{Equivalence Classes}
+\label{sec:org4beac2b}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.14.EC1.1 & axis & axis is a vector with nonzero length & \{x=1.0,y=0.0,z=0.0\}\\
+1.14.EC1.1 & axis & axis is a vector with nonzero length & \{1.0,0.0,0.0\}\\
 \hline
-1.14.EC1.a & axis & axis is a vector with zero length & \{x=0,y=0,z=0\}\\
+1.14.EC1.a & axis & axis is a vector with zero length & \{0.0,0.0,0.0\}\\
 \hline
 1.14.EC1.b & axis & axis is not a vector & 1\\
 \hline
@@ -194,19 +328,40 @@ This is a simple getter and only exposes a field.
 \hline
 \end{tabularx}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:org5ea806a}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} &  & \textbf{Expected} & Additional Coverage\\
+ & \textit{axis} & \textit{amount} &  & \\
+\hline
+1.14.TC1 & \{1.0,0.0,0.0\} & 90.0f & No output & 1.14.EC1.1\\
+ &  &  &  & 1.14.EC2.1\\
+\hline
+1.14.TC2 & \{1.0,0.0,0.0\} & 90 & No output & 1.14.EC2.2\\
+\hline
+1.14.TC3 & \{0.0,0.0,0.0\} & 90.0f & Error: log message & 1.14.EC1.a\\
+\hline
+1.14.TC4* & 1 & 90.0f & Disallowed by type checker & 1.14.EC1.b\\
+\hline
+1.14.TC5* & \{1.0,0.0,0.0\} & "90" & Disallowed by type checker & 1.14.EC2.a\\
+\hline
+\end{tabularx}
+\end{center}
 \subsection{Transform::Scale(glm::vec3 amount)}
-\label{sec:org48cb68e}
+\label{sec:org6f4bf9f}
 
-\subsubsection{Equivalence Classes}
-\label{sec:org1e32c8c}
+\subsubsection*{Equivalence Classes}
+\label{sec:org2be11be}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.15.EC1.1 & amount & Any vector & \{x=2.0,y=3.0,z=2.0\}\\
+1.15.EC1.1 & amount & Any vector other than the zero vector or the identity vector of component-wise multiplication & \{x=2.0,y=3.0,z=2.0\}\\
 \hline
-1.15.EC1.2 & amount & The identity element & \{x=1.0,y=1.0,z=1.0\}\\
+1.15.EC1.2 & amount & The identity element of component-wise multiplication & \{x=1.0,y=1.0,z=1.0\}\\
 \hline
 1.15.EC1.3 & amount & The zero vector & \{x=0.0,y=0.0,z=0.0\}\\
 \hline
@@ -214,65 +369,86 @@ This is a simple getter and only exposes a field.
 \hline
 \end{tabularx}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:orgbbac659}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{amount} &  & \\
+\hline
+1.15.TC1 & \{2.0,3.0,2.0\} & No output & 1.15.EC1.1\\
+\hline
+1.15.TC2 & \{1.0,1.0,1.0\} & No output & 1.15.EC1.2\\
+\hline
+1.15.TC3 & \{0.0,0.0,0.0\} & No output & 1.15.EC1.3\\
+\hline
+1.15.TC4* & 1 & Disallowed by type checker & 1.15.EC1.a\\
+\hline
+\end{tabularx}
+\end{center}
 \subsection{Transform::Translate(glm::vec3 offset)}
-\label{sec:org01d8cee}
+\label{sec:org089e5a5}
 
-\subsubsection{Equivalence Classes}
-\label{sec:orgaf99f0c}
+\subsubsection*{Equivalence Classes}
+\label{sec:org5c8e452}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
 \textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
 \hline
-1.16.EC1.1 & amount & Any vector & \{x=2.0,y=3.0,z=2.0\}\\
+1.16.EC1.1 & amount & Any vector that is not the identity vector & \{x=2.0,y=3.0,z=2.0\}\\
 \hline
-1.16.EC1.2 & amount & The identity & \{x=0.0,y=0.0,z=0.0\}\\
+1.16.EC1.2 & amount & The identity vector for addition & \{x=0.0,y=0.0,z=0.0\}\\
 \hline
 1.16.EC1.a & amount & Not a vector & 1\\
 \hline
 \end{tabularx}
 \end{center}
-\subsection{Transform::Forward()}
-\label{sec:orgebc1e08}
-
-\subsubsection{Equivalence Classes}
-\label{sec:org7f09a25}
+\subsubsection*{Test Cases}
+\label{sec:org32d385f}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
-\textbf{Eq. Class ID} & \textbf{Param} & \textbf{Description} & \textbf{Representative}\\
+\textbf{Test Case ID} & \textbf{Param.} & \textbf{Expected} & Coverage\\
+ & \textit{amount} &  & \\
 \hline
-1.17.EC1.1 & rotation (implicit) & Any unit quaternion \(x \in \mathbb{H}:\lvert x \rvert =1\) & \{x=0,y=0,z=0,w=1\}\\
+1.16.TC1 & \{2.0,3.0,2.0\} & No output & 1.16.EC1.1\\
 \hline
-1.17.EC1.a & rotation (implicit) & A non-unit quaternion \(x \in \mathbb{H}:\lvert x \rvert \neq 1\) & \{x=0,y=0,z=0,w=2\}\\
+1.16.TC2 & \{0.0,0.0,0.0\} & No output & 1.16.EC1.2\\
 \hline
-1.17.EC1.b & rotation (implicit) & Not a quaternion \(x \notin \mathbb{H}\) & 1\\
+1.16.TC3 & 1 & Disallowed by type checker & 1.16.EC1.a\\
 \hline
 \end{tabularx}
 \end{center}
+\subsection{Transform::Forward()}
+\label{sec:org08bc334}
+\subsubsection*{Equivalence Classes}
+\label{sec:org75c82d4}
+Method has no parameters.
 \subsection{Transform::Backward()}
-\label{sec:org037d19f}
-\subsubsection{Equivalence Classes}
-\label{sec:org5a6d53f}
-Equivalence classes same as Transform::Forward.
+\label{sec:org85db5c5}
+\subsubsection*{Equivalence Classes}
+\label{sec:org110166a}
+Method has no parameters.
 \subsection{Transform::Left()}
-\label{sec:org2e49995}
-\subsubsection{Equivalence Classes}
-\label{sec:org98f05f6}
-Equivalence classes same as Transform::Forward.
+\label{sec:org496847e}
+\subsubsection*{Equivalence Classes}
+\label{sec:org8e47aae}
+Method has no parameters.
 \subsection{Transform::Right()}
-\label{sec:orgb479db4}
-\subsubsection{Equivalence Classes}
-\label{sec:orge574de4}
-Equivalence classes same as Transform::Forward.
+\label{sec:org2b8c158}
+\subsubsection*{Equivalence Classes}
+\label{sec:org94406d0}
+Method has no parameters.
 \subsection{Transform::Up()}
-\label{sec:org3be650e}
-\subsubsection{Equivalence Classes}
-\label{sec:org8d59bf4}
-Equivalence classes same as Transform::Forward.
+\label{sec:org54f4a5b}
+\subsubsection*{Equivalence Classes}
+\label{sec:org07dd1c7}
+Method has no parameters.
 \subsection{Transform::Down()}
-\label{sec:org7453789}
-\subsubsection{Equivalence Classes}
-\label{sec:orgcce37e5}
-Equivalence classes same as Transform::Forward.
+\label{sec:org2a98043}
+\subsubsection*{Equivalence Classes}
+\label{sec:orgf330b6c}
+Method has no parameters.
 \end{document}

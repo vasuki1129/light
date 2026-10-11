@@ -36,7 +36,6 @@
 #include "camera_component.h"
 #include "sound_manager.h"
 
-
 namespace engine {
 
 class AssetManager;
@@ -66,14 +65,8 @@ public:
 
   void Stop();
 
-
-
   Component *GetLocalPlayer();
   void SetLocalPlayer(Component* local_player);
-
-
-
-
 
   void Initialize();
 

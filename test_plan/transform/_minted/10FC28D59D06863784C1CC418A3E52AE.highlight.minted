@@ -1,0 +1,35 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}1.1.TC1\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{child\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{c+c1}{//redirect cout to a string so we can check for the error message}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{streambuf}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{old\PYGZus{}cout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{());}
+
+\PYG{+w}{  }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{AddChild}\PYG{p}{(}\PYG{n}{child\PYGZus{}transform}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{old\PYGZus{}cout}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{str}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//no output expected}
+
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{child\PYGZus{}transform}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}1.1.TC2\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{streambuf}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{old\PYGZus{}cout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{());}
+
+\PYG{+w}{  }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{AddChild}\PYG{p}{(}\PYG{k}{nullptr}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{old\PYGZus{}cout}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{str}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//some kind of log output expected}
+
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\end{MintedVerbatim}

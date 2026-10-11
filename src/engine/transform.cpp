@@ -7,22 +7,22 @@
 #include "engine.h"
 namespace engine {
 
-static int CompSearchCallback(ImGuiInputTextCallbackData* data) {
+  static int CompSearchCallback(ImGuiInputTextCallbackData* data) {
     if (data->EventFlag == ImGuiInputTextFlags_CallbackEdit) {
-
+      
     }
     return 0;
-}
-
-Component *Transform::GetComponent(std::string name) {
-  for (auto comp : components) {
-    if(comp == nullptr) continue;
-    if (comp->name == name) {
-      return comp;
-    }
   }
-  return nullptr;
-}
+
+  Component *Transform::GetComponent(std::string name) {
+    for (auto comp : components) {
+      if(comp == nullptr) continue;
+      if (comp->name == name) {
+	return comp;
+      }
+    }
+    return nullptr;
+  }
 
 
 

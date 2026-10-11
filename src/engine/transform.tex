@@ -1,0 +1,487 @@
+% Created 2026-10-01 Thu 19:42
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\#pragma once
+\#include "component.h"
+\#include "saveable.h"
+\#include <glm/glm.hpp>
+\#include <glm/ext.hpp>
+\#include <vector>
+\#include <string>
+\#include "../dflib/dflib.h"
+
+namespace engine \{
+
+class Component;
+
+class Transform : public Saveable \{
+public:
+
+Transform();
+
+/**
+\begin{itemize}
+\item "load" constructor
+\item 
+
+\item Called by the level loader to deserialize transforms from json
+\item Simply reads the corresponding fields from the json file and populates the class fields
+\item 
+
+\item @param value The JSON to deserialize
+\end{itemize}
+ */
+Transform(json value);
+
+/**
+\begin{itemize}
+\item Same as default constructor, but with the node name set
+\item 
+
+\item @param name The desired node name
+\end{itemize}
+ */
+Transform(std::string name);
+
+/**
+\begin{itemize}
+\item Destroys this transform, all of its components, and then recursively destroys
+\item its children
+\end{itemize}
+ */
+\textasciitilde{}Transform();
+
+/**
+\begin{itemize}
+\item Sets the node's name
+\item 
+
+\item @param name The desired node name
+\end{itemize}
+ */
+void SetName(std::string name);
+
+/**
+\begin{itemize}
+\item Save's the transform's properties to a JSON object
+\item 
+
+\item @returns the JSON object representing the transform
+\end{itemize}
+ */
+json Save() override;
+
+/**
+\begin{itemize}
+\item Load the transform properties saved with `Save()` into the transform
+\item 
+
+\item @returns true on success, false on failure
+\end{itemize}
+ */
+bool Load(json value) override;
+
+/**
+\begin{itemize}
+\item This is the render function called by the editor
+\end{itemize}
+ */
+void ProcessEditorRender();
+
+/**
+\begin{itemize}
+\item This is the render function called by the game
+\end{itemize}
+ */
+void ProcessRender();
+
+/**
+\begin{itemize}
+\item Runs once per frame when the game simulation is running
+\end{itemize}
+ */
+void ProcessTick(float dt);
+
+/**
+\begin{itemize}
+\item This is the initialization function called to initialize
+\item components.
+\end{itemize}
+ */  
+void ProcessInit();
+
+/**
+\begin{itemize}
+\item Add a component to this transform
+\item 
+
+\item @param component A pointer to the component to add
+\end{itemize}
+ \textbf{/  
+void AddComponent(Component} component);
+
+/**
+\begin{itemize}
+\item Get a component on this transform by name
+\item 
+
+\item If multiple components have the same name, the first
+\item in the array is returned
+\item 
+
+\item If no component has the given name, return nullptr
+\item 
+
+\item @param name The name of the component to return
+\item 
+
+\item @returns A pointer to the component with the given name, or nullptr
+\end{itemize}
+ \textbf{/  
+Component} GetComponent(std::string name);
+
+/**
+\begin{itemize}
+\item Add a child transform to this transform
+\item 
+
+\item If the transform is already a child of this transform
+\item log a warning and ignore it
+\item 
+
+\item @param tr the transform to add as a child
+\item 
+\end{itemize}
+ */
+void AddChild(Transform *tr);
+
+/**
+\begin{itemize}
+\item Return the child transform that has the given id
+\item 
+
+\item If no child has the given ID, return nullptr
+\item 
+
+\item @param id The id of the transform to return
+\item 
+
+\item @returns A pointer to the transform with the given id, or nullptr
+\end{itemize}
+ */
+Transform *FindTransformByUID(uint64\textsubscript{t} id);
+
+/**
+\begin{itemize}
+\item Return the attached component that has the given id
+\item 
+
+\item If no component has the given ID, return nullptr
+\item 
+
+\item @param id The id of the component to return
+\item 
+
+\item @returns A pointer to the component with the given id, or nullptr
+\end{itemize}
+ \textbf{/  
+Component} FindComponentByUID(uint64\textsubscript{t} id);
+
+/**
+\begin{itemize}
+\item Return the child transform with the given name
+\item 
+
+\item If more than one child has the given name, return the first in the array
+\item 
+
+\item If no child has the given name, return nullptr
+\item 
+
+\item @param name The name of the child to return
+\item 
+
+\item @returns A pointer to the transform with the given name, or nullptr
+\end{itemize}
+ */
+Transform *FindChildByName(std::string name);
+
+/**
+\begin{itemize}
+\item Removes the given transform from the children array, and returns it
+\item 
+
+\item Does not automatically destroy the transform
+\item 
+
+\item If the given transform does not exist in the child array, return nullptr
+\item 
+
+\item @param tr The transform to remove
+\item 
+
+\item @returns The transform that was removed
+\end{itemize}
+ \textbf{/
+Transform} RemoveChild(Transform *tr);
+
+
+
+/**
+\begin{itemize}
+\item Return the children array of this transform
+\item 
+
+\item @returns The children array of this transform
+\end{itemize}
+ */
+std::vector<Transform*> GetChildren();
+
+/**
+\begin{itemize}
+\item Translates this transform in local coordinates
+\item 
+
+\item @param offset The vector to translate the transform by
+\end{itemize}
+ */
+void Translate(glm::vec3 offset);
+
+
+/**
+\begin{itemize}
+\item Scales this transform by the given multiplier
+\item 
+
+\item @param amount The vector to multiply the scale by
+\end{itemize}
+ */
+void Scale(glm::vec3 amount);
+
+/**
+\begin{itemize}
+\item Rotates the transform along the given axis by the given amount
+\item 
+
+\item @param axis The axis to rotate around
+\item @param amount The rotation amount, in degrees
+\end{itemize}
+ */
+void Rotate(glm::vec3 axis, float amount);
+
+/**
+\begin{itemize}
+\item Returns the forward direction of this transform
+\item 
+
+\item @returns the forward direction of the transform
+\end{itemize}
+ */
+glm::vec3 Forward();
+
+/**
+\begin{itemize}
+\item Returns the backward direction of this transform
+\item 
+
+\item @returns the backward direction of the transform
+\end{itemize}
+ */ 
+glm::vec3 Backward();
+
+/**
+\begin{itemize}
+\item Returns the up direction of this transform
+\item 
+
+\item @returns the up direction of the transform
+\end{itemize}
+ */
+glm::vec3 Up();
+
+/**
+\begin{itemize}
+\item Returns the down direction of this transform
+\item 
+
+\item @returns the down direction of the transform
+\end{itemize}
+ */
+glm::vec3 Down();
+
+/**
+\begin{itemize}
+\item Returns the left direction of this transform
+\item 
+
+\item @returns the left direction of the transform
+\end{itemize}
+ */
+glm::vec3 Left();
+
+/**
+\begin{itemize}
+\item Returns the right direction of this transform
+\item 
+
+\item @returns the right direction of the transform
+\end{itemize}
+ */  
+glm::vec3 Right();
+
+
+/**
+\begin{itemize}
+\item Calculate the model matrix given the instances position, rotation, and scale
+\item 
+
+\item @returns the model matrix corresponding to this instance
+\end{itemize}
+ */
+glm::mat4 GetModelMatrix();
+
+/**
+\begin{itemize}
+\item Calculates the model matrix with the scale normalized to 1
+\item 
+
+\item This is used internally for some editor functionality.
+\item 
+
+\item @returns The model matrix corresponding to this instance with a unit scale
+\end{itemize}
+ */
+glm::mat4 GetModelMatrixUnscaled();
+
+/**
+\begin{itemize}
+\item Calculates the position of this transform in global coordinates
+\item 
+
+\item @returns the global position vector of this transform
+\item 
+\end{itemize}
+ */
+glm::vec3 GetGlobalPosition();
+
+/**
+\begin{itemize}
+\item Returns the position of this transform in local coordinates
+\item 
+
+\item @returns the local position vector of this transform
+\end{itemize}
+ */
+glm::vec3 GetLocalPosition();
+
+/**
+\begin{itemize}
+\item Returns the rotation of this transform in global coordinates
+\item 
+
+\item @returns the quaternion rotation of this transform in global coordinates
+\end{itemize}
+ */
+glm::quat GetGlobalRotation();
+
+/**
+\begin{itemize}
+\item Returns the rotation of this transform in local coordinates
+\item 
+
+\item @returns the quaternion rotation of this transform in local coordinates
+\end{itemize}
+ */
+glm::quat GetLocalRotation();
+
+
+
+/**
+\begin{itemize}
+\item Returns the scale of this transform in global coordinates
+\item 
+
+\item @returns the scale value of this transform in global coordinates
+\end{itemize}
+ */
+glm::vec3 GetGlobalScale();
+
+/**
+\begin{itemize}
+\item Returns the scale of this transform in local coordinates
+\item 
+
+\item @returns the scale value of this transform in local coordinates
+\end{itemize}
+ */
+glm::vec3 GetLocalScale();
+
+/**
+\begin{itemize}
+\item Returns the name of this transform
+\item 
+
+\item @returns the name of this transform
+\end{itemize}
+ */
+std::string GetName();
+
+/**
+\begin{itemize}
+\item Returns the uid of this transform
+\item 
+
+\item @returns the uid of this transform
+\end{itemize}
+ */
+uint64\textsubscript{t} GetUID();
+
+
+/**
+\begin{itemize}
+\item Draws the editor UI for this transform
+\end{itemize}
+ */
+void DrawWidget();
+
+glm::vec3 position;
+glm::quat rotation;
+glm::vec3 scale;
+std::string name;
+uint64\textsubscript{t} uid;
+glm::vec3 rotationEuler; //slaved to the quaternion
+
+Transform *parent = nullptr;
+std::vector<Transform *> children;
+std::vector<Component*> components;
+
+private:
+\};
+
+\}
+\end{document}

@@ -13,16 +13,15 @@ class Component;
 
 class Transform : public Saveable {
 public:
-  /**
-   * Default constructor
-   */
+  
   Transform();
 
   /**
    * "load" constructor
    *
    * Called by the level loader to deserialize transforms from json
-   *
+   * Simply reads the corresponding fields from the json file and populates the class fields
+   * 
    * @param value The JSON to deserialize
    */
   Transform(json value);
@@ -48,7 +47,7 @@ public:
   void SetName(std::string name);
 
   /**
-   * Save's the transform's properties to a JSON object
+   * Saves the transform's properties to a JSON object
    *
    * @returns the JSON object representing the transform
    */
@@ -57,12 +56,14 @@ public:
   /**
    * Load the transform properties saved with `Save()` into the transform
    *
-   * @returns true on success, false on failure
+   * @returns true on success, false on error
    */
   bool Load(json value) override;
 
   /**
    * This is the render function called by the editor
+   *
+   * Run's each attached component's render
    */
   void ProcessEditorRender();
   

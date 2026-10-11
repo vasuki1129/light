@@ -1,0 +1,83 @@
+% Created 2026-10-02 Fri 00:15
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage[inkscapelatex=false]{svg}
+\usepackage[margin=0.75in]{geometry}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={},
+ pdflang={English}}
+\begin{document}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+\section{Glossary and Conventions}
+\label{sec:org342f6c8}
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Term} & \textbf{Definition}\\
+\hline
+ & \\
+\hline
+\end{tabular}
+\end{center}
+\section{Project}
+\label{sec:orgda8d090}
+
+\subsection{Light}
+\label{sec:org64a949d}
+Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
+\subsection{Component Under Test}
+\label{sec:org9333d5d}
+The focus of the testing will be limited to the `Transform` class due to time constraints. This class is used to build a tree structure representing a 3D scene, along with allowing pieces of C++ code (`Component`s) to be attached to nodes in this tree.  The vast majority of the other features of the engine rely on this class, so it is the most critical to test.  Additionally, it is known to have at least one flaw.
+\section{The Transform Class}
+\label{sec:orge598675}
+
+\subsection{Activity Diagram}
+\label{sec:orga9bf70b}
+
+\begin{center}
+\includesvg[width=.9\linewidth]{diagrams/scenegraph_activity_diagram}
+\label{org6695a77}
+\end{center}
+\subsection{Object Diagram}
+\label{sec:org9377fc1}
+\begin{center}
+\includesvg[width=.9\linewidth]{diagrams/scenegraph_object_diagram}
+\label{org3d77c70}
+\end{center}
+\section{Quality Criteria}
+\label{sec:org777d7e5}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+\textbf{Quality Property} & \textbf{Definition} & \textbf{Metric} & \textbf{Criterion}\\
+\hline
+Functional Correctness & Test cases yield the expected results anticipated during derivation &  & 100\% of test cases pass.\\
+\hline
+Fault Tolerance & Software should run as intended even if invalid inputs are supplied. &  & All invalid test cases properly log invalid inputs and ignore them.\\
+\hline
+Performance &  &  & \\
+\hline
+\end{tabularx}
+\end{center}
+\end{document}

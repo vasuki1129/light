@@ -1,0 +1,84 @@
+@startuml
+
+
+
+
+
+/' Objects '/
+
+namespace engine {
+	class Transform {
+		+Transform()
+		+Transform(json value)
+		+Transform(std::string name)
+		+~Transform()
+		+FindComponentByUID(uint64_t id) : Component*
+		+GetComponent(std::string name) : Component*
+		+FindChildByName(std::string name) : Transform*
+		+FindTransformByUID(uint64_t id) : Transform*
+		+RemoveChild(Transform* tr) : Transform*
+		+parent : Transform*
+		+Load(json value) : bool
+		+GetModelMatrix() : glm::mat4
+		+GetModelMatrixUnscaled() : glm::mat4
+		+GetGlobalRotation() : glm::quat
+		+GetLocalRotation() : glm::quat
+		+rotation : glm::quat
+		+Backward() : glm::vec3
+		+Down() : glm::vec3
+		+Forward() : glm::vec3
+		+GetGlobalPosition() : glm::vec3
+		+GetGlobalScale() : glm::vec3
+		+GetLocalPosition() : glm::vec3
+		+GetLocalScale() : glm::vec3
+		+Left() : glm::vec3
+		+Right() : glm::vec3
+		+Up() : glm::vec3
+		+position : glm::vec3
+		+rotationEuler : glm::vec3
+		+scale : glm::vec3
+		+Save() : json
+		+GetName() : std::string
+		+name : std::string
+		+components : std::vector<Component*>
+		+GetChildren() : std::vector<Transform*>
+		+children : std::vector<Transform*>
+		+GetUID() : uint64_t
+		+uid : uint64_t
+		+AddChild(Transform* tr) : void
+		+AddComponent(Component* component) : void
+		+DrawWidget() : void
+		+ProcessEditorRender() : void
+		+ProcessInit() : void
+		+ProcessRender() : void
+		+ProcessTick(float dt) : void
+		+Rotate(glm::vec3 axis, float amount) : void
+		+Scale(glm::vec3 amount) : void
+		+SetName(std::string name) : void
+		+Translate(glm::vec3 offset) : void
+	}
+}
+
+
+
+
+
+/' Inheritance relationships '/
+
+
+
+
+/' Aggregation relationships '/
+
+engine.Transform "2" o-- engine.Transform
+
+
+
+
+
+
+/' Nested objects '/
+
+
+
+@enduml

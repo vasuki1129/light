@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Add a child transform to this transform}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * If the desired child is already a child of this transform}
+\PYG{c+cm}{ * log a warning and ignore it}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * @param tr the transform to add as a child}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ */}
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{AddChild}\PYG{p}{(}\PYG{n}{Transform}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{tr}\PYG{p}{);}
+
+\end{MintedVerbatim}

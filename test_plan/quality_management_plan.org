@@ -1,16 +1,92 @@
-* Light Engine Test Documentation
-** Project Description
-+ Name :: Light
-+ Description :: Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority modern hardware.
-+ Component Under Test :: The focus of the testing will be the `Transform` class, which stores the contents of a scene as a hierarchical tree structure in which child Transforms inherit their positions, rotations, and scales from their parent Transforms.
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage[inkscapelatex=false]{svg}
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+PROPERTY: header-args:plantuml :file-ext svg
+#+OPTIONS: toc:nil
 
-** Quality Criteria
 
-|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
-| *Quality Property* | *Definition*                                                        | *Metric* | *Criterion*                                                     |
-|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
-| Correctness        | Test cases yield the expected results anticipated during derivation |          | 100% of test cases pass.                                        |
-|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
-| Usability          |                                                                     |          | Methods, fields and classes are named clearly and in a way that |
-|--------------------+---------------------------------------------------------------------+----------+-----------------------------------------------------------------|
-|                    |                                                                     |          |                                                                 |
+#+TOC: headlines 1
+
+
+
+
+* Glossary and Conventions
+|--------+--------------|
+| *Term* | *Definition* |
+|--------+--------------|
+|        |              |
+|--------+--------------|
+
+* Project
+
+** Light
+Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
+** Component Under Test
+The focus of the testing will be limited to the `Transform` class due to time constraints. This class is used to build a tree structure representing a 3D scene, along with allowing pieces of C++ code (`Component`s) to be attached to nodes in this tree.  The vast majority of the other features of the engine rely on this class, so it is the most critical to test.  Additionally, it is known to have at least one flaw.
+
+* The Transform Class
+
+** Object Diagram
+#+BEGIN_SRC plantuml :file diagrams/scenegraph_object_diagram.svg
+  @startuml
+    allowmixing
+
+    object "t1 : Transform" {
+      name = "t1"
+      id = 1
+      position = <U+0028>0,0,0<U+0029>
+      rotation = <U+0028>0,0,0,1<U+0029>
+      scale = <U+0028>1,1,1<U+0029>
+    }
+    
+    object t2
+
+    t2 : name = "t2"
+    t2 : id = 2
+    t2 : position = <U+0028>1,0,0<U+0029>
+    t2 : rotation = <U+0028>0,0,0,1<U+0029>
+    t2 : scale = <U+0028>1,1,1<U+0029>
+
+    object t3
+
+    t3 : name = "t3"
+    t3 : id = 3
+    t3 : position = <U+0028>1,0,1<U+0029>
+    t3 : rotation = <U+0028>0,0,0,1<U+0029>
+    t3 : scale = <U+0028>1,1,1<U+0029>
+
+    object "c1 : Component"
+    "c1 : Component" : name = "c1"
+    "c1 : Component" :  id = 4
+    
+    "t1 : Transform" <-- t2
+    "t1 : Transform" <-- t3
+
+    t3 o-right- "c1 : TestComponent"
+
+    object t4 {
+      name = "t4"
+      id = 5
+      position = <U+0028>1,0,1<U+0029>
+      rotation = <U+0028>0,0,0,1<U+0029>
+      scale = <U+0028>1,1,1<U+0029>
+    } 
+
+   t3 <-- t4 
+
+  @enduml
+      
+#+END_SRC
+
+* Quality Criteria
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+| *Quality Property*     | *Definition*                                                         | *Metric* | *Criterion*                                                         |
+|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+| Functional Correctness | Test cases yield the expected results anticipated during derivation  |          | 100% of test cases pass.                                            |
+|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+| Fault Tolerance        | Software should run as intended even if invalid inputs are supplied. |          | All invalid test cases properly log invalid inputs and ignore them. |
+|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+| Performance            |                                                                      |          |                                                                     |
+|------------------------+----------------------------------------------------------------------+----------+---------------------------------------------------------------------|
+
