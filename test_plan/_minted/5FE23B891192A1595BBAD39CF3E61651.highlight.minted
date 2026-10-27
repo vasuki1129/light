@@ -1,0 +1,38 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC1\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Component}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindComponentByUID}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC7\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindTransformByUID}\PYG{p}{(}\PYG{n}{UINT64\PYGZus{}MAX}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC2\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Component}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindComponentByUID}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC7\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Component}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindComponentByUID}\PYG{p}{(}\PYG{n}{UINT64\PYGZus{}MAX}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC8\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Component}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindComponentByUID}\PYG{p}{(}\PYG{n}{UINT64\PYGZus{}MAX}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.4.TC9\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Component}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{out}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{FindComponentByUID}\PYG{p}{(}\PYG{n}{UINT64\PYGZus{}MAX}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{out}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

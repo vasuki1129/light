@@ -1,0 +1,147 @@
+===============================================================================
+src/test/transform_test.cpp:6:
+TEST CASE:  1.1.TC1
+
+src/test/transform_test.cpp:18: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:22:
+TEST CASE:  1.1.TC2
+
+src/test/transform_test.cpp:32: SUCCESS: CHECK( buffer.str() != "" ) is correct!
+  values: CHECK( Error: null transform passed to Transform::AddChild
+ !=  )
+
+===============================================================================
+src/test/transform_test.cpp:36:
+TEST CASE:  1.2.TC1
+
+src/test/transform_test.cpp:48: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:51:
+TEST CASE:  1.2.TC3
+
+src/test/transform_test.cpp:61: SUCCESS: CHECK( buffer.str() != "" ) is correct!
+  values: CHECK( Error: null component passed to Transform::AddComponent
+ !=  )
+
+===============================================================================
+src/test/transform_test.cpp:64:
+TEST CASE:  1.3.TC1
+
+src/test/transform_test.cpp:76: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:81:
+TEST CASE:  1.3.TC2
+
+src/test/transform_test.cpp:93: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:98:
+TEST CASE:  1.4.TC1
+
+src/test/transform_test.cpp:104: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:109:
+TEST CASE:  1.4.TC2
+
+src/test/transform_test.cpp:115: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:120:
+TEST CASE:  1.5.TC1
+
+src/test/transform_test.cpp:126: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:131:
+TEST CASE:  1.5.TC2
+
+src/test/transform_test.cpp:137: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:142:
+TEST CASE:  1.6.TC1
+
+src/test/transform_test.cpp:148: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:153:
+TEST CASE:  1.6.TC2
+
+src/test/transform_test.cpp:159: SUCCESS: CHECK( out == nullptr ) is correct!
+  values: CHECK( nullptr == nullptr )
+
+===============================================================================
+src/test/transform_test.cpp:164:
+TEST CASE:  1.10.TC1
+
+src/test/transform_test.cpp:173: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:178:
+TEST CASE:  1.10.TC2
+
+src/test/transform_test.cpp:187: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:191:
+TEST CASE:  1.10.TC3
+
+src/test/transform_test.cpp:200: SUCCESS: CHECK( buffer.str() != "" ) is correct!
+  values: CHECK( Error: the zero vector does not constitute a valid axis for Transform::Rotate
+ !=  )
+
+===============================================================================
+src/test/transform_test.cpp:205:
+TEST CASE:  1.11.TC1
+
+src/test/transform_test.cpp:217: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:223:
+TEST CASE:  1.11.TC2
+
+src/test/transform_test.cpp:235: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:240:
+TEST CASE:  1.11.TC3
+
+src/test/transform_test.cpp:252: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:257:
+TEST CASE:  1.12.TC1
+
+src/test/transform_test.cpp:269: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+src/test/transform_test.cpp:274:
+TEST CASE:  1.12.TC2
+
+src/test/transform_test.cpp:286: SUCCESS: CHECK( buffer.str() == "" ) is correct!
+  values: CHECK(  ==  )
+
+===============================================================================
+[doctest] test cases: 20 | 20 passed | 0 failed | 0 skipped
+[doctest] assertions: 20 | 20 passed | 0 failed |
+[doctest] Status: SUCCESS!

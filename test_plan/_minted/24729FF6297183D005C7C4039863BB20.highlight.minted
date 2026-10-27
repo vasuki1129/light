@@ -1,0 +1,29 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.10.TC1\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{streambuf}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{old\PYGZus{}cout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{());}
+\PYG{+w}{  }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rotate}\PYG{p}{(}\PYG{n}{glm}\PYG{o}{::}\PYG{n}{vec3}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{),}\PYG{+w}{ }\PYG{l+m+mf}{90.0f}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{old\PYGZus{}cout}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{str}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//no output expected}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.10.TC2\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{streambuf}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{old\PYGZus{}cout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{());}
+\PYG{+w}{  }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rotate}\PYG{p}{(}\PYG{n}{glm}\PYG{o}{::}\PYG{n}{vec3}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{),}\PYG{+w}{ }\PYG{l+m+mi}{90}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{old\PYGZus{}cout}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{str}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//no output expected}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{TEST\PYGZus{}CASE}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}4.10.TC3\PYGZdq{}}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{Transform}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{stringstream}\PYG{+w}{ }\PYG{n}{buffer}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{streambuf}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{old\PYGZus{}cout}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{());}
+\PYG{+w}{  }\PYG{n}{test\PYGZus{}transform}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{Rotate}\PYG{p}{(}\PYG{n}{glm}\PYG{o}{::}\PYG{n}{vec3}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{l+m+mf}{0.0}\PYG{p}{),}\PYG{+w}{ }\PYG{l+m+mf}{90.0f}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{std}\PYG{o}{::}\PYG{n}{cout}\PYG{p}{.}\PYG{n}{rdbuf}\PYG{p}{(}\PYG{n}{old\PYGZus{}cout}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{CHECK}\PYG{p}{(}\PYG{n}{buffer}\PYG{p}{.}\PYG{n}{str}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//Error log output expected}
+\PYG{+w}{  }\PYG{k}{delete}\PYG{+w}{ }\PYG{n}{test\PYGZus{}transform}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

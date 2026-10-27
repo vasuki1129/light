@@ -34,15 +34,15 @@ public:
   virtual void init();
   virtual void destroy();
 
-  virtual void DrawWidget() =0;
+  virtual void DrawWidget() {};
 
   Transform* GetOwner();
   void SetOwner(Transform* own);
 
   std::string GetName();
 
-  virtual json Save() override =0;
-  virtual bool Load(json value) override =0;
+  virtual json Save() override;
+  virtual bool Load(json value) override {};
   uint64_t GetUID();
   std::string name;
   std::string component_type;

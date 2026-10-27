@@ -103,11 +103,20 @@ namespace engine {
     }
   }
 void Transform::AddComponent(Component *component) {
+  if (component == nullptr)
+  {
+    std::cout << "Error: null component passed to Transform::AddComponent\n";
+    return;
+  }
   component->SetOwner(this);
   this->components.push_back(component);
 }
 
 void Transform::AddChild(Transform *tr) {
+  if (tr == nullptr) {
+    std::cout << "Error: null transform passed to Transform::AddChild\n";
+    return;
+  }
   tr->parent = this;
   this->children.push_back(tr);
 }
@@ -362,6 +371,11 @@ void Transform::Translate(glm::vec3 offset) {
 void Transform::Scale(glm::vec3 amount) { this->scale *= amount; }
 
 void Transform::Rotate(glm::vec3 axis, float amount) {
+  if (glm::length(axis) == 0) {
+    std::cout << "Error: the zero vector does not constitute a valid axis for "
+                 "Transform::Rotate\n";
+    return;
+  }    
   this->rotation = glm::rotate(this->rotation,amount,axis);
 }
 
