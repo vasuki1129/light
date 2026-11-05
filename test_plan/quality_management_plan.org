@@ -1,4 +1,4 @@
-#+TITLE: Light Game Engine Quality Management Plan
+n#+TITLE: Light Game Engine Quality Management Plan
 #+SUBTITLE: Phase 1: Specification Based Testing
 #+AUTHOR: Max Morabito
 
@@ -16,7 +16,6 @@
 #+OPTIONS: toc:nil
 #+Options: num:2
 
-#+TOC: headlines 2
 
 \clearpage
 
@@ -24,7 +23,7 @@
 
 ** Light
 Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
-It is available, fully open-source and free to use, at https://github.com/vasuki1129/light.
+It is available, fully open-source and free to use, at https://git.deepfrog.org/deepfrog/light.
 
 
 \begin{figure}[htbp]
@@ -805,6 +804,15 @@ void Transform::AddChild(Transform *tr) {
 #+attr_latex: :width 8cm
 [[file:diagrams/transform/addchild.pdf]]
 
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|---------+-----------------+------------------|
+| ID      | tr              | Path             |
+|---------+-----------------+------------------|
+| 5.1.TC1 | nullptr         | (in, 2, 3, out)  |
+| 5.2.TC2 | new Transform() | (in, 2, 6-7,out) |
+|---------+-----------------+------------------|
+
 ** Transform::AddComponent(Component* component)
 *** Source Code
 #+begin_src c++
@@ -820,14 +828,14 @@ void Transform::AddComponent(Component *component) {
 #+end_src
 
 *** Control Flow Graph
-#+begin_src mermaid :file diagrams/transform/addchild.pdf :exports results
+#+begin_src mermaid :file diagrams/transform/addcomponent.pdf :exports results
   flowchart
       id1(("`**in**
       def component`")) --> id2(("`**2**`"))
       
       id2 -->|p-use component| id3(("`**3**`"))
       id3 --> out(("`**out**`"))
-      id2 -->|p-use component| id4(("`**6-7**
+      id2 -->|p-use component| id4(("`**7**
       def component
       c-use component`"))
       id4 --> out
@@ -835,7 +843,329 @@ void Transform::AddComponent(Component *component) {
 
 #+end_src
 #+attr_latex: :width 8cm
-[[file:diagrams/transform/addchild.pdf]]
+[[file:diagrams/transform/addcomponent.pdf]]
+
+
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|---------+-----------------+--------------|
+| ID      | component       | Path         |
+|---------+-----------------+--------------|
+| 5.2.TC1 | nullptr         | (in,2,4,out) |
+| 5.2.TC2 | new Component() | (in,2,7,out) |
+|---------+-----------------+--------------|
+
+** Transform::FindChildByName(std::string name)
+
+*** Source Code
+#+begin_src c++
+Transform *Transform::FindChildByName(std::string name) {
+  auto it = std::find_if(children.begin(), children.end(), [name](Transform* t) {return t->name == name;});
+  if (it == children.end()) {
+    std::cout << "Supplied name " + name + " not found on " +
+               this->name << "\n";
+    return nullptr;
+  } else {
+    return *it;
+  }
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/findchildbyname.pdf :exports results
+  flowchart
+      id1(("`**in**
+      def name`")) --> id2(("`**2**
+      def it
+      c-use name`"))
+      
+      id2 --> id3(("`**3**`"))
+      id3 -->|p-use it| out(("`**out**`"))
+      id3 -->|p-use it| id4(("`**4-5**
+      c-use name`"))
+      id4 --> out
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/findchildbyname.pdf]]
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|---------+------+------|
+| ID      | name | Path |
+| 5.3.TC1 |      |      |
+|---------+------+------|
+
+
+
+** Transform::FindComponentByUID(uint64_t id)
+
+*** Source Code
+#+begin_src c++
+Component* Transform::FindComponentByUID(uint64_t id)
+{
+  for(auto comp : components)
+  {
+    if(comp->GetUID() == id)
+    {
+      return comp;
+    }
+  }
+  for(auto ch : children)
+  {
+    Component* c = ch->FindComponentByUID(id);
+    if(c!=nullptr)
+    {
+      return c;
+    }
+  }
+  return nullptr;
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/findcomponentbyuid.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def id`")) --> id2(("`**3**
+      def comp`"))
+      id2 --> id3(("`**5**`"))
+      id3 -->|"`p-use {comp,id}`"| out(("`**out**`"))
+      id3 -->|"`p-use {comp,id}`"| id2
+      id2 --> id4(("`10
+      def ch`"))
+      id4 --> out
+      id4 --> id5(("`12
+      def c
+      c-use id`"))
+      id5 --> id6(("`13`"))
+      id6 -->|p-use c| out
+      id6 -->|p-use c| id4
+      
+
+
+      
+      
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/findcomponentbyuid.pdf]]
+
+** Transform::FindTransformByUID(uint64_t id)
+
+*** Source Code
+#+begin_src c++
+Transform* Transform::FindTransformByUID(uint64_t id)
+{
+  if(this->GetUID() == id)
+  {
+    return this;
+  }
+  else
+  {
+    for(auto ch : children)
+    {
+      Transform* t = ch->FindTransformByUID(id);
+      if(t != nullptr)
+      {
+        return t;
+      }
+    }
+    return nullptr;
+  }
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/findtransformbyuid.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def id`")) --> id2(("`**3**`"))
+      id2 -->|p-use id| out(("`**out**
+      c-use t`"))
+      id2 -->|p-use id| id3(("`**9**
+      def ch`"))
+      id3 --> id4(("`**11**
+      def t
+      c-use {ch,id}`"))
+      id4 --> id5(("`**12**`"))
+      id5 -->|p-use t| out
+      id5 -->|p-use t| id3
+      id3 --> out
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/findtransformbyuid.pdf]]
+
+** Transform::GetComponent(std::string name)
+
+*** Source Code
+#+begin_src c++
+  Component *Transform::GetComponent(std::string name) {
+    for (auto comp : components) {
+      if (comp != nullptr && comp->name == name) {
+	return comp;
+      }
+    }
+    return nullptr;
+  }
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/getcomponent.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def name`")) --> id2(("`**2**
+      def comp`"))
+      id2 --> id3(("`**3**`"))
+      id3 -->|"`p-use {comp, name}`"| out(("`**out**`"))
+      id3 -->|"`p-use {comp, name}`"| id2
+      id2 --> out
+
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/getcomponent.pdf]]
+
+
+
+
+
+** Transform::GetGlobalPosition()
+
+*** Source Code
+#+begin_src c++
+glm::vec3 Transform::GetGlobalPosition() {
+  glm::vec3 tot(0.0f, 0.0f, 0.0f);
+  Transform *tr = this;
+  while (tr != nullptr) {
+    tot += tr->GetLocalPosition();
+    tr = tr->parent;
+  }
+  return tot;
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/getglobalposition.pdf :exports results
+  flowchart TD
+      id1(("`**in**`")) --> id2(("`**2-3**
+      def {tot,tr}`"))
+      id2 --> id3(("`**4**`"))
+      id3 -->|p-use tr| id4(("`**5-6**
+      def {tr,tot}
+      c-use {tr,tot}`"))
+      id4 --> id3
+      id3 -->|p-use tr| out(("`**out**`"))
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/getglobalposition.pdf]]
+
+
+
+** Transform::GetGlobalRotation()
+
+*** Source Code
+#+begin_src c++
+glm::quat Transform::GetGlobalRotation() {
+  glm::quat rot = glm::identity<glm::quat>();
+  Transform *tr = this;
+  while (tr != nullptr) {
+    rot = tr->GetLocalRotation() * rot;
+    tr = tr->parent;
+  }
+  return rot;
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/getglobalrotation.pdf :exports results
+  flowchart TD
+      id1(("`**in**`")) --> id2(("`**2-3**
+      def {rot,tr}`"))
+      id2 --> id3(("`**4**`"))
+      id3 -->|p-use tr| id4(("`**5-6**
+      def {tr,tot}
+      c-use {tr,rot}`"))
+      id4 --> id3
+      id3 -->|p-use tr| out(("`**out**`"))
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/getglobalrotation.pdf]]
+
+
+** Transform::GetGlobalScale()
+
+*** Source Code
+#+begin_src c++
+glm::vec3 Transform::GetGlobalScale() {
+  glm::vec3 tot(1.0f, 1.0f, 1.0f);
+  Transform *tr = this;
+  while (tr != nullptr) {
+    tot *= tr->GetLocalScale();
+    tr = tr->parent;
+  }
+  return tot;
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/getglobalscale.pdf :exports results
+  flowchart TD
+      id1(("`**in**`")) --> id2(("`**2-3**
+      def {tot,tr}`"))
+      id2 --> id3(("`**4**`"))
+      id3 -->|p-use tr| id4(("`**5-6**
+      def {tr,tot}
+      c-use {tr,tot}`"))
+      id4 --> id3
+      id3 -->|p-use tr| out(("`**out**`"))
+      
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/getglobalscale.pdf]]
+
+
+
+** Transform::Rotate()
+
+*** Source Code
+#+begin_src c++
+void Transform::Rotate(glm::vec3 axis, float amount) {
+  if (glm::length(axis) == 0) {
+    std::cout << "Error: the zero vector does not constitute a valid axis for "
+                 "Transform::Rotate\n";
+    return;
+  }    
+  this->rotation = glm::rotate(this->rotation,amount,axis);
+}
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/getglobalscale.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def {axis,amount}`")) --> id2(("`**2**`"))
+      id2 -->|p-use axis| id3(("`**3-4**`"))
+      id3 --> out(("`**out**`"))
+      id2 -->|p-use axis| id4(("`**7**
+      c-use {amount,axis}`"))
+      id4 --> out
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/getglobalscale.pdf]]
+
+
+*** Test Cases
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
+|----------+------------------+--------------+----------------|
+| ID       | axis             | amount       | Path           |
+| 5.10.TC1 | glm::vec3(0,0,0) | 10.0f (free) | (in,2,3-4,out) |
+| 5.10.TC2 | glm::vec3(1,0,0) | 10.0f (free) | (in,2,7,out)   |
+|----------+------------------+--------------+----------------|x
 
 * Test Results
 

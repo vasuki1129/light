@@ -1,4 +1,4 @@
-% Created 2026-10-27 Tue 14:24
+% Created 2026-10-30 Fri 09:35
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 
@@ -27,29 +27,26 @@
 \setcounter{secnumdepth}{2}
 \author{Max Morabito}
 \date{\today}
-\title{Light Game Engine Quality Management Plan\\\medskip
+\title{\\\medskip
 \large Phase 1: Specification Based Testing}
 \hypersetup{
  pdfauthor={Max Morabito},
- pdftitle={Light Game Engine Quality Management Plan},
+ pdftitle={},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={},
  pdflang={English}}
 \begin{document}
 
-\maketitle
-\setcounter{tocdepth}{2}
-\tableofcontents
-
+n\#+TITLE: Light Game Engine Quality Management Plan
 \clearpage
 \section{Project}
-\label{sec:orgfe8fe27}
+\label{sec:org8ed7fb4}
 
 \subsection{Light}
-\label{sec:org16fccec}
+\label{sec:org4b7e86a}
 Light is a minimalist game engine, designed to allow a modern, editor-based workflow while being lightweight enough to run on the vast majority of modern hardware.  It was written over a period of about 20 days for CSC455 at SUNY Oswego.
-It is available, fully open-source and free to use, at \url{https://github.com/vasuki1129/light}.
+It is available, fully open-source and free to use, at \url{https://git.deepfrog.org/deepfrog/light}.
 
 
 \begin{figure}[htbp]
@@ -71,23 +68,23 @@ It is available, fully open-source and free to use, at \url{https://github.com/v
 
 \clearpage
 \subsection{Component Under Test}
-\label{sec:orge4d5474}
+\label{sec:orge20a103}
 The focus of the testing will be limited to the `Transform` class due to time constraints. This class is used to build a graph structure representing a 3D scene, along with allowing pieces of C++ code (`Component`s) to be attached to nodes in this graph.  The vast majority of the other features of the engine rely on this class, so it is the most critical to test.  Additionally, it is known to have at least one flaw.
 \section{The Transform Class}
-\label{sec:org45add83}
+\label{sec:orgf95ffe3}
 \subsection{Purpose}
-\label{sec:org9a26bab}
+\label{sec:orgbde26a4}
 The Transform class forms a single node in a rooted, directed graph that represents a three-dimensional scene.  Each transform represents the location, orientation, and scale of a coordinate frame (in mathematical terms, it defines a basis with an offset). The methods being tested here are the ones that allow constructing this graph, as well as the ones that interact with the Transform's spatial properties (position, rotation, and scale).
 \subsection{Object Diagram}
-\label{sec:org0fb072a}
+\label{sec:orgd78c818}
 This object diagram provides an example of what a transform graph might look like during a run of the program. Fields irrelevant to testing have been omitted.
 \begin{center}
 \includesvg[width=8cm]{diagrams/scenegraph_object_diagram}
-\label{orgb5fcbfa}
+\label{org29378e7}
 \end{center}
 \newpage
 \subsection{Currently Known Flaw}
-\label{sec:orge72f8a5}
+\label{sec:org63931cb}
 
 To illustrate the flaw, imagine a transform called "A" at the origin, with a transform "B" as its child, translated along the Y axis an arbitrary distance.  If the transform "A" is rotated about its Z axis, the child should follow the parent, such that it maintains its position and rotation relative to the parent. Instead, the child rotates independently.
 
@@ -121,9 +118,9 @@ To illustrate the flaw, imagine a transform called "A" at the origin, with a tra
   \end{subfigure}
 \end{figure}
 \section{Quality Management Plan}
-\label{sec:orgcd616cd}
+\label{sec:orgf0617e0}
 \subsection{Quality Criteria}
-\label{sec:org207065e}
+\label{sec:org877d18d}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -138,7 +135,7 @@ Performance & Software should run efficiently enough to allow smooth rendering. 
 \end{tabularx}
 \end{center}
 \subsection{Quality Management Tools}
-\label{sec:orgfa0ae68}
+\label{sec:orgc256bd9}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -155,7 +152,7 @@ Doctest & Automated unit testing and result reporting.\\
 \end{tabularx}
 \end{center}
 \subsection{Test Plan}
-\label{sec:org89e2a61}
+\label{sec:orgbd31e63}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -170,12 +167,12 @@ Further phases are yet to be determined.
 
 \clearpage
 \section{Equivalence Class Testing}
-\label{sec:orgfa8ae60}
+\label{sec:org411ecde}
 
 \subsection{Transform::AddChild(Transform* tr)}
-\label{sec:org461bb10}
+\label{sec:org9a9b086}
 \subsubsection*{Specification}
-\label{sec:org4a029fa}
+\label{sec:org6ac7298}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 /**
  * Add a child transform to this transform
@@ -190,7 +187,7 @@ void AddChild(Transform *tr);
 
 \end{minted}
 \subsubsection*{Equivalence Classes}
-\label{sec:org2257289}
+\label{sec:org03343eb}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -203,7 +200,7 @@ void AddChild(Transform *tr);
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:orgcd31f07}
+\label{sec:orgbf00bf7}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -217,7 +214,7 @@ void AddChild(Transform *tr);
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:org136d751}
+\label{sec:org3e01e99}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 #include "../doctest/doctest.h"
 #include "../engine/transform.h"
@@ -246,9 +243,9 @@ TEST_CASE("4.1.TC2") {
 
 \clearpage
 \subsection{Transform::AddComponent(Component* component)}
-\label{sec:orge9b6a3e}
+\label{sec:orgaa4f9f0}
 \subsubsection*{Specification}
-\label{sec:org6f8d233}
+\label{sec:org8a21000}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 
 /**
@@ -262,7 +259,7 @@ TEST_CASE("4.1.TC2") {
 void AddComponent(Component* component);
 \end{minted}
 \subsubsection*{Equivalence Classes}
-\label{sec:org132c0e8}
+\label{sec:org7ea67c1}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -277,7 +274,7 @@ void AddComponent(Component* component);
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:orgeccc8d2}
+\label{sec:orgfcd335d}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -293,7 +290,7 @@ void AddComponent(Component* component);
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:orgcaae13c}
+\label{sec:orgab94cc7}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.2.TC1") {
   Transform* test_transform = new Transform();
@@ -318,9 +315,9 @@ TEST_CASE("4.2.TC3") {
 
 \clearpage
 \subsection{Transform::FindChildByName(std::string name)}
-\label{sec:org142efcf}
+\label{sec:org3e41296}
 \subsubsection*{Equivalence Classes}
-\label{sec:org35ead83}
+\label{sec:orgaeb3fb6}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -335,7 +332,7 @@ TEST_CASE("4.2.TC3") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org5bffdef}
+\label{sec:org1f3b5d7}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -355,7 +352,7 @@ TEST_CASE("4.2.TC3") {
 \item The specification is unclear on whether the empty string is a valid name for a Transform, so I am assuming it is a valid transform name.
 \end{itemize}
 \subsubsection*{Test Implementation}
-\label{sec:org73c59c9}
+\label{sec:orgce093cc}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.3.TC1") {
   Transform* test_transform = new Transform();
@@ -379,10 +376,10 @@ TEST_CASE("4.3.TC2") {
 
 \clearpage
 \subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
-\label{sec:org70a1028}
+\label{sec:orgf8300e1}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org4e52bae}
+\label{sec:orga062896}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -397,7 +394,7 @@ TEST_CASE("4.3.TC2") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Boundary Value Analysis}
-\label{sec:org1e8b7e1}
+\label{sec:orgb4df3f0}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -408,7 +405,7 @@ id & 0, UINT64\textunderscore{}MAX\\
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org0a377fe}
+\label{sec:org01d53ed}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -448,7 +445,7 @@ id & 0, UINT64\textunderscore{}MAX\\
 
 \clearpage
 \subsubsection*{Test Implementation}
-\label{sec:org3ace0c5}
+\label{sec:orgcc26917}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.4.TC1") {
   Transform* test_transform = new Transform();
@@ -490,13 +487,13 @@ TEST_CASE("4.4.TC9") {
 
 \clearpage
 \subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
-\label{sec:orgad73952}
+\label{sec:org06545f8}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:orgae80899}
+\label{sec:org7798b68}
 Equivalence classes same as Transform::FindComponentByUID.
 \subsubsection*{Test Cases}
-\label{sec:org531f2cb}
+\label{sec:orgbaedd2d}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -512,10 +509,10 @@ Equivalence classes same as Transform::FindComponentByUID.
 \end{tabularx}
 \end{center}
 \subsubsection*{Boundary Value Analysis}
-\label{sec:org5f5582e}
+\label{sec:org223de52}
 Boundary values and additional test cases are the same as 4.4.
 \subsubsection*{Test Implementation}
-\label{sec:org34a82f1}
+\label{sec:org84d41cd}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.5.TC1") {
   Transform* test_transform = new Transform();
@@ -552,10 +549,10 @@ TEST_CASE("4.5.TC9") {
 
 \clearpage
 \subsection{Transform::GetComponent(std::string name)}
-\label{sec:org2bd916f}
+\label{sec:org3972870}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:orgf52b3b4}
+\label{sec:org3417ca0}
 Possible issues with specification:
 \begin{itemize}
 \item The method to get a transform by name is called `FindChildByName`, this method should be updated to match that scheme as `FindComponentByName`.
@@ -563,7 +560,7 @@ Possible issues with specification:
 The equivalence classes are the same as Transform::FindChildByName.
 \end{itemize}
 \subsubsection*{Test Cases}
-\label{sec:org8ae6c2b}
+\label{sec:org113a98e}
 
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
@@ -580,7 +577,7 @@ The equivalence classes are the same as Transform::FindChildByName.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:org8ac00ad}
+\label{sec:orga7ea597}
 
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.6.TC1") {
@@ -599,26 +596,26 @@ TEST_CASE("4.6.TC2") {
 
 \clearpage
 \subsection{Transform::GetGlobalPosition()}
-\label{sec:org90ff586}
+\label{sec:orgbc7eb80}
 \subsubsection*{Equivalence Classes}
-\label{sec:org672c477}
+\label{sec:orged14dfe}
 Takes no parameters, so equivalence class testing is not appropriate.
 \subsection{Transform::GetGlobalRotation()}
-\label{sec:org70d3b9b}
+\label{sec:orgc216cd3}
 \subsubsection*{Equivalence Classes}
-\label{sec:org78e4d7d}
+\label{sec:orgacec553}
 Takes no parameters, so equivalence class testing is not appropriate.
 \subsection{Transform::GetGlobalScale()}
-\label{sec:org894f974}
+\label{sec:orgc3b7417}
 \subsubsection*{Equivalence Classes}
-\label{sec:orgd4ee8cc}
+\label{sec:orgd6e0f09}
 Takes no parameters, so equivalence class testing is not appropriate.
 
 \clearpage
 \subsection{Transform::Rotate(glm::vec3 axis, float amount)}
-\label{sec:orgb983edf}
+\label{sec:orgde370c7}
 \subsubsection*{Equivalence Classes}
-\label{sec:org4c9045e}
+\label{sec:org28cd6cc}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -639,7 +636,7 @@ Takes no parameters, so equivalence class testing is not appropriate.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org30ec50c}
+\label{sec:orgd3b7cce}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXXX}
 \hline
@@ -660,7 +657,7 @@ Takes no parameters, so equivalence class testing is not appropriate.
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:org28c5c74}
+\label{sec:org26a0fc6}
 
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.10.TC1") {
@@ -694,10 +691,10 @@ TEST_CASE("4.10.TC3") {
 
 \clearpage
 \subsection{Transform::Scale(glm::vec3 amount)}
-\label{sec:orgf8fee8b}
+\label{sec:orgf2eb590}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org926f722}
+\label{sec:org216732f}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -714,7 +711,7 @@ TEST_CASE("4.10.TC3") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:org1816036}
+\label{sec:org9f8d897}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -732,7 +729,7 @@ TEST_CASE("4.10.TC3") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:org8db361a}
+\label{sec:org2073c20}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.11.TC1") {
   Transform* test_transform = new Transform();
@@ -768,10 +765,10 @@ TEST_CASE("4.11.TC3") {
 
 \clearpage
 \subsection{Transform::Translate(glm::vec3 offset)}
-\label{sec:org56d003c}
+\label{sec:orgcd2317e}
 
 \subsubsection*{Equivalence Classes}
-\label{sec:org476b5fd}
+\label{sec:orga2eb45b}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -786,7 +783,7 @@ TEST_CASE("4.11.TC3") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Cases}
-\label{sec:orgc354406}
+\label{sec:org9c3de82}
 \begin{center}
 \begin{tabularx}{\textwidth}{lXXX}
 \hline
@@ -802,7 +799,7 @@ TEST_CASE("4.11.TC3") {
 \end{tabularx}
 \end{center}
 \subsubsection*{Test Implementation}
-\label{sec:orgf11a9b0}
+\label{sec:orgbe5b660}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 TEST_CASE("4.12.TC1") {
   Transform* test_transform = new Transform();
@@ -828,12 +825,12 @@ TEST_CASE("4.12.TC2") {
 
 \clearpage
 \section{Source Code Based Testing}
-\label{sec:orgdc7ecfd}
+\label{sec:org98f7a5e}
 \subsection{Transform::AddChild(Transform* tr)}
-\label{sec:org9535a80}
+\label{sec:orgc41c819}
 
 \subsubsection*{Source Code}
-\label{sec:org0618140}
+\label{sec:orgb642f2a}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 void Transform::AddChild(Transform *tr) {
   if (tr == nullptr) {
@@ -845,14 +842,26 @@ void Transform::AddChild(Transform *tr) {
 }
 \end{minted}
 \subsubsection*{Control Flow Graph}
-\label{sec:orgf5ad76d}
+\label{sec:org877008f}
 \begin{center}
 \includegraphics[width=8cm]{diagrams/transform/addchild.pdf}
 \end{center}
+\subsubsection*{Test Cases}
+\label{sec:org9206d6a}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+ID & tr & Path\\
+\hline
+5.1.TC1 & nullptr & (in, 2, 3, out)\\
+5.2.TC2 & new Transform() & (in, 2, 6-7,out)\\
+\hline
+\end{tabularx}
+\end{center}
 \subsection{Transform::AddComponent(Component* component)}
-\label{sec:orgabd0ca3}
+\label{sec:org407d530}
 \subsubsection*{Source Code}
-\label{sec:orgea0b6e3}
+\label{sec:orge292dfb}
 \begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
 void Transform::AddComponent(Component *component) {
   if (component == nullptr)
@@ -865,12 +874,232 @@ void Transform::AddComponent(Component *component) {
 }
 \end{minted}
 \subsubsection*{Control Flow Graph}
-\label{sec:orgb768cc8}
+\label{sec:org3778f14}
 \begin{center}
-\includegraphics[width=8cm]{diagrams/transform/addchild.pdf}
+\includegraphics[width=8cm]{diagrams/transform/addcomponent.pdf}
+\end{center}
+\subsubsection*{Test Cases}
+\label{sec:orgbc72fdb}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+ID & component & Path\\
+\hline
+5.2.TC1 & nullptr & (in,2,4,out)\\
+5.2.TC2 & new Component() & (in,2,7,out)\\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::FindChildByName(std::string name)}
+\label{sec:org9772781}
+
+\subsubsection*{Source Code}
+\label{sec:org032e696}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+Transform *Transform::FindChildByName(std::string name) {
+  auto it = std::find_if(children.begin(), children.end(), [name](Transform* t) {return t->name == name;});
+  if (it == children.end()) {
+    std::cout << "Supplied name " + name + " not found on " +
+               this->name << "\n";
+    return nullptr;
+  } else {
+    return *it;
+  }
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:org9611a25}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/findchildbyname.pdf}
+\end{center}
+\subsubsection*{Test Cases}
+\label{sec:org7e9f96b}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+ID & name & Path\\
+5.3.TC1 &  & \\
+\hline
+\end{tabularx}
+\end{center}
+\subsection{Transform::FindComponentByUID(uint64\textsubscript{t} id)}
+\label{sec:org0c88993}
+
+\subsubsection*{Source Code}
+\label{sec:orgeaa65ec}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+Component* Transform::FindComponentByUID(uint64_t id)
+{
+  for(auto comp : components)
+  {
+    if(comp->GetUID() == id)
+    {
+      return comp;
+    }
+  }
+  for(auto ch : children)
+  {
+    Component* c = ch->FindComponentByUID(id);
+    if(c!=nullptr)
+    {
+      return c;
+    }
+  }
+  return nullptr;
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:orgf25d260}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/findcomponentbyuid.pdf}
+\end{center}
+\subsection{Transform::FindTransformByUID(uint64\textsubscript{t} id)}
+\label{sec:org63a49d1}
+
+\subsubsection*{Source Code}
+\label{sec:orgf5b6f89}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+Transform* Transform::FindTransformByUID(uint64_t id)
+{
+  if(this->GetUID() == id)
+  {
+    return this;
+  }
+  else
+  {
+    for(auto ch : children)
+    {
+      Transform* t = ch->FindTransformByUID(id);
+      if(t != nullptr)
+      {
+        return t;
+      }
+    }
+    return nullptr;
+  }
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:org0240607}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/findtransformbyuid.pdf}
+\end{center}
+\subsection{Transform::GetComponent(std::string name)}
+\label{sec:org10f208b}
+
+\subsubsection*{Source Code}
+\label{sec:org4791758}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+Component *Transform::GetComponent(std::string name) {
+  for (auto comp : components) {
+    if (comp != nullptr && comp->name == name) {
+        return comp;
+    }
+  }
+  return nullptr;
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:orgf77f88f}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/getcomponent.pdf}
+\end{center}
+\subsection{Transform::GetGlobalPosition()}
+\label{sec:orga79a3ea}
+
+\subsubsection*{Source Code}
+\label{sec:org53c7e84}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+glm::vec3 Transform::GetGlobalPosition() {
+  glm::vec3 tot(0.0f, 0.0f, 0.0f);
+  Transform *tr = this;
+  while (tr != nullptr) {
+    tot += tr->GetLocalPosition();
+    tr = tr->parent;
+  }
+  return tot;
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:orgb7e9597}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/getglobalposition.pdf}
+\end{center}
+\subsection{Transform::GetGlobalRotation()}
+\label{sec:org65d46c3}
+
+\subsubsection*{Source Code}
+\label{sec:org574c3c4}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+glm::quat Transform::GetGlobalRotation() {
+  glm::quat rot = glm::identity<glm::quat>();
+  Transform *tr = this;
+  while (tr != nullptr) {
+    rot = tr->GetLocalRotation() * rot;
+    tr = tr->parent;
+  }
+  return rot;
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:org5d5be27}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/getglobalrotation.pdf}
+\end{center}
+\subsection{Transform::GetGlobalScale()}
+\label{sec:org62fd121}
+
+\subsubsection*{Source Code}
+\label{sec:orgf88f83d}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+glm::vec3 Transform::GetGlobalScale() {
+  glm::vec3 tot(1.0f, 1.0f, 1.0f);
+  Transform *tr = this;
+  while (tr != nullptr) {
+    tot *= tr->GetLocalScale();
+    tr = tr->parent;
+  }
+  return tot;
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:orgd518747}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/getglobalscale.pdf}
+\end{center}
+\subsection{Transform::Rotate()}
+\label{sec:org18f78db}
+
+\subsubsection*{Source Code}
+\label{sec:org957201f}
+\begin{minted}[frame=single,framerule=0.0mm,framesep=0mm,bgcolor=bg]{c++}
+void Transform::Rotate(glm::vec3 axis, float amount) {
+  if (glm::length(axis) == 0) {
+    std::cout << "Error: the zero vector does not constitute a valid axis for "
+                 "Transform::Rotate\n";
+    return;
+  }    
+  this->rotation = glm::rotate(this->rotation,amount,axis);
+}
+\end{minted}
+\subsubsection*{Control Flow Graph}
+\label{sec:org164bd5c}
+\begin{center}
+\includegraphics[width=5cm]{diagrams/transform/getglobalscale.pdf}
+\end{center}
+\subsubsection*{Test Cases}
+\label{sec:orgb8fee77}
+\begin{center}
+\begin{tabularx}{\textwidth}{lXXX}
+\hline
+ID & axis & amount & Path\\
+5.10.TC1 & glm::vec3(0,0,0) & 10.0f (free) & (in,2,3-4,out)\\
+5.10.TC2 & glm::vec3(1,0,0) & 10.0f (free) & (in,2,7,out)\\
+\hline
+\end{tabularx}
 \end{center}
 \section{Test Results}
-\label{sec:org7fdca99}
+\label{sec:org10689b5}
 
 Running the suite of test cases described in this document yields the following output.
 

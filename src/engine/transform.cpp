@@ -16,8 +16,7 @@ namespace engine {
 
   Component *Transform::GetComponent(std::string name) {
     for (auto comp : components) {
-      if(comp == nullptr) continue;
-      if (comp->name == name) {
+      if (comp != nullptr && comp->name == name) {
 	return comp;
       }
     }

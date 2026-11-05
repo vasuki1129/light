@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{glm}\PYG{o}{::}\PYG{n}{quat}\PYG{+w}{ }\PYG{n+nf}{Transform::GetGlobalRotation}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{glm}\PYG{o}{::}\PYG{n}{quat}\PYG{+w}{ }\PYG{n}{rot}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{glm}\PYG{o}{::}\PYG{n}{identity}\PYG{o}{\PYGZlt{}}\PYG{n}{glm}\PYG{o}{::}\PYG{n}{quat}\PYG{o}{\PYGZgt{}}\PYG{p}{();}
+\PYG{+w}{  }\PYG{n}{Transform}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{tr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{tr}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{rot}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tr}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{GetLocalRotation}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{rot}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{tr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{tr}\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{n}{parent}\PYG{p}{;}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{rot}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}
