@@ -1,4 +1,4 @@
-n#+TITLE: Light Game Engine Quality Management Plan
+#+TITLE: Light Game Engine Quality Management Plan
 #+SUBTITLE: Phase 1: Specification Based Testing
 #+AUTHOR: Max Morabito
 
@@ -15,7 +15,6 @@ n#+TITLE: Light Game Engine Quality Management Plan
 #+PROPERTY: header-args:plantuml :file-ext svg
 #+OPTIONS: toc:nil
 #+Options: num:2
-
 
 \clearpage
 
@@ -185,7 +184,6 @@ Further phases are yet to be determined.
 \clearpage
 
 * Equivalence Class Testing
-
 ** Transform::AddChild(Transform* tr)
 *** Specification
 #+BEGIN_SRC c++ 
@@ -773,7 +771,6 @@ Takes no parameters, so equivalence class testing is not appropriate.
 
 * Source Code Based Testing
 ** Transform::AddChild(Transform* tr)
-
 *** Source Code
 #+begin_src c++
 void Transform::AddChild(Transform *tr) {
@@ -785,7 +782,6 @@ void Transform::AddChild(Transform *tr) {
   this->children.push_back(tr);
 }
 #+end_src
-
 *** Control Flow Graph
 #+begin_src mermaid :file diagrams/transform/addchild.pdf :exports results
   flowchart
@@ -803,7 +799,6 @@ void Transform::AddChild(Transform *tr) {
 #+end_src
 #+attr_latex: :width 8cm
 [[file:diagrams/transform/addchild.pdf]]
-
 *** Test Cases
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
 |---------+-----------------+------------------|
@@ -845,8 +840,6 @@ void Transform::AddComponent(Component *component) {
 #+attr_latex: :width 8cm
 [[file:diagrams/transform/addcomponent.pdf]]
 
-
-
 *** Test Cases
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
 |---------+-----------------+--------------|
@@ -857,7 +850,6 @@ void Transform::AddComponent(Component *component) {
 |---------+-----------------+--------------|
 
 ** Transform::FindChildByName(std::string name)
-
 *** Source Code
 #+begin_src c++
 Transform *Transform::FindChildByName(std::string name) {
@@ -897,10 +889,7 @@ Transform *Transform::FindChildByName(std::string name) {
 | 5.3.TC1 |      |      |
 |---------+------+------|
 
-
-
 ** Transform::FindComponentByUID(uint64_t id)
-
 *** Source Code
 #+begin_src c++
 Component* Transform::FindComponentByUID(uint64_t id)
@@ -999,7 +988,6 @@ Transform* Transform::FindTransformByUID(uint64_t id)
 [[file:diagrams/transform/findtransformbyuid.pdf]]
 
 ** Transform::GetComponent(std::string name)
-
 *** Source Code
 #+begin_src c++
   Component *Transform::GetComponent(std::string name) {
@@ -1027,8 +1015,6 @@ Transform* Transform::FindTransformByUID(uint64_t id)
 #+end_src
 #+attr_latex: :width 5cm
 [[file:diagrams/transform/getcomponent.pdf]]
-
-
 
 
 
@@ -1063,8 +1049,6 @@ glm::vec3 Transform::GetGlobalPosition() {
 #+attr_latex: :width 5cm
 [[file:diagrams/transform/getglobalposition.pdf]]
 
-
-
 ** Transform::GetGlobalRotation()
 
 *** Source Code
@@ -1095,7 +1079,6 @@ glm::quat Transform::GetGlobalRotation() {
 #+end_src
 #+attr_latex: :width 5cm
 [[file:diagrams/transform/getglobalrotation.pdf]]
-
 
 ** Transform::GetGlobalScale()
 
@@ -1129,9 +1112,7 @@ glm::vec3 Transform::GetGlobalScale() {
 [[file:diagrams/transform/getglobalscale.pdf]]
 
 
-
-** Transform::Rotate()
-
+** Transform::Rotate(glm::vec3 axis, float amount)
 *** Source Code
 #+begin_src c++
 void Transform::Rotate(glm::vec3 axis, float amount) {
@@ -1145,7 +1126,7 @@ void Transform::Rotate(glm::vec3 axis, float amount) {
 #+end_src
 
 *** Control Flow Graph
-#+begin_src mermaid :file diagrams/transform/getglobalscale.pdf :exports results
+#+begin_src mermaid :file diagrams/transform/rotate.pdf :exports results
   flowchart TD
       id1(("`**in**
       def {axis,amount}`")) --> id2(("`**2**`"))
@@ -1156,8 +1137,7 @@ void Transform::Rotate(glm::vec3 axis, float amount) {
       id4 --> out
 #+end_src
 #+attr_latex: :width 5cm
-[[file:diagrams/transform/getglobalscale.pdf]]
-
+[[file:diagrams/transform/rotate.pdf]]
 
 *** Test Cases
 #+ATTR_LATEX: :environment tabularx :width \textwidth :align lXXX :hline \hline
@@ -1166,6 +1146,45 @@ void Transform::Rotate(glm::vec3 axis, float amount) {
 | 5.10.TC1 | glm::vec3(0,0,0) | 10.0f (free) | (in,2,3-4,out) |
 | 5.10.TC2 | glm::vec3(1,0,0) | 10.0f (free) | (in,2,7,out)   |
 |----------+------------------+--------------+----------------|x
+
+** Transform::Scale(glm::vec3 amount)
+*** Source Code
+#+begin_src c++
+  void Transform::Scale(glm::vec3 amount)
+  {
+    this->scale *= amount;
+  }
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/scale.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def {amount}`")) --> id2(("`**3**`"))
+      id2 --> out
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/scale.pdf]]
+
+** Transform::Translate(glm::vec3 offset)
+*** Source Code
+#+begin_src c++
+  void Transform::Translate(glm::vec3 offset)
+  {
+    this->position += offset;
+  }
+#+end_src
+
+*** Control Flow Graph
+#+begin_src mermaid :file diagrams/transform/translate.pdf :exports results
+  flowchart TD
+      id1(("`**in**
+      def {offset}`")) --> id2(("`**3**`"))
+      id2 --> out
+#+end_src
+#+attr_latex: :width 5cm
+[[file:diagrams/transform/translate.pdf]]
+
 
 * Test Results
 
